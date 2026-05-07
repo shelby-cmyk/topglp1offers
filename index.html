@@ -31,6 +31,7 @@
   --pro:#34997d;
   --pro-soft:#e6f5f0;
   --con:#b33a3a;
+  --gray-soft:#f3f4f6;
   --sans:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -42,6 +43,7 @@ body{
   font-size:16px;
   line-height:1.6;
   -webkit-font-smoothing:antialiased;
+  padding-bottom:84px;
 }
 a{color:var(--brand-link);text-decoration:none}
 a:hover{text-decoration:underline}
@@ -49,13 +51,9 @@ img{max-width:100%;display:block}
 
 /* ---------- Top utility bar ---------- */
 .utility{
-  background:var(--brand);
-  color:#cbd2e0;
-  font-size:12px;
-  letter-spacing:.04em;
-  text-transform:uppercase;
-  padding:8px 0;
-  text-align:center;
+  background:var(--brand);color:#cbd2e0;
+  font-size:12px;letter-spacing:.04em;text-transform:uppercase;
+  padding:8px 0;text-align:center;
 }
 .utility a{color:#7fdab2;font-weight:700;margin:0 8px}
 .utility .sep{color:#3a4566;margin:0 6px}
@@ -63,20 +61,14 @@ img{max-width:100%;display:block}
 /* ---------- Header ---------- */
 .site-header{
   border-bottom:1px solid var(--line);
-  background:#fff;
-  position:sticky;top:0;z-index:50;
+  background:#fff;position:sticky;top:0;z-index:50;
 }
 .site-header__inner{
   max-width:1200px;margin:0 auto;
   display:flex;align-items:center;justify-content:space-between;
   padding:16px 24px;
 }
-.logo{
-  font-weight:900;
-  font-size:22px;
-  letter-spacing:-.025em;
-  color:var(--ink);
-}
+.logo{font-weight:900;font-size:22px;letter-spacing:-.025em;color:var(--ink)}
 .logo span{color:var(--accent)}
 .site-nav{display:flex;gap:28px;align-items:center}
 .site-nav a{
@@ -91,11 +83,7 @@ img{max-width:100%;display:block}
 .site-nav .nav-phone::before{content:"\260E";font-size:14px;opacity:.85}
 
 /* ---------- Article container ---------- */
-.article{
-  max-width:820px;
-  margin:0 auto;
-  padding:28px 24px 80px;
-}
+.article{max-width:980px;margin:0 auto;padding:24px 24px 60px}
 .breadcrumb{
   font-size:11px;text-transform:uppercase;letter-spacing:.1em;
   color:var(--muted-soft);margin-bottom:14px;font-weight:600;
@@ -104,19 +92,12 @@ img{max-width:100%;display:block}
 .breadcrumb strong{color:var(--brand-link);font-weight:700}
 
 h1.title{
-  font-size:42px;
-  font-weight:900;
-  line-height:1.05;
-  letter-spacing:-.03em;
-  margin-bottom:14px;
-  color:var(--ink);
+  font-size:40px;font-weight:900;line-height:1.05;letter-spacing:-.03em;
+  margin-bottom:12px;color:var(--ink);
 }
 .dek{
-  font-size:18px;
-  color:var(--muted);
-  line-height:1.5;
-  margin-bottom:18px;
-  font-weight:400;
+  font-size:17px;color:var(--muted);line-height:1.5;
+  margin-bottom:16px;font-weight:400;
 }
 .byline{
   display:flex;flex-wrap:wrap;gap:14px;align-items:center;
@@ -126,187 +107,113 @@ h1.title{
 }
 .byline strong{color:var(--ink);font-weight:700}
 .byline-sep{width:1px;height:12px;background:var(--line)}
-.byline-checked{
-  display:inline-flex;align-items:center;gap:5px;
-  color:var(--pro);font-weight:700;
-}
+.byline-checked{color:var(--pro);font-weight:700;display:inline-flex;align-items:center;gap:5px}
 
 /* ---------- Social proof strip ---------- */
 .social-proof{
-  display:grid;grid-template-columns:repeat(3,1fr);
-  gap:14px;
-  background:var(--card);
-  border:1px solid var(--line);
-  border-radius:8px;
-  padding:14px 16px;
-  margin:0 0 18px;
-  font-size:13px;
-  text-align:center;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:14px;
+  background:var(--card);border:1px solid var(--line);border-radius:8px;
+  padding:14px 16px;margin:0 0 18px;font-size:13px;text-align:center;
 }
 .social-proof__item{display:flex;flex-direction:column;align-items:center;gap:3px}
-.social-proof__num{
-  font-weight:900;font-size:20px;
-  color:var(--brand);line-height:1;letter-spacing:-.02em;
-}
+.social-proof__num{font-weight:900;font-size:20px;color:var(--brand);line-height:1;letter-spacing:-.02em}
 .social-proof__lbl{color:var(--muted);font-size:11px;line-height:1.3;font-weight:500}
-
-/* ---------- Compact FDA notice ---------- */
-.warn{
-  background:var(--partner-bg);
-  border:1px solid var(--partner-line);
-  padding:10px 14px;
-  font-size:12px;
-  color:#5a4a1a;
-  border-radius:4px;
-  margin:0 0 24px;
-  line-height:1.5;
-  display:flex;gap:8px;align-items:flex-start;
-}
-.warn::before{content:"\26A0";font-size:14px;flex-shrink:0;color:#8a5a00}
-.warn strong{color:#8a5a00;font-weight:700}
 
 /* ---------- Featured partner ---------- */
 .featured-partner{
-  background:var(--partner-bg);
-  border:1px solid var(--partner-line);
-  border-radius:10px;
-  padding:24px 26px;
-  margin:0 0 24px;
+  background:var(--partner-bg);border:1px solid var(--partner-line);
+  border-radius:10px;padding:22px 26px;margin:0 0 28px;
   display:flex;align-items:center;justify-content:space-between;gap:24px;
   flex-wrap:wrap;
-  position:relative;
 }
 .featured-partner__inner{flex:1;min-width:240px}
 .featured-partner__tag{
-  display:inline-block;
-  background:var(--superlative);color:#fff;
-  font-size:10px;font-weight:800;
-  text-transform:uppercase;letter-spacing:.1em;
-  padding:4px 9px;border-radius:3px;margin-bottom:10px;
+  display:inline-block;background:var(--superlative);color:#fff;
+  font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;
+  padding:4px 9px;border-radius:3px;margin-bottom:8px;
 }
-.featured-partner__logo{height:30px;width:auto;max-width:160px;display:block;margin-bottom:10px}
-.featured-partner__logo--thinnex{height:46px;max-width:180px;margin:-4px 0 8px -8px}
-.featured-partner__copy{font-size:15px;color:#3d3215;margin-bottom:8px;font-weight:500}
+.featured-partner__logo{height:30px;width:auto;max-width:160px;display:block;margin-bottom:8px}
+.featured-partner__logo--thinnex{height:46px;max-width:180px;margin:-4px 0 6px -8px}
+.featured-partner__copy{font-size:15px;color:#3d3215;margin-bottom:6px;font-weight:500}
 .featured-partner__copy strong{color:var(--ink);font-weight:800}
-.featured-partner__urgency{
-  font-size:12px;color:var(--con);font-weight:700;
-  display:inline-flex;align-items:center;gap:6px;
-}
+.featured-partner__urgency{font-size:12px;color:var(--con);font-weight:700;display:inline-flex;align-items:center;gap:6px}
 .featured-partner__urgency::before{content:"\23F1";font-size:12px}
 .featured-partner__cta{
-  background:var(--accent);color:#fff;
-  padding:14px 26px;border-radius:4px;
-  font-weight:800;font-size:14px;
-  text-transform:uppercase;letter-spacing:.06em;
-  border:0;cursor:pointer;
-  white-space:nowrap;
+  background:var(--accent);color:#fff;padding:14px 26px;border-radius:6px;
+  font-weight:800;font-size:14px;text-transform:uppercase;letter-spacing:.06em;
+  border:0;cursor:pointer;white-space:nowrap;
   transition:background .15s, transform .1s;
 }
-.featured-partner__cta:hover{background:var(--accent-dark);text-decoration:none;color:#fff;transform:translateY(-1px)}
+.featured-partner__cta:hover{background:var(--accent-dark);transform:translateY(-1px);text-decoration:none;color:#fff}
 
-/* ---------- Body copy ---------- */
-.lede{font-size:16px;line-height:1.65;margin-bottom:20px;color:var(--muted)}
-.article p{margin-bottom:16px;color:#2a2a2a}
-.article h2{
-  font-size:30px;font-weight:900;
-  margin:48px 0 16px;letter-spacing:-.02em;line-height:1.15;
-  color:var(--ink);
+/* ---------- Top Picks 3-card grid ---------- */
+.top-picks{margin:8px 0 28px}
+.top-picks__title{
+  text-align:center;font-size:26px;font-weight:900;letter-spacing:-.02em;
+  margin-bottom:8px;color:var(--ink);
 }
-.article h3{
-  font-size:22px;font-weight:800;
-  margin:28px 0 12px;letter-spacing:-.015em;
-  color:var(--ink);
+.top-picks__sub{
+  text-align:center;font-size:14px;color:var(--muted);
+  margin-bottom:20px;
 }
-
-/* ---------- Trust box ---------- */
-.trust-box{
-  background:var(--accent-soft);
-  border-left:4px solid var(--brand-link);
-  padding:18px 22px;
-  margin:32px 0;
-  border-radius:0 6px 6px 0;
+.top-picks__grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:14px;
 }
-.trust-box h4{font-size:16px;font-weight:800;margin-bottom:6px;color:var(--ink)}
-.trust-box p{font-size:14px;color:var(--muted);margin:0}
-
-/* ---------- 3-step process ---------- */
-.steps{
-  display:grid;grid-template-columns:repeat(3,1fr);
-  gap:14px;margin:20px 0 8px;
+.pick{
+  background:#fff;border:1px solid var(--line);border-radius:12px;
+  padding:22px 20px 20px;position:relative;
+  display:flex;flex-direction:column;
+  transition:transform .15s, box-shadow .15s;
 }
-.step{
-  background:var(--card);border-radius:10px;padding:22px 18px;text-align:center;
-  border:1px solid var(--line);
-}
-.step__num{
-  width:32px;height:32px;border-radius:50%;
-  background:var(--accent);color:#fff;
-  font-weight:900;font-size:15px;
+.pick:hover{transform:translateY(-2px);box-shadow:0 8px 24px -8px rgba(4,16,47,.12)}
+.pick__rank{
+  position:absolute;top:-12px;left:18px;
+  width:36px;height:36px;border-radius:50%;
   display:flex;align-items:center;justify-content:center;
-  margin:0 auto 10px;
+  font-weight:900;font-size:13px;color:#fff;
+  border:3px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.1);
 }
-.step h4{font-size:16px;font-weight:800;margin-bottom:4px;color:var(--ink)}
-.step p{font-size:13px;color:var(--muted);margin:0;line-height:1.5}
-
-/* ---------- Quiz / Match ---------- */
-.quiz{
-  background:linear-gradient(135deg,var(--accent-soft) 0%,#dff0e5 100%);
-  border:1px solid #c2e3d4;
-  border-radius:12px;
-  padding:30px;
-  margin:40px 0;
-  text-align:center;
+.pick__rank--1{background:var(--pro)}
+.pick__rank--2{background:var(--brand-link)}
+.pick__rank--3{background:var(--superlative)}
+.pick__rating{
+  position:absolute;top:14px;right:14px;
+  background:#fff;border:1px solid var(--line);
+  padding:4px 10px;border-radius:999px;
+  font-size:13px;font-weight:800;
+  display:flex;align-items:center;gap:4px;
 }
-.quiz__eyebrow{
-  font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;
-  color:var(--accent-dark);margin-bottom:6px;
+.pick__rating .star{color:var(--gold);font-size:14px}
+.pick__logo{
+  background:var(--gray-soft);border-radius:8px;padding:14px 12px;
+  display:flex;align-items:center;justify-content:center;
+  min-height:64px;margin:18px 0 12px;
 }
-.quiz h3{
-  font-size:24px;font-weight:900;
-  margin:0 0 8px;letter-spacing:-.02em;
+.pick__logo img{max-height:36px;width:auto;max-width:140px}
+.pick__title{font-size:16px;font-weight:800;margin-bottom:6px;color:var(--ink)}
+.pick__check{
+  font-size:13px;color:var(--ink);margin-bottom:12px;
+  display:flex;gap:6px;align-items:flex-start;line-height:1.4;
 }
-.quiz__sub{font-size:14px;color:var(--muted);margin-bottom:18px}
-.quiz__cta{
-  background:var(--accent);color:#fff;
-  padding:14px 28px;border-radius:4px;
-  font-weight:800;font-size:14px;
-  text-transform:uppercase;letter-spacing:.06em;
-  border:0;cursor:pointer;
-  display:inline-flex;align-items:center;gap:8px;
-  transition:background .15s, transform .1s;
+.pick__check::before{content:"\2713";color:var(--pro);font-weight:900;flex-shrink:0}
+.pick__desc{
+  font-size:13px;color:var(--muted);line-height:1.55;
+  margin-bottom:12px;flex:1;
 }
-.quiz__cta:hover{background:var(--accent-dark);transform:translateY(-1px)}
-.quiz__cta::after{content:"\2192";font-size:18px}
-.quiz__meta{
-  display:flex;gap:16px;justify-content:center;
-  font-size:12px;color:var(--muted);margin-top:14px;
+.pick__badge{
+  font-size:11px;color:var(--pro-soft);background:var(--pro-soft);color:var(--pro);
+  padding:4px 10px;border-radius:4px;font-weight:700;
+  margin-bottom:12px;align-self:flex-start;
+  text-transform:uppercase;letter-spacing:.04em;
 }
-.quiz__meta span::before{content:"\2713";color:var(--pro);margin-right:4px;font-weight:800}
-
-/* ---------- TOC ---------- */
-.toc{
-  border:1px solid var(--line);
-  border-radius:8px;
-  padding:18px 22px;
-  margin:32px 0;
+.pick__cta{
+  background:#fff;border:1.5px solid var(--accent);color:var(--accent);
+  padding:11px;border-radius:6px;
+  font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:.04em;
+  cursor:pointer;width:100%;transition:all .15s;
 }
-.toc h4{
-  font-size:11px;text-transform:uppercase;letter-spacing:.1em;
-  color:var(--muted-soft);margin-bottom:10px;font-weight:700;
-}
-.toc ol{list-style:none;counter-reset:toc}
-.toc li{
-  counter-increment:toc;
-  padding:6px 0;border-bottom:1px solid var(--line-soft);
-  font-size:14px;
-}
-.toc li:last-child{border-bottom:0}
-.toc li::before{
-  content:counter(toc) ". ";
-  color:var(--muted-soft);font-weight:700;margin-right:8px;
-}
-.toc a{color:var(--ink);font-weight:600}
-.toc a:hover{color:var(--accent)}
+.pick__cta:hover{background:var(--accent);color:#fff}
+.pick__cta::after{content:" \2192"}
 
 /* ---------- Comparison table ---------- */
 .compare-wrap{margin:0 0 16px}
@@ -315,275 +222,275 @@ h1.title{
   font-weight:800;color:var(--brand-link);margin-bottom:8px;
 }
 .compare-headline{
-  font-size:24px;font-weight:900;letter-spacing:-.02em;
+  font-size:22px;font-weight:900;letter-spacing:-.02em;
   margin-bottom:14px;color:var(--ink);
 }
 .compare{
-  overflow-x:auto;
-  border:1px solid var(--line);
-  border-radius:8px;
-  background:#fff;
+  overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:#fff;
 }
 .compare table{width:100%;border-collapse:collapse;font-size:14px}
 .compare th,.compare td{
-  padding:13px 16px;text-align:left;border-bottom:1px solid var(--line);
-  vertical-align:middle;
+  padding:13px 16px;text-align:left;border-bottom:1px solid var(--line);vertical-align:middle;
 }
 .compare th{
-  background:#f7f9ff;
-  font-weight:700;font-size:11px;
-  text-transform:uppercase;letter-spacing:.08em;
-  color:var(--muted-soft);
+  background:var(--card);font-weight:700;font-size:11px;
+  text-transform:uppercase;letter-spacing:.08em;color:var(--muted-soft);
 }
 .compare tr:last-child td{border-bottom:0}
 .compare td strong{font-weight:800;font-size:16px;display:block;margin-bottom:2px;color:var(--ink);letter-spacing:-.01em}
 .compare .pill{
   display:inline-block;background:var(--superlative-bg);color:var(--superlative);
-  font-size:10px;font-weight:800;
-  padding:2px 7px;border-radius:10px;
+  font-size:10px;font-weight:800;padding:2px 7px;border-radius:10px;
   text-transform:uppercase;letter-spacing:.06em;margin-top:4px;
 }
 .compare .pill--green{background:var(--pro-soft);color:var(--pro)}
 .compare .score{color:var(--pro);font-weight:900;font-size:18px}
 .compare .price{color:var(--ink);font-weight:800;font-size:15px}
 .compare .anchor-row td{
-  background:#fff7e6;font-size:12px;color:#5a4a1a;font-weight:600;
+  background:var(--partner-bg);font-size:12px;color:#5a4a1a;font-weight:600;
   text-transform:uppercase;letter-spacing:.04em;
 }
 .compare .anchor-row strong{font-size:12px;color:#8a5a00;display:inline}
-.price-anchor{
-  font-size:11px;color:var(--muted-soft);text-decoration:line-through;
-  margin-right:6px;font-weight:600;
-}
+.price-anchor{font-size:11px;color:var(--muted-soft);text-decoration:line-through;margin-right:6px;font-weight:600}
 .compare-cta{
-  background:var(--accent);color:#fff;
-  padding:8px 14px;border-radius:4px;
-  font-weight:800;font-size:11px;
-  text-transform:uppercase;letter-spacing:.05em;
-  border:0;cursor:pointer;
-  white-space:nowrap;
-  transition:background .15s;
+  background:var(--accent);color:#fff;padding:8px 14px;border-radius:4px;
+  font-weight:800;font-size:11px;text-transform:uppercase;letter-spacing:.05em;
+  border:0;cursor:pointer;white-space:nowrap;transition:background .15s;
 }
 .compare-cta:hover{background:var(--accent-dark)}
 
-/* ---------- Listicle entries ---------- */
-.entry{
-  border:1px solid var(--line);
-  border-radius:10px;
-  padding:28px;
-  margin:18px 0;
-  background:#fff;
-  scroll-margin-top:100px;
-  position:relative;
+/* ---------- Promotional ribbon ---------- */
+.promo-ribbon{
+  background:linear-gradient(135deg,#ff8a3d 0%,#ed6e13 100%);
+  color:#fff;text-align:center;
+  padding:14px 18px;border-radius:8px;
+  font-size:14px;font-weight:700;letter-spacing:.01em;
+  margin:24px 0;
+  display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;
 }
-.entry--pick{
-  border-color:var(--pro);
-  border-width:2px;
-  box-shadow:0 4px 16px -4px rgba(53,183,130,.15);
+.promo-ribbon__dot{
+  width:8px;height:8px;border-radius:50%;background:#fff;
+  animation:pulse 1.5s ease-in-out infinite;
 }
-.entry--pick::before{
-  content:"BEST OVERALL";
-  position:absolute;top:-12px;left:24px;
-  background:var(--pro);color:#fff;
-  font-size:10px;font-weight:900;letter-spacing:.12em;
-  padding:4px 12px;border-radius:3px;
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+
+/* ---------- DETAILED Reviews section ---------- */
+.reviews-headline{
+  text-align:center;font-size:26px;font-weight:900;letter-spacing:-.02em;
+  margin:36px 0 4px;color:var(--ink);
 }
-.entry__head{
-  display:flex;gap:18px;align-items:flex-start;
-  padding-bottom:18px;border-bottom:1px solid var(--line);margin-bottom:18px;
+.reviews-sub{
+  text-align:center;font-size:14px;color:var(--muted);margin-bottom:24px;
 }
-.entry__num{
-  flex-shrink:0;
-  width:42px;height:42px;
+
+/* Review entry: 2-col layout */
+.review{
+  border:1px solid var(--line);border-radius:12px;
+  padding:24px;margin:18px 0;background:#fff;
+  position:relative;scroll-margin-top:100px;
+}
+.review--pick{border:2px solid var(--pro);box-shadow:0 4px 16px -6px rgba(53,183,130,.18)}
+.review__topbar{
+  display:flex;justify-content:space-between;align-items:center;
+  margin-bottom:14px;
+}
+.review__bonus{
+  background:var(--superlative);color:#fff;
+  padding:5px 14px;border-radius:999px;
+  font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;
+}
+.review__rank-num{
   background:var(--brand);color:#fff;
-  border-radius:8px;
-  font-weight:900;font-size:18px;
+  width:34px;height:34px;border-radius:50%;
   display:flex;align-items:center;justify-content:center;
+  font-weight:900;font-size:14px;
 }
-.entry__title-wrap{flex:1;min-width:0}
-.entry__logo{height:36px;width:auto;max-width:180px;display:block;margin-bottom:10px}
-.entry__logo--thinnex{height:56px;max-width:200px;margin:-6px 0 6px -8px}
-.entry__tag{
-  display:inline-block;
+.review__grid{
+  display:grid;grid-template-columns:1fr 240px;gap:24px;
+}
+.review__main{min-width:0}
+.review__intro{
+  background:var(--partner-bg);border-radius:8px;padding:16px 18px;
+  font-size:15px;line-height:1.55;color:#3d3215;margin-bottom:18px;
+}
+.review__love-title{
+  font-size:15px;font-weight:800;margin-bottom:10px;color:var(--ink);
+  display:inline-flex;align-items:center;gap:6px;
+}
+.review__love-title::before{content:"\2605";color:var(--gold);font-size:16px}
+.review__love-list{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:14px}
+.review__love-list li{
+  background:var(--gray-soft);border-radius:6px;padding:11px 14px;
+  font-size:14px;display:flex;gap:10px;align-items:flex-start;line-height:1.45;
+}
+.review__love-list li::before{content:"\2713";color:var(--pro);font-weight:900;flex-shrink:0;margin-top:1px}
+.review__tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.review__tag{
+  font-size:12px;font-weight:700;
+  padding:5px 10px;border-radius:5px;
+}
+.review__tag--effect{background:var(--accent-soft);color:var(--brand-link)}
+.review__tag--bestfor{background:#f4ecff;color:#7c3aed}
+.review__tag--cons{background:#fdecec;color:var(--con)}
+
+/* Review sidebar */
+.review__side{
+  background:var(--gray-soft);border-radius:10px;padding:18px;
+  display:flex;flex-direction:column;gap:12px;text-align:center;
+}
+.review__side__logo{
+  background:#fff;border-radius:8px;padding:20px 12px;
+  display:flex;align-items:center;justify-content:center;
+  min-height:80px;
+}
+.review__side__logo img{max-height:50px;width:auto;max-width:160px}
+.review__side__logo img.thinnex-logo{max-height:62px}
+.review__side__discount{
+  background:#dc3232;color:#fff;
+  padding:6px 12px;border-radius:6px;
+  font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;
+}
+.review__side__rating{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  font-size:14px;font-weight:700;
+}
+.review__side__rating .stars{color:var(--gold);font-size:14px;letter-spacing:1px}
+.review__side__score{font-size:18px;font-weight:900;color:var(--ink)}
+.review__side__score span{font-size:12px;color:var(--muted-soft);font-weight:600}
+.review__side__trending{
   background:var(--superlative-bg);color:var(--superlative);
-  font-size:10px;font-weight:800;
-  text-transform:uppercase;letter-spacing:.1em;
-  padding:3px 9px;border-radius:3px;margin-bottom:8px;
+  padding:8px 10px;border-radius:6px;
+  font-size:12px;font-weight:700;
 }
-.entry__tag--green{background:var(--pro-soft);color:var(--pro)}
-.entry__brand{
-  font-size:28px;font-weight:900;
-  letter-spacing:-.025em;line-height:1.1;margin-bottom:8px;color:var(--ink);
-}
-.entry__meds{display:flex;gap:6px;flex-wrap:wrap}
-.med-pill{
-  display:inline-flex;align-items:center;gap:5px;
-  background:var(--accent-soft);color:var(--brand-link);
-  font-size:11px;font-weight:700;
-  padding:3px 9px;border-radius:12px;
-}
-.med-pill::before{content:"\211E";font-weight:400;opacity:.6}
-.entry__right{
-  flex-shrink:0;
-  display:flex;flex-direction:column;align-items:stretch;gap:10px;
-  min-width:140px;
-}
-.entry__score{
-  text-align:center;
-  background:var(--pro-soft);
-  border:1px solid #c2e3d4;
-  border-radius:6px;
-  padding:8px 10px;
-}
-.entry__score strong{
-  display:block;
-  font-weight:900;font-size:28px;
-  color:var(--pro);line-height:1;letter-spacing:-.02em;
-}
-.entry__score span{
-  display:block;font-size:9px;
-  text-transform:uppercase;letter-spacing:.1em;
-  color:var(--muted-soft);font-weight:700;margin-top:3px;
-}
-.entry__cta{
-  background:var(--accent);color:#fff;
-  padding:13px 16px;border-radius:4px;
-  font-weight:800;font-size:13px;
-  text-transform:uppercase;letter-spacing:.06em;
+.review__side__cta{
+  background:var(--accent);color:#fff;padding:14px;border-radius:6px;
+  font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:.04em;
   border:0;cursor:pointer;
-  white-space:nowrap;
+  display:flex;align-items:center;justify-content:center;gap:6px;
   transition:background .15s, transform .1s;
 }
-.entry__cta:hover{background:var(--accent-dark);text-decoration:none;color:#fff;transform:translateY(-1px)}
-
-.entry__why h5{
-  font-size:11px;text-transform:uppercase;letter-spacing:.1em;
-  color:var(--muted-soft);margin-bottom:8px;font-weight:700;
+.review__side__cta:hover{background:var(--accent-dark);transform:translateY(-1px)}
+.review__side__cta::after{content:"\2192"}
+.review__side__trust{
+  display:flex;flex-direction:column;gap:6px;
+  font-size:11px;color:var(--muted);
 }
-.entry__why p{font-size:15px;line-height:1.6;color:#2a2a2a}
-
-/* Score breakdown */
-.score-breakdown{
-  display:grid;grid-template-columns:repeat(2,1fr);
-  gap:10px 26px;
-  margin:18px 0;
-  padding:16px 18px;
-  background:var(--pro-soft);
-  border:1px solid #c2e3d4;
-  border-radius:6px;
+.review__side__trust span{
+  display:flex;align-items:center;gap:6px;justify-content:center;
 }
-.score-row{display:flex;align-items:center;gap:10px;font-size:13px}
-.score-row__label{
-  flex-shrink:0;width:78px;
-  font-size:11px;color:var(--muted);font-weight:700;
+.review__side__trust .ok::before{content:"\2713";color:var(--pro);font-weight:900}
+
+/* ---------- Hero testimonial ---------- */
+.hero-tm{
+  background:var(--partner-bg);border-radius:12px;
+  padding:24px;margin:32px 0;
+  display:grid;grid-template-columns:300px 1fr;gap:24px;align-items:center;
+}
+.hero-tm__visual{
+  position:relative;background:#e8d8c0;border-radius:8px;
+  min-height:240px;display:flex;align-items:center;justify-content:center;
+  overflow:hidden;
+}
+.hero-tm__visual span{
+  font-size:13px;color:#7a6a4a;font-style:italic;text-align:center;padding:0 16px;
+}
+.hero-tm__overlay{
+  position:absolute;top:14px;left:14px;
+  background:var(--superlative);color:#fff;
+  padding:6px 12px;border-radius:6px;
+  font-size:12px;font-weight:800;
+}
+.hero-tm__content h3{
+  font-size:22px;font-weight:900;letter-spacing:-.02em;margin-bottom:12px;color:var(--ink);
+}
+.hero-tm__quote{
+  border-left:3px solid var(--pro);padding-left:14px;
+  font-size:15px;line-height:1.6;color:var(--ink);font-style:italic;margin-bottom:14px;
+}
+.hero-tm__pills{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.hero-tm__pill{
+  font-size:11px;font-weight:700;padding:5px 10px;border-radius:5px;
   text-transform:uppercase;letter-spacing:.04em;
 }
-.score-row__bar{
-  flex:1;height:5px;background:#d6e8e0;border-radius:3px;overflow:hidden;
+.hero-tm__pill--green{background:var(--pro-soft);color:var(--pro)}
+.hero-tm__pill--blue{background:var(--accent-soft);color:var(--brand-link)}
+.hero-tm__cta{
+  background:var(--superlative);color:#fff;
+  padding:12px 22px;border-radius:6px;
+  font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:.04em;
+  border:0;cursor:pointer;display:inline-flex;align-items:center;gap:6px;
 }
-.score-row__fill{height:100%;background:var(--pro);border-radius:3px}
-.score-row__num{
-  flex-shrink:0;width:30px;text-align:right;
-  font-weight:800;color:var(--pro);font-size:13px;
-}
+.hero-tm__cta::after{content:"\2192"}
+.hero-tm__cta:hover{filter:brightness(.95)}
 
-.entry__procon{
-  display:grid;grid-template-columns:1fr 1fr;gap:18px;
-  margin:20px 0;
-  padding:18px;
-  background:var(--card);border-radius:8px;
+/* ---------- Body copy ---------- */
+.article p{margin-bottom:14px;color:#2a2a2a}
+.article h2{
+  font-size:28px;font-weight:900;
+  margin:42px 0 14px;letter-spacing:-.02em;line-height:1.15;color:var(--ink);
 }
-.entry__procon h6{
-  font-size:11px;text-transform:uppercase;letter-spacing:.08em;
-  font-weight:800;margin-bottom:8px;
-}
-.entry__procon ul{list-style:none}
-.entry__procon li{
-  font-size:13px;line-height:1.5;padding:3px 0;
-  display:flex;gap:8px;align-items:flex-start;
-}
-.pros h6{color:var(--pro)}
-.pros li::before{content:"\2713";color:var(--pro);font-weight:800;flex-shrink:0}
-.cons h6{color:var(--con)}
-.cons li::before{content:"\2715";color:var(--con);font-weight:800;flex-shrink:0}
+.article h3{font-size:20px;font-weight:800;margin:24px 0 10px;letter-spacing:-.015em;color:var(--ink)}
 
-.entry__details{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:12px;
-  padding:14px 0;border-top:1px solid var(--line);
+/* ---------- Trust box ---------- */
+.trust-box{
+  background:var(--accent-soft);border-left:4px solid var(--brand-link);
+  padding:16px 20px;margin:28px 0;border-radius:0 6px 6px 0;
 }
-.entry__details div{font-size:13px}
-.entry__details strong{
-  display:block;
-  font-size:10px;text-transform:uppercase;letter-spacing:.08em;
-  color:var(--muted-soft);font-weight:700;margin-bottom:3px;
-}
-.entry__details .price-cell{color:var(--ink);font-weight:800;font-size:14px}
-.entry__details .price-cell .price-anchor{font-size:11px}
+.trust-box h4{font-size:15px;font-weight:800;margin-bottom:6px;color:var(--ink)}
+.trust-box p{font-size:13px;color:var(--muted);margin:0}
 
-.entry__bottom-cta{
-  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;
-  margin-top:18px;padding:16px 18px;
-  background:var(--accent-soft);border:1px solid #c5d6e0;border-radius:8px;
+/* ---------- 3-step process ---------- */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0 8px}
+.step{background:var(--card);border-radius:10px;padding:22px 18px;text-align:center;border:1px solid var(--line)}
+.step__num{
+  width:32px;height:32px;border-radius:50%;background:var(--accent);color:#fff;
+  font-weight:900;font-size:15px;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;
 }
-.entry__bottom-cta__copy{font-size:13px;color:var(--brand);font-weight:600}
-.entry__bottom-cta__copy strong{font-size:16px;font-weight:900;color:var(--ink)}
-.entry__bottom-cta button{
-  background:var(--accent);color:#fff;
-  padding:12px 22px;border-radius:4px;
-  font-weight:800;font-size:13px;
-  text-transform:uppercase;letter-spacing:.06em;
-  border:0;cursor:pointer;
+.step h4{font-size:16px;font-weight:800;margin-bottom:4px;color:var(--ink)}
+.step p{font-size:13px;color:var(--muted);margin:0;line-height:1.5}
+
+/* ---------- Quiz / Match ---------- */
+.quiz{
+  background:linear-gradient(135deg,var(--accent-soft) 0%,#dff0e5 100%);
+  border:1px solid #c2e3d4;border-radius:12px;
+  padding:28px;margin:32px 0;text-align:center;
+}
+.quiz__eyebrow{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:var(--accent-dark);margin-bottom:6px}
+.quiz h3{font-size:22px;font-weight:900;margin:0 0 8px;letter-spacing:-.02em}
+.quiz__sub{font-size:14px;color:var(--muted);margin-bottom:18px}
+.quiz__cta{
+  background:var(--accent);color:#fff;padding:14px 28px;border-radius:6px;
+  font-weight:800;font-size:14px;text-transform:uppercase;letter-spacing:.06em;
+  border:0;cursor:pointer;display:inline-flex;align-items:center;gap:8px;
   transition:background .15s, transform .1s;
 }
-.entry__bottom-cta button:hover{background:var(--accent-dark);transform:translateY(-1px)}
+.quiz__cta:hover{background:var(--accent-dark);transform:translateY(-1px)}
+.quiz__cta::after{content:"\2192";font-size:18px}
+.quiz__meta{display:flex;gap:16px;justify-content:center;font-size:12px;color:var(--muted);margin-top:14px}
+.quiz__meta span::before{content:"\2713";color:var(--pro);margin-right:4px;font-weight:800}
 
-/* ---------- Testimonials ---------- */
-.testimonials{
-  display:grid;grid-template-columns:repeat(3,1fr);
-  gap:14px;margin:22px 0;
-}
-.tm{
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:10px;
-  padding:20px;
-  display:flex;flex-direction:column;
-}
-.tm__quote{
-  font-size:15px;line-height:1.5;
-  color:var(--ink);margin-bottom:12px;flex:1;font-weight:500;
-}
-.tm__quote::before{
-  content:"\201C";font-size:42px;line-height:0;
-  color:var(--accent);vertical-align:-14px;margin-right:3px;font-weight:900;
-}
-.tm__meta{
-  font-size:12px;color:var(--muted);
-  border-top:1px solid var(--line);padding-top:10px;
-  display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;
-}
+/* ---------- 3-card testimonials ---------- */
+.testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0}
+.tm{background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px;display:flex;flex-direction:column}
+.tm__quote{font-size:14px;line-height:1.5;color:var(--ink);margin-bottom:12px;flex:1;font-weight:500}
+.tm__quote::before{content:"\201C";font-size:36px;line-height:0;color:var(--accent);vertical-align:-12px;margin-right:3px;font-weight:900}
+.tm__meta{font-size:12px;color:var(--muted);border-top:1px solid var(--line);padding-top:10px;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
 .tm__name{font-weight:800;color:var(--ink)}
 .tm__brand{color:var(--accent-dark);font-weight:700}
-.testimonial-disclaimer{
-  font-size:11px;color:var(--muted-soft);text-align:center;margin-top:6px;
-  font-style:italic;
-}
+.testimonial-disclaimer{font-size:11px;color:var(--muted-soft);text-align:center;margin-top:6px;font-style:italic}
 
 /* ---------- FAQ ---------- */
-.faq{border-top:1px solid var(--line);margin-top:32px;padding-top:6px}
-.faq details{border-bottom:1px solid var(--line);padding:16px 0}
+.faq{border-top:1px solid var(--line);margin-top:28px;padding-top:6px}
+.faq details{border-bottom:1px solid var(--line);padding:14px 0}
 .faq summary{
-  font-size:17px;font-weight:800;letter-spacing:-.01em;
+  font-size:16px;font-weight:800;letter-spacing:-.01em;
   cursor:pointer;list-style:none;
-  display:flex;justify-content:space-between;align-items:center;gap:14px;
-  color:var(--ink);
+  display:flex;justify-content:space-between;align-items:center;gap:14px;color:var(--ink);
 }
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::after{
-  content:"+";font-size:24px;font-weight:300;color:var(--accent);
-}
+.faq summary::after{content:"+";font-size:24px;font-weight:300;color:var(--accent)}
 .faq details[open] summary::after{content:"\2212"}
-.faq details p{margin-top:12px;font-size:15px;color:var(--muted)}
+.faq details p{margin-top:10px;font-size:14px;color:var(--muted)}
 .faq__softcta{
   display:inline-block;margin-top:8px;
   font-size:13px;font-weight:700;color:var(--accent-dark);
@@ -593,26 +500,44 @@ h1.title{
 .faq__softcta::after{content:"\2192";margin-left:4px}
 
 /* ---------- Methodology ---------- */
-.methodology{
-  background:var(--card);
-  border-radius:10px;
-  padding:24px;
-  margin:32px 0 0;
-  border:1px solid var(--line);
-}
+.methodology{background:var(--card);border-radius:10px;padding:22px;margin:28px 0 0;border:1px solid var(--line)}
 .methodology h3{margin-top:0;margin-bottom:10px}
 .methodology p{font-size:14px;color:var(--muted);margin-bottom:10px}
 
-/* ---------- Disclaimer block ---------- */
+/* ---------- Closing CTA section ---------- */
+.closing-cta{
+  background:linear-gradient(135deg,var(--accent-soft) 0%,#d8efe2 100%);
+  border-radius:12px;padding:44px 32px;margin:36px 0 0;text-align:center;
+}
+.closing-cta h2{font-size:26px;font-weight:900;margin:0 0 8px;letter-spacing:-.02em;color:var(--ink)}
+.closing-cta p{font-size:15px;color:var(--muted);max-width:540px;margin:0 auto 20px}
+.closing-cta__btn{
+  background:var(--accent);color:#fff;padding:14px 32px;border-radius:6px;
+  font-weight:800;font-size:14px;text-transform:uppercase;letter-spacing:.05em;
+  border:0;cursor:pointer;margin-bottom:12px;
+  display:inline-flex;align-items:center;gap:6px;
+  transition:background .15s, transform .1s;
+}
+.closing-cta__btn:hover{background:var(--accent-dark);transform:translateY(-1px)}
+.closing-cta__btn::after{content:"\2192"}
+.closing-cta__note{font-size:11px;color:var(--muted-soft);margin:0;font-weight:500}
+
+/* ---------- FDA / Disclaimer block ---------- */
+.warn{
+  background:var(--partner-bg);border:1px solid var(--partner-line);
+  padding:10px 14px;font-size:12px;color:#5a4a1a;border-radius:4px;
+  margin:24px 0 16px;line-height:1.5;display:flex;gap:8px;align-items:flex-start;
+}
+.warn::before{content:"\26A0";font-size:14px;flex-shrink:0;color:#8a5a00}
+.warn strong{color:#8a5a00;font-weight:700}
 .disclaimer{
-  font-size:11px;color:var(--muted-soft);
-  line-height:1.6;margin:32px 0 0;
+  font-size:11px;color:var(--muted-soft);line-height:1.6;margin:14px 0 0;
   padding:18px;background:var(--card);border-radius:6px;border:1px solid var(--line);
 }
 .disclaimer strong{color:var(--ink);text-transform:uppercase;font-size:10px;letter-spacing:.08em;display:block;margin-bottom:6px;font-weight:800}
 
 /* ---------- Footer ---------- */
-.site-footer{background:var(--brand);color:#cbd2e0;padding:48px 24px 100px;font-size:13px}
+.site-footer{background:var(--brand);color:#cbd2e0;padding:40px 24px 32px;font-size:13px}
 .site-footer__inner{max-width:1200px;margin:0 auto}
 .site-footer p{margin-bottom:14px;line-height:1.6;color:#9aa3bb}
 .site-footer p strong{color:#fff;font-weight:800}
@@ -623,47 +548,44 @@ h1.title{
 }
 .site-footer__links a{margin-right:18px;color:#cbd2e0}
 
-/* ---------- Sticky mobile bar ---------- */
-.sticky-bar{
-  display:none;
+/* ---------- Sticky bottom CTA bar with countdown ---------- */
+.cta-bar{
   position:fixed;bottom:0;left:0;right:0;
-  background:#fff;
-  border-top:1px solid var(--line);
+  background:#fff;border-top:1px solid var(--line);
   box-shadow:0 -4px 16px rgba(0,0,0,.08);
-  padding:10px 14px;
-  z-index:60;
-  gap:10px;
+  padding:12px 24px;z-index:60;
+  display:flex;align-items:center;gap:18px;
 }
-.sticky-bar.is-shown{display:flex}
-.sticky-bar__btn{
-  flex:1;border-radius:4px;
-  padding:13px 8px;
-  font-weight:800;font-size:13px;
-  text-transform:uppercase;letter-spacing:.04em;
-  cursor:pointer;border:0;
-  text-align:center;
+.cta-bar__copy{flex:1;display:flex;flex-direction:column}
+.cta-bar__copy strong{font-weight:800;font-size:15px;color:var(--ink)}
+.cta-bar__copy span{color:var(--muted);font-size:13px}
+.cta-bar__timer{
+  display:flex;align-items:center;gap:8px;
+  background:var(--superlative-bg);color:var(--superlative);
+  padding:8px 14px;border-radius:6px;
+  font-size:13px;font-weight:700;white-space:nowrap;
 }
-.sticky-bar__btn--primary{background:var(--accent);color:#fff}
-.sticky-bar__btn--secondary{background:#fff;color:var(--brand);border:1px solid var(--brand)}
+.cta-bar__timer::before{content:"\23F1";font-size:14px}
+.cta-bar__timer strong{font-size:15px;font-weight:900;letter-spacing:.02em;font-variant-numeric:tabular-nums}
+.cta-bar__btn{
+  background:var(--superlative);color:#fff;padding:13px 22px;border-radius:6px;
+  font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:.04em;
+  border:0;cursor:pointer;display:inline-flex;align-items:center;gap:6px;white-space:nowrap;
+  transition:filter .15s, transform .1s;
+}
+.cta-bar__btn::after{content:"\2192"}
+.cta-bar__btn:hover{filter:brightness(.95);transform:translateY(-1px)}
 
 /* ---------- Modals (shared) ---------- */
-.modal{
-  display:none;position:fixed;inset:0;
-  background:rgba(4,16,47,.7);z-index:100;
-  align-items:center;justify-content:center;padding:24px;
-}
+.modal{display:none;position:fixed;inset:0;background:rgba(4,16,47,.7);z-index:100;align-items:center;justify-content:center;padding:24px}
 .modal.is-open{display:flex}
 .modal__panel{
-  background:#fff;border-radius:10px;
-  max-width:520px;width:100%;padding:30px;position:relative;
-  box-shadow:0 20px 60px rgba(0,0,0,.3);
-  max-height:92vh;overflow-y:auto;
+  background:#fff;border-radius:10px;max-width:520px;width:100%;padding:30px;position:relative;
+  box-shadow:0 20px 60px rgba(0,0,0,.3);max-height:92vh;overflow-y:auto;
 }
 .modal__close{
-  position:absolute;top:14px;right:14px;
-  background:transparent;border:0;
-  width:32px;height:32px;border-radius:50%;
-  font-size:20px;cursor:pointer;color:var(--muted);
+  position:absolute;top:14px;right:14px;background:transparent;border:0;
+  width:32px;height:32px;border-radius:50%;font-size:20px;cursor:pointer;color:var(--muted);
 }
 .modal__close:hover{background:var(--card);color:var(--ink)}
 .modal h3{font-size:24px;font-weight:900;margin-bottom:6px;line-height:1.15;letter-spacing:-.02em;color:var(--ink)}
@@ -671,32 +593,19 @@ h1.title{
 
 /* Lead form */
 .form-row{margin-bottom:12px}
-.form-row label{
-  display:block;font-size:11px;
-  text-transform:uppercase;letter-spacing:.08em;
-  color:var(--muted-soft);font-weight:700;margin-bottom:5px;
-}
+.form-row label{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted-soft);font-weight:700;margin-bottom:5px}
 .form-row input,.form-row select{
-  width:100%;padding:11px 12px;
-  border:1px solid var(--line);border-radius:4px;
+  width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:4px;
   font-family:inherit;font-size:15px;background:#fff;
 }
-.form-row input:focus,.form-row select:focus{
-  outline:none;border-color:var(--accent);
-  box-shadow:0 0 0 3px rgba(53,183,130,.15);
-}
+.form-row input:focus,.form-row select:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(53,183,130,.15)}
 .form-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .form-row.consent{display:flex;gap:10px;align-items:flex-start;margin-top:10px}
 .form-row.consent input{width:auto;margin-top:3px;flex-shrink:0}
-.form-row.consent label{
-  text-transform:none;letter-spacing:0;font-size:11px;
-  color:var(--muted-soft);font-weight:400;line-height:1.5;margin:0;
-}
+.form-row.consent label{text-transform:none;letter-spacing:0;font-size:11px;color:var(--muted-soft);font-weight:400;line-height:1.5;margin:0}
 .form-submit{
-  width:100%;background:var(--accent);color:#fff;
-  padding:14px;border:0;border-radius:4px;
-  font-weight:800;font-size:14px;
-  text-transform:uppercase;letter-spacing:.06em;
+  width:100%;background:var(--accent);color:#fff;padding:14px;border:0;border-radius:4px;
+  font-weight:800;font-size:14px;text-transform:uppercase;letter-spacing:.06em;
   cursor:pointer;margin-top:6px;transition:background .15s;
 }
 .form-submit:hover{background:var(--accent-dark)}
@@ -712,31 +621,21 @@ h1.title{
 .form-success p{font-size:15px;color:var(--muted)}
 
 /* Step indicator */
-.step-indicator{
-  display:flex;align-items:center;gap:10px;margin-bottom:16px;font-size:12px;color:var(--muted);
-}
+.step-indicator{display:flex;align-items:center;gap:10px;margin-bottom:16px;font-size:12px;color:var(--muted)}
 .step-dot{
-  width:22px;height:22px;border-radius:50%;
-  background:var(--line);color:var(--muted);
-  display:flex;align-items:center;justify-content:center;
-  font-weight:800;font-size:11px;
+  width:22px;height:22px;border-radius:50%;background:var(--line);color:var(--muted);
+  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:11px;
 }
 .step-dot.is-active{background:var(--accent);color:#fff}
 .step-dot.is-done{background:var(--pro);color:#fff}
 .step-line{flex:1;height:2px;background:var(--line)}
 .step-line.is-done{background:var(--pro)}
-
-/* Wizard step controls */
 .wizard__step{display:none}
 .wizard__step.is-active{display:block}
 .qualify-msg{
-  background:var(--pro-soft);
-  border-left:3px solid var(--pro);
-  padding:9px 12px;
-  font-size:13px;color:#1a4a3a;
-  border-radius:0 4px 4px 0;
-  margin-bottom:12px;
-  display:flex;gap:8px;align-items:center;font-weight:600;
+  background:var(--pro-soft);border-left:3px solid var(--pro);
+  padding:9px 12px;font-size:13px;color:#1a4a3a;border-radius:0 4px 4px 0;
+  margin-bottom:12px;display:flex;gap:8px;align-items:center;font-weight:600;
 }
 .qualify-msg::before{content:"\2713";color:var(--pro);font-weight:900;font-size:15px}
 
@@ -744,60 +643,52 @@ h1.title{
 .quiz-q{font-size:20px;font-weight:800;margin-bottom:16px;line-height:1.3;letter-spacing:-.015em;color:var(--ink)}
 .quiz-options{display:flex;flex-direction:column;gap:10px}
 .quiz-option{
-  width:100%;text-align:left;padding:14px 16px;
-  background:#fff;border:1px solid var(--line);
-  border-radius:6px;font-family:inherit;font-size:15px;font-weight:600;
-  cursor:pointer;transition:all .15s;color:var(--ink);
+  width:100%;text-align:left;padding:14px 16px;background:#fff;
+  border:1px solid var(--line);border-radius:6px;font-family:inherit;
+  font-size:15px;font-weight:600;cursor:pointer;transition:all .15s;color:var(--ink);
 }
-.quiz-option:hover{
-  border-color:var(--accent);background:var(--accent-soft);
-  transform:translateX(2px);
-}
+.quiz-option:hover{border-color:var(--accent);background:var(--accent-soft);transform:translateX(2px)}
 .quiz-progress{display:flex;gap:6px;margin-bottom:16px}
-.quiz-progress span{
-  flex:1;height:4px;background:var(--line);border-radius:2px;
-}
+.quiz-progress span{flex:1;height:4px;background:var(--line);border-radius:2px}
 .quiz-progress span.is-done{background:var(--accent)}
 .quiz-result{display:none;text-align:center}
 .quiz-result.is-shown{display:block}
-.quiz-result__brand{
-  font-size:30px;font-weight:900;
-  color:var(--accent-dark);margin:6px 0 10px;letter-spacing:-.025em;
-}
+.quiz-result__brand{font-size:30px;font-weight:900;color:var(--accent-dark);margin:6px 0 10px;letter-spacing:-.025em}
 .quiz-result__copy{font-size:14px;color:var(--muted);margin-bottom:20px}
 
-/* Exit intent modal */
 .modal--exit .modal__panel{max-width:440px;text-align:center}
 .modal--exit h3{font-size:22px}
 .modal--exit p.modal__sub{font-size:14px;margin-bottom:20px}
 
 /* ---------- Mobile ---------- */
-@media (max-width:720px){
-  .site-nav{display:none}
+@media (max-width:760px){
+  .site-nav a:not(.nav-phone){display:none}
   h1.title{font-size:30px}
-  .dek{font-size:16px}
-  .article h2{font-size:24px}
+  .dek{font-size:15px}
+  .article h2{font-size:22px}
   .social-proof{grid-template-columns:1fr;gap:10px;text-align:left}
   .social-proof__item{flex-direction:row;justify-content:flex-start;gap:10px}
   .featured-partner{flex-direction:column;align-items:flex-start;padding:20px}
   .featured-partner__cta{width:100%;text-align:center}
-  .steps{grid-template-columns:1fr}
-  .quiz{padding:22px 18px}
-  .quiz h3{font-size:20px}
-  .entry{padding:22px}
-  .entry--pick::before{left:16px}
-  .entry__head{flex-direction:column;align-items:stretch}
-  .entry__right{flex-direction:row;align-items:stretch;min-width:0}
-  .entry__score{flex:1}
-  .entry__cta{flex:1}
-  .entry__brand{font-size:24px}
-  .entry__procon{grid-template-columns:1fr}
-  .entry__details{grid-template-columns:1fr;gap:10px}
-  .score-breakdown{grid-template-columns:1fr;gap:10px 0}
-  .testimonials{grid-template-columns:1fr}
+  .top-picks__grid{grid-template-columns:1fr;gap:24px}
+  .pick{padding-top:24px}
   .compare table{font-size:12px}
   .compare th,.compare td{padding:9px 10px}
   .compare-cta{padding:7px 10px;font-size:10px}
+  .review__grid{grid-template-columns:1fr}
+  .review__side{order:-1}
+  .reviews-headline{font-size:22px}
+  .hero-tm{grid-template-columns:1fr;padding:18px}
+  .hero-tm__visual{min-height:180px}
+  .steps{grid-template-columns:1fr}
+  .quiz{padding:22px 18px}
+  .quiz h3{font-size:20px}
+  .testimonials{grid-template-columns:1fr}
+  .closing-cta{padding:32px 22px}
+  .closing-cta h2{font-size:22px}
+  .cta-bar{padding:10px 12px;gap:10px;flex-wrap:wrap}
+  .cta-bar__copy{display:none}
+  .cta-bar__btn{flex:1}
   .form-grid-2{grid-template-columns:1fr}
   .modal__panel{padding:24px}
 }
@@ -815,9 +706,9 @@ h1.title{
   <div class="site-header__inner">
     <a href="/" class="logo">Top<span>GLP-1</span>Offers</a>
     <nav class="site-nav">
-      <a href="#compare">Top Picks</a>
+      <a href="#top-picks">Top Picks</a>
+      <a href="#reviews">Reviews</a>
       <a href="#how-it-works">How It Works</a>
-      <a href="#how-we-chose">Methodology</a>
       <a href="#faq">FAQ</a>
       <a href="tel:18005550199" class="nav-phone">1-800-555-0199</a>
     </nav>
@@ -826,12 +717,9 @@ h1.title{
 
 <article class="article">
 
-  <div class="breadcrumb">
-    <a href="#">Health</a> &nbsp;&rsaquo;&nbsp; <strong>GLP-1 Weight Loss</strong>
-  </div>
+  <div class="breadcrumb"><a href="#">Health</a> &nbsp;&rsaquo;&nbsp; <strong>GLP-1 Weight Loss</strong></div>
 
   <h1 class="title">Best GLP-1 Weight Loss Programs Of 2026</h1>
-
   <p class="dek">Compare the top compounded GLP-1 telehealth programs &mdash; pricing, medication options, and editor scores for the three providers leading the market this year.</p>
 
   <div class="byline">
@@ -857,7 +745,7 @@ h1.title{
     </div>
   </div>
 
-  <!-- ============ FEATURED PARTNER (above the fold) ============ -->
+  <!-- ============ FEATURED PARTNER ============ -->
   <div class="featured-partner">
     <div class="featured-partner__inner">
       <span class="featured-partner__tag">Featured Partner</span>
@@ -868,10 +756,48 @@ h1.title{
     <button class="featured-partner__cta" data-offer="Thinnex">See If I Qualify</button>
   </div>
 
-  <!-- ============ COMPARISON TABLE (above the fold) ============ -->
+  <!-- ============ THREE-CARD TOP PICKS ============ -->
+  <section class="top-picks" id="top-picks">
+    <h2 class="top-picks__title">View Our Top Picks</h2>
+    <p class="top-picks__sub">Three vetted GLP-1 programs, ranked by editor score.</p>
+    <div class="top-picks__grid">
+      <article class="pick">
+        <div class="pick__rank pick__rank--1">#1</div>
+        <div class="pick__rating"><span class="star">&#9733;</span> 9.9</div>
+        <div class="pick__logo"><img src="assets/thinnex-logo.png" alt="Thinnex"></div>
+        <h3 class="pick__title">Best Overall</h3>
+        <div class="pick__check">Speed + dual-medication access (sema + tirz)</div>
+        <p class="pick__desc">Compounded semaglutide and tirzepatide on one platform with 24-hour clinician decisions and $149/mo all-inclusive pricing.</p>
+        <span class="pick__badge">Most popular this week</span>
+        <button class="pick__cta" data-offer="Thinnex">View Offer</button>
+      </article>
+      <article class="pick">
+        <div class="pick__rank pick__rank--2">#2</div>
+        <div class="pick__rating"><span class="star">&#9733;</span> 9.7</div>
+        <div class="pick__logo"><img src="assets/brello-logo.png" alt="Brello Health"></div>
+        <h3 class="pick__title">Best Value</h3>
+        <div class="pick__check">Lowest entry price with full clinician care</div>
+        <p class="pick__desc">$133/month entry pricing with a dedicated clinician and monthly check-ins included on every plan.</p>
+        <span class="pick__badge">Best Value</span>
+        <button class="pick__cta" data-offer="Brello Health">View Offer</button>
+      </article>
+      <article class="pick">
+        <div class="pick__rank pick__rank--3">#3</div>
+        <div class="pick__rating"><span class="star">&#9733;</span> 9.5</div>
+        <div class="pick__logo"><img src="assets/directmeds-logo.svg" alt="DirectMeds"></div>
+        <h3 class="pick__title">Best for Format Flexibility</h3>
+        <div class="pick__check">Both injectable and oral GLP-1 formats</div>
+        <p class="pick__desc">Only program with oral sublingual GLP-1 drops as an alternative to weekly injections. 180k+ patients served.</p>
+        <span class="pick__badge">Format Choice</span>
+        <button class="pick__cta" data-offer="DirectMeds">View Offer</button>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ COMPARISON TABLE ============ -->
   <div class="compare-wrap" id="compare">
-    <div class="compare-eyebrow">Top 3 Picks &mdash; At A Glance</div>
-    <div class="compare-headline">Side-by-side comparison</div>
+    <div class="compare-eyebrow">Side-by-Side</div>
+    <div class="compare-headline">Compare the top 3 at a glance</div>
     <div class="compare">
       <table>
         <thead>
@@ -888,10 +814,7 @@ h1.title{
             <td colspan="5"><strong>Brand-name retail anchor:</strong> Wegovy ~$1,349/mo &middot; Zepbound ~$1,059/mo &mdash; the programs below price compounded alternatives at a fraction of retail.</td>
           </tr>
           <tr>
-            <td>
-              <strong>Thinnex</strong>
-              <span class="pill pill--green">Editor&rsquo;s Pick</span>
-            </td>
+            <td><strong>Thinnex</strong><span class="pill pill--green">Editor&rsquo;s Pick</span></td>
             <td>Best overall &mdash; speed + dual medication</td>
             <td><span class="price-anchor">$1,349</span><span class="price">$149/mo</span></td>
             <td><span class="score">9.9</span></td>
@@ -916,200 +839,162 @@ h1.title{
     </div>
   </div>
 
-  <!-- ============ ENTRY 1: Thinnex (Best Overall) ============ -->
-  <section class="entry entry--pick" id="thinnex">
-    <div class="entry__head">
-      <div class="entry__num">1</div>
-      <div class="entry__title-wrap">
-        <img class="entry__logo entry__logo--thinnex" src="assets/thinnex-logo.png" alt="Thinnex">
-        <span class="entry__tag entry__tag--green">Best Overall</span>
-        <div class="entry__brand">Thinnex</div>
-        <div class="entry__meds">
-          <span class="med-pill">Semaglutide</span>
-          <span class="med-pill">Tirzepatide</span>
+  <!-- ============ Promotional ribbon ============ -->
+  <div class="promo-ribbon">
+    <span class="promo-ribbon__dot"></span>
+    Special offer: Featured pricing valid through May 31, 2026 &mdash; check eligibility while it lasts
+  </div>
+
+  <!-- ============ DETAILED REVIEWS ============ -->
+  <h2 class="reviews-headline" id="reviews">Best GLP-1 Programs &mdash; Detailed Reviews</h2>
+  <p class="reviews-sub">Why each program earned its score, what members get, and where each one shines.</p>
+
+  <!-- REVIEW 1: Thinnex (Best Overall) -->
+  <section class="review review--pick" id="thinnex">
+    <div class="review__topbar">
+      <span class="review__bonus">Editor&rsquo;s Pick &mdash; Best Overall</span>
+      <span class="review__rank-num">1</span>
+    </div>
+    <div class="review__grid">
+      <div class="review__main">
+        <div class="review__intro">
+          Thinnex earned our top slot for combining the fastest clinician decision in the category &mdash; most members report a response within 24 hours of intake &mdash; with both compounded semaglutide and tirzepatide on the same platform. The all-inclusive $149/month pricing covers prescription, medication, supplies, and clinician visits with no surprise add-ons.
         </div>
-      </div>
-      <div class="entry__right">
-        <div class="entry__score"><strong>9.9</strong><span>Editor Score</span></div>
-        <button class="entry__cta" data-offer="Thinnex">See If I Qualify</button>
-      </div>
-    </div>
-
-    <div class="entry__why">
-      <h5>Why we picked it</h5>
-      <p>Thinnex earned our top slot for combining the fastest clinician decision in the category &mdash; most members report a response within 24 hours of intake &mdash; with both compounded semaglutide and tirzepatide on the same platform. The all-inclusive $149/month pricing covers prescription, medication, supplies, and clinician visits with no surprise add-ons. There&rsquo;s no annual contract, and pausing or cancelling is one-click.</p>
-    </div>
-
-    <div class="score-breakdown">
-      <div class="score-row"><span class="score-row__label">Price</span><span class="score-row__bar"><span class="score-row__fill" style="width:95%"></span></span><span class="score-row__num">9.5</span></div>
-      <div class="score-row"><span class="score-row__label">Speed</span><span class="score-row__bar"><span class="score-row__fill" style="width:100%"></span></span><span class="score-row__num">10.0</span></div>
-      <div class="score-row"><span class="score-row__label">Support</span><span class="score-row__bar"><span class="score-row__fill" style="width:97%"></span></span><span class="score-row__num">9.7</span></div>
-      <div class="score-row"><span class="score-row__label">Med Range</span><span class="score-row__bar"><span class="score-row__fill" style="width:100%"></span></span><span class="score-row__num">10.0</span></div>
-    </div>
-
-    <div class="entry__procon">
-      <div class="pros">
-        <h6>Pros</h6>
-        <ul>
-          <li>Both semaglutide and tirzepatide available</li>
-          <li>$149/month all-inclusive &mdash; no add-ons</li>
-          <li>24-hour clinician response time</li>
+        <h5 class="review__love-title">What We Love</h5>
+        <ul class="review__love-list">
+          <li>Both semaglutide and tirzepatide available on one platform</li>
+          <li>$149/month all-inclusive &mdash; medication, supplies, and clinician visits</li>
+          <li>24-hour clinician response time on intake</li>
           <li>No insurance or PA paperwork required</li>
-          <li>Pause or cancel anytime</li>
+          <li>Pause or cancel anytime &mdash; no annual contract</li>
         </ul>
+        <div class="review__tags">
+          <span class="review__tag review__tag--effect">Starting at $149/month</span>
+          <span class="review__tag review__tag--bestfor">Best for: Fast start + dual medication</span>
+          <span class="review__tag review__tag--cons">Compounded only &middot; not all states</span>
+        </div>
       </div>
-      <div class="cons">
-        <h6>Cons</h6>
-        <ul>
-          <li>Compounded only &mdash; no brand-name options</li>
-          <li>Not available in every state</li>
-          <li>Subscription required (no one-off prescriptions)</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="entry__details">
-      <div><strong>Starting Price</strong><span class="price-cell"><span class="price-anchor">$1,349</span>$149/mo</span></div>
-      <div><strong>Eligibility</strong>BMI &ge; 27 with comorbidity, or &ge; 30</div>
-      <div><strong>Medication</strong>Compounded semaglutide + tirzepatide</div>
-    </div>
-
-    <div class="entry__bottom-cta">
-      <div class="entry__bottom-cta__copy">Save up to <strong>$1,200/month</strong> vs. brand-name retail</div>
-      <button data-offer="Thinnex">See If I Qualify</button>
+      <aside class="review__side">
+        <div class="review__side__logo"><img class="thinnex-logo" src="assets/thinnex-logo.png" alt="Thinnex"></div>
+        <div class="review__side__discount">Featured Pricing</div>
+        <div class="review__side__rating">
+          <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <span class="review__side__score">9.9 <span>/10</span></span>
+        </div>
+        <div class="review__side__trending">Top Trending Program</div>
+        <button class="review__side__cta" data-offer="Thinnex">Take Assessment</button>
+        <div class="review__side__trust">
+          <span class="ok">No insurance required</span>
+          <span class="ok">24-hour decisions</span>
+          <span class="ok">Cancel anytime</span>
+        </div>
+      </aside>
     </div>
   </section>
 
-  <!-- ============ ENTRY 2: Brello Health ============ -->
-  <section class="entry" id="brello">
-    <div class="entry__head">
-      <div class="entry__num">2</div>
-      <div class="entry__title-wrap">
-        <img class="entry__logo" src="assets/brello-logo.png" alt="Brello Health">
-        <span class="entry__tag">Best Value</span>
-        <div class="entry__brand">Brello Health</div>
-        <div class="entry__meds">
-          <span class="med-pill">Semaglutide</span>
-          <span class="med-pill">Tirzepatide</span>
+  <!-- REVIEW 2: Brello Health -->
+  <section class="review" id="brello">
+    <div class="review__topbar">
+      <span class="review__bonus" style="background:var(--brand-link)">Best Value</span>
+      <span class="review__rank-num">2</span>
+    </div>
+    <div class="review__grid">
+      <div class="review__main">
+        <div class="review__intro">
+          Brello Health is the lowest sticker price on this list at $133/month while still bundling a full clinician care model &mdash; every plan includes a dedicated provider and monthly check-ins. Members cited Brello&rsquo;s coaching layer, built around behavior change rather than just prescription refills, as the reason they stayed past month three.
         </div>
-      </div>
-      <div class="entry__right">
-        <div class="entry__score"><strong>9.7</strong><span>Editor Score</span></div>
-        <button class="entry__cta" data-offer="Brello Health">See If I Qualify</button>
-      </div>
-    </div>
-
-    <div class="entry__why">
-      <h5>Why we picked it</h5>
-      <p>Brello Health is the lowest sticker price on this list at $133/month while still bundling a full clinician care model &mdash; every plan includes a dedicated provider and monthly check-ins. Members we surveyed cited Brello&rsquo;s coaching layer, built around behavior change rather than just prescription refills, as the reason they stayed past month three. Strong member retention earned it the #2 slot.</p>
-    </div>
-
-    <div class="score-breakdown">
-      <div class="score-row"><span class="score-row__label">Price</span><span class="score-row__bar"><span class="score-row__fill" style="width:100%"></span></span><span class="score-row__num">10.0</span></div>
-      <div class="score-row"><span class="score-row__label">Speed</span><span class="score-row__bar"><span class="score-row__fill" style="width:90%"></span></span><span class="score-row__num">9.0</span></div>
-      <div class="score-row"><span class="score-row__label">Support</span><span class="score-row__bar"><span class="score-row__fill" style="width:100%"></span></span><span class="score-row__num">10.0</span></div>
-      <div class="score-row"><span class="score-row__label">Med Range</span><span class="score-row__bar"><span class="score-row__fill" style="width:97%"></span></span><span class="score-row__num">9.7</span></div>
-    </div>
-
-    <div class="entry__procon">
-      <div class="pros">
-        <h6>Pros</h6>
-        <ul>
-          <li>Lowest entry price at $133/month</li>
+        <h5 class="review__love-title">What We Love</h5>
+        <ul class="review__love-list">
+          <li>Lowest entry price in our review at $133/month</li>
           <li>Dedicated clinician on every plan</li>
-          <li>Monthly check-ins included</li>
+          <li>Monthly check-ins included &mdash; not just refills</li>
           <li>Both semaglutide and tirzepatide options</li>
-          <li>Strongest member retention in our review</li>
+          <li>Strongest member retention in our category review</li>
         </ul>
-      </div>
-      <div class="cons">
-        <h6>Cons</h6>
-        <ul>
-          <li>Three-month minimum commitment</li>
-          <li>Longer intake (~72 hours)</li>
-          <li>Compounded only &mdash; no brand-name</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="entry__details">
-      <div><strong>Starting Price</strong><span class="price-cell"><span class="price-anchor">$1,349</span>$133/mo</span></div>
-      <div><strong>Eligibility</strong>BMI &ge; 27 with comorbidity, or &ge; 30</div>
-      <div><strong>Medication</strong>Compounded semaglutide + tirzepatide</div>
-    </div>
-
-    <div class="entry__bottom-cta">
-      <div class="entry__bottom-cta__copy">Lowest entry price &mdash; <strong>save $1,216/mo</strong> vs. retail</div>
-      <button data-offer="Brello Health">See If I Qualify</button>
-    </div>
-  </section>
-
-  <!-- ============ ENTRY 3: DirectMeds ============ -->
-  <section class="entry" id="directmeds">
-    <div class="entry__head">
-      <div class="entry__num">3</div>
-      <div class="entry__title-wrap">
-        <img class="entry__logo" src="assets/directmeds-logo.svg" alt="DirectMeds">
-        <span class="entry__tag">Best for Format Flexibility</span>
-        <div class="entry__brand">DirectMeds</div>
-        <div class="entry__meds">
-          <span class="med-pill">Semaglutide</span>
-          <span class="med-pill">Tirzepatide</span>
-          <span class="med-pill">Oral &amp; Injectable</span>
+        <div class="review__tags">
+          <span class="review__tag review__tag--effect">Starting at $133/month</span>
+          <span class="review__tag review__tag--bestfor">Best for: Personalized care</span>
+          <span class="review__tag review__tag--cons">3-month minimum &middot; longer intake</span>
         </div>
       </div>
-      <div class="entry__right">
-        <div class="entry__score"><strong>9.5</strong><span>Editor Score</span></div>
-        <button class="entry__cta" data-offer="DirectMeds">See If I Qualify</button>
-      </div>
-    </div>
-
-    <div class="entry__why">
-      <h5>Why we picked it</h5>
-      <p>DirectMeds is the only program on this list offering both injectable <em>and</em> oral sublingual formats of semaglutide and tirzepatide, giving members who can&rsquo;t tolerate weekly injections a real alternative. Pricing is transactional &mdash; no membership fees, just per-prescription &mdash; and stays flat across dose levels. With 180,000+ patients served and LegitScript telehealth compliance certification, DirectMeds also brings the strongest scale and trust signals in the category.</p>
-    </div>
-
-    <div class="score-breakdown">
-      <div class="score-row"><span class="score-row__label">Price</span><span class="score-row__bar"><span class="score-row__fill" style="width:97%"></span></span><span class="score-row__num">9.7</span></div>
-      <div class="score-row"><span class="score-row__label">Speed</span><span class="score-row__bar"><span class="score-row__fill" style="width:95%"></span></span><span class="score-row__num">9.5</span></div>
-      <div class="score-row"><span class="score-row__label">Support</span><span class="score-row__bar"><span class="score-row__fill" style="width:90%"></span></span><span class="score-row__num">9.0</span></div>
-      <div class="score-row"><span class="score-row__label">Med Range</span><span class="score-row__bar"><span class="score-row__fill" style="width:100%"></span></span><span class="score-row__num">10.0</span></div>
-    </div>
-
-    <div class="entry__procon">
-      <div class="pros">
-        <h6>Pros</h6>
-        <ul>
-          <li>Both semaglutide and tirzepatide available</li>
-          <li>Choice of injectable or oral sublingual drops</li>
-          <li>$147/month with current promotion (semaglutide)</li>
-          <li>No subscription &mdash; pay per prescription</li>
-          <li>Same price across all dose levels</li>
-          <li>LegitScript certified, 180k+ patients served</li>
-          <li>Refund if prescription is not approved</li>
-        </ul>
-      </div>
-      <div class="cons">
-        <h6>Cons</h6>
-        <ul>
-          <li>Tirzepatide priced higher ($199/month with promotion)</li>
-          <li>Not available in Mississippi or Louisiana</li>
-          <li>Promotional pricing &mdash; confirm current rates at checkout</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="entry__details">
-      <div><strong>Starting Price</strong><span class="price-cell"><span class="price-anchor">$1,349</span>$147/mo</span></div>
-      <div><strong>Availability</strong>48 states (excludes MS, LA)</div>
-      <div><strong>Medication</strong>Compounded semaglutide + tirzepatide, injectable or oral</div>
-    </div>
-
-    <div class="entry__bottom-cta">
-      <div class="entry__bottom-cta__copy">Only program with <strong>oral GLP-1 drops</strong> &mdash; injection-free option</div>
-      <button data-offer="DirectMeds">See If I Qualify</button>
+      <aside class="review__side">
+        <div class="review__side__logo"><img src="assets/brello-logo.png" alt="Brello Health"></div>
+        <div class="review__side__discount" style="background:var(--brand-link)">Lowest Price</div>
+        <div class="review__side__rating">
+          <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <span class="review__side__score">9.7 <span>/10</span></span>
+        </div>
+        <div class="review__side__trending" style="background:var(--accent-soft);color:var(--brand-link)">Best Member Retention</div>
+        <button class="review__side__cta" data-offer="Brello Health">Take Assessment</button>
+        <div class="review__side__trust">
+          <span class="ok">Dedicated clinician</span>
+          <span class="ok">Monthly check-ins</span>
+          <span class="ok">No insurance required</span>
+        </div>
+      </aside>
     </div>
   </section>
+
+  <!-- REVIEW 3: DirectMeds -->
+  <section class="review" id="directmeds">
+    <div class="review__topbar">
+      <span class="review__bonus">Best for Format Flexibility</span>
+      <span class="review__rank-num">3</span>
+    </div>
+    <div class="review__grid">
+      <div class="review__main">
+        <div class="review__intro">
+          DirectMeds is the only program offering both injectable and oral sublingual formats of semaglutide and tirzepatide, giving members who can&rsquo;t tolerate weekly injections a real alternative. Pricing is transactional &mdash; no membership fees, just per-prescription &mdash; and stays flat across dose levels. With 180,000+ patients served and LegitScript certification, DirectMeds also brings the strongest scale and trust signals in the category.
+        </div>
+        <h5 class="review__love-title">What We Love</h5>
+        <ul class="review__love-list">
+          <li>Both semaglutide and tirzepatide available</li>
+          <li>Choice of injectable or oral sublingual drops &mdash; injection-free option</li>
+          <li>$147/month with current promotion (semaglutide)</li>
+          <li>No subscription &mdash; pay per prescription, same price every dose</li>
+          <li>LegitScript certified, 180,000+ patients served</li>
+          <li>Refund if your prescription is not approved</li>
+        </ul>
+        <div class="review__tags">
+          <span class="review__tag review__tag--effect">From $147/month</span>
+          <span class="review__tag review__tag--bestfor">Best for: Oral GLP-1 access</span>
+          <span class="review__tag review__tag--cons">Tirz priced higher &middot; not in MS or LA</span>
+        </div>
+      </div>
+      <aside class="review__side">
+        <div class="review__side__logo"><img src="assets/directmeds-logo.svg" alt="DirectMeds"></div>
+        <div class="review__side__discount" style="background:var(--superlative)">Format Choice</div>
+        <div class="review__side__rating">
+          <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+          <span class="review__side__score">9.5 <span>/10</span></span>
+        </div>
+        <div class="review__side__trending">180k+ Patients Served</div>
+        <button class="review__side__cta" data-offer="DirectMeds">Take Assessment</button>
+        <div class="review__side__trust">
+          <span class="ok">Injectable or oral</span>
+          <span class="ok">No subscription</span>
+          <span class="ok">LegitScript certified</span>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============ HERO TESTIMONIAL ============ -->
+  <div class="hero-tm">
+    <div class="hero-tm__visual">
+      <span>Member story photo<br>(swap in real before/after image)</span>
+      <div class="hero-tm__overlay">Member result</div>
+    </div>
+    <div class="hero-tm__content">
+      <h3>A member&rsquo;s journey</h3>
+      <p class="hero-tm__quote">&ldquo;The intake took ten minutes and I had a clinician decision the next day. The monthly check-ins are what kept me on track for the long haul. I&rsquo;ve felt in control of my eating for the first time.&rdquo;</p>
+      <div class="hero-tm__pills">
+        <span class="hero-tm__pill hero-tm__pill--green">Medically Supervised</span>
+        <span class="hero-tm__pill hero-tm__pill--blue">Member Feedback</span>
+      </div>
+      <button class="hero-tm__cta" data-offer="Thinnex">Start Your Match</button>
+    </div>
+  </div>
 
   <!-- ============ Below-the-fold supporting content ============ -->
 
@@ -1119,23 +1004,11 @@ h1.title{
   </div>
 
   <h2 id="how-it-works">How It Works</h2>
-  <p>Every program on this list follows the same three-step path. Differences come down to pricing, medication options, and how much clinician interaction you get.</p>
+  <p>Every program on this list follows the same three-step path. Differences come down to pricing, medication options, and clinician interaction.</p>
   <div class="steps">
-    <div class="step">
-      <div class="step__num">1</div>
-      <h4>Choose</h4>
-      <p>Pick the program that fits your goals and budget from the providers above.</p>
-    </div>
-    <div class="step">
-      <div class="step__num">2</div>
-      <h4>Evaluate</h4>
-      <p>Complete a medical intake. A licensed clinician reviews your history within 24&ndash;72 hours.</p>
-    </div>
-    <div class="step">
-      <div class="step__num">3</div>
-      <h4>Receive</h4>
-      <p>If approved, your medication ships from a U.S. licensed pharmacy in cold-chain packaging.</p>
-    </div>
+    <div class="step"><div class="step__num">1</div><h4>Choose</h4><p>Pick the program that fits your goals and budget from the providers above.</p></div>
+    <div class="step"><div class="step__num">2</div><h4>Evaluate</h4><p>Complete a medical intake. A licensed clinician reviews your history within 24&ndash;72 hours.</p></div>
+    <div class="step"><div class="step__num">3</div><h4>Receive</h4><p>If approved, your medication ships from a U.S. licensed pharmacy in cold-chain packaging.</p></div>
   </div>
 
   <div class="quiz">
@@ -1144,42 +1017,31 @@ h1.title{
     <p class="quiz__sub">Answer 3 quick questions and we&rsquo;ll recommend the best GLP-1 program for your goals.</p>
     <button class="quiz__cta" id="openQuiz">Find My Match</button>
     <div class="quiz__meta">
-      <span>Free</span>
-      <span>No email required</span>
-      <span>60 seconds</span>
+      <span>Free</span><span>No email required</span><span>60 seconds</span>
     </div>
   </div>
 
-  <h2 id="testimonials">What members say</h2>
+  <h2 id="testimonials">More from members</h2>
   <div class="testimonials">
     <div class="tm">
       <p class="tm__quote">The intake took ten minutes and I had a clinician decision the next day. No phone calls, no paperwork.</p>
-      <div class="tm__meta">
-        <span class="tm__name">Sarah M., TX</span>
-        <span class="tm__brand">Thinnex member</span>
-      </div>
+      <div class="tm__meta"><span class="tm__name">Sarah M., TX</span><span class="tm__brand">Thinnex member</span></div>
     </div>
     <div class="tm">
       <p class="tm__quote">The monthly clinician check-in is what kept me consistent. I&rsquo;d tried other programs that were just refill machines.</p>
-      <div class="tm__meta">
-        <span class="tm__name">David L., OH</span>
-        <span class="tm__brand">Brello member</span>
-      </div>
+      <div class="tm__meta"><span class="tm__name">David L., OH</span><span class="tm__brand">Brello member</span></div>
     </div>
     <div class="tm">
       <p class="tm__quote">I switched from injections to the oral drops and that made all the difference. Same effect, no needles.</p>
-      <div class="tm__meta">
-        <span class="tm__name">Maria R., FL</span>
-        <span class="tm__brand">DirectMeds member</span>
-      </div>
+      <div class="tm__meta"><span class="tm__name">Maria R., FL</span><span class="tm__brand">DirectMeds member</span></div>
     </div>
   </div>
   <p class="testimonial-disclaimer">Names changed for privacy. Individual results vary. Member feedback collected by our editorial team and is not medical advice.</p>
 
   <div class="methodology" id="how-we-chose">
     <h3>How we chose the best GLP-1 programs</h3>
-    <p>We evaluated more than a dozen GLP-1 telehealth providers active in the U.S. market and scored each on five weighted dimensions: published price (25%), clinician quality and U.S. licensing (25%), member experience and retention (20%), pharmacy partner credentials (15%), and policy transparency around cancellation, refunds, and side effects (15%).</p>
-    <p>Our scoring uses publicly reported pricing, member surveys collected by our editorial team, and pharmacy verification through state board records. Providers cannot pay to influence rankings, but featured-partner placements are clearly labeled.</p>
+    <p>We evaluated more than a dozen GLP-1 telehealth providers active in the U.S. market and scored each on five weighted dimensions: published price (25%), clinician quality and U.S. licensing (25%), member experience and retention (20%), pharmacy partner credentials (15%), and policy transparency (15%).</p>
+    <p>Scoring uses publicly reported pricing, member surveys, and pharmacy verification through state board records. Providers cannot pay to influence rankings, but featured-partner placements are clearly labeled.</p>
   </div>
 
   <h2 id="faq">Frequently Asked Questions</h2>
@@ -1222,7 +1084,15 @@ h1.title{
     </details>
   </div>
 
-  <div class="warn" style="margin:24px 0 16px">
+  <!-- ============ CLOSING CTA ============ -->
+  <section class="closing-cta">
+    <h2>Start Your GLP-1 Journey Today</h2>
+    <p>Get matched with one of the top GLP-1 programs in 60 seconds. No credit card required for the initial check.</p>
+    <button class="closing-cta__btn" id="closingMatch">Check My Eligibility</button>
+    <p class="closing-cta__note">Limited spots available with featured providers.</p>
+  </section>
+
+  <div class="warn">
     <span><strong>Important:</strong> Compounded GLP-1 medications are not FDA-approved. They require a valid prescription from a licensed clinician. Results vary; this guide is educational and is not medical advice.</span>
   </div>
 
@@ -1239,40 +1109,37 @@ h1.title{
     <p>We may earn a commission when you submit information through our partner forms. Compensation does not influence our editor scores or ranking criteria.</p>
     <div class="site-footer__legal">
       <div class="site-footer__links">
-        <a href="#">Privacy</a>
-        <a href="#">Terms</a>
-        <a href="#">Editorial Standards</a>
-        <a href="#">Contact</a>
+        <a href="#">Privacy</a><a href="#">Terms</a><a href="#">Editorial Standards</a><a href="#">Contact</a>
       </div>
       <div>&copy; 2026 Top GLP-1 Offers</div>
     </div>
   </div>
 </footer>
 
-<!-- Sticky mobile CTA bar -->
-<div class="sticky-bar" id="stickyBar">
-  <button class="sticky-bar__btn sticky-bar__btn--secondary" id="stickyQuiz">Find My Match</button>
-  <button class="sticky-bar__btn sticky-bar__btn--primary" data-offer="Thinnex">See If I Qualify</button>
+<!-- ============ Sticky bottom CTA bar with countdown ============ -->
+<div class="cta-bar" id="ctaBar">
+  <div class="cta-bar__copy">
+    <strong>Ready to start your weight loss journey?</strong>
+    <span>Get matched with the best GLP-1 program for your needs.</span>
+  </div>
+  <div class="cta-bar__timer">Offer expires in <strong id="ctaTimer">11:00</strong></div>
+  <button class="cta-bar__btn" data-offer="Thinnex">Get Featured Offer</button>
 </div>
 
 <!-- Lead form modal (2-step wizard) -->
 <div class="modal" id="leadModal" role="dialog" aria-modal="true" aria-labelledby="leadTitle">
   <div class="modal__panel">
     <button class="modal__close" aria-label="Close">&times;</button>
-
     <div class="modal__form-wrap">
       <h3 id="leadTitle">Get Your <span data-brand>Thinnex</span> Offer</h3>
       <p class="modal__sub">Two quick steps. Average completion time: 45 seconds.</p>
-
       <div class="step-indicator">
         <span class="step-dot is-active" data-dot="1">1</span>
         <span class="step-line" data-line="1"></span>
         <span class="step-dot" data-dot="2">2</span>
       </div>
-
       <form id="leadForm" novalidate>
         <input type="hidden" name="brand" id="leadBrand" value="">
-
         <div class="wizard__step is-active" data-step="1">
           <div class="form-row">
             <label for="ln_zip">ZIP Code</label>
@@ -1289,47 +1156,22 @@ h1.title{
             </select>
           </div>
           <button type="button" class="form-submit" id="wizNext">Continue &rarr;</button>
-          <div class="form-trust">
-            <span>HIPAA-aligned</span>
-            <span>SSL secure</span>
-            <span>No spam, ever</span>
-          </div>
+          <div class="form-trust"><span>HIPAA-aligned</span><span>SSL secure</span><span>No spam, ever</span></div>
         </div>
-
         <div class="wizard__step" data-step="2">
           <div class="qualify-msg" id="qualifyMsg">Looks like you may qualify. Let&rsquo;s get your contact info.</div>
           <div class="form-grid-2">
-            <div class="form-row">
-              <label for="ln_first">First Name</label>
-              <input type="text" id="ln_first" name="first_name" required autocomplete="given-name">
-            </div>
-            <div class="form-row">
-              <label for="ln_last">Last Name</label>
-              <input type="text" id="ln_last" name="last_name" required autocomplete="family-name">
-            </div>
+            <div class="form-row"><label for="ln_first">First Name</label><input type="text" id="ln_first" name="first_name" required autocomplete="given-name"></div>
+            <div class="form-row"><label for="ln_last">Last Name</label><input type="text" id="ln_last" name="last_name" required autocomplete="family-name"></div>
           </div>
-          <div class="form-row">
-            <label for="ln_email">Email</label>
-            <input type="email" id="ln_email" name="email" required autocomplete="email">
-          </div>
-          <div class="form-row">
-            <label for="ln_phone">Phone</label>
-            <input type="tel" id="ln_phone" name="phone" required autocomplete="tel">
-          </div>
-          <div class="form-row consent">
-            <input type="checkbox" id="ln_consent" required>
-            <label for="ln_consent">I agree to be contacted by Top GLP-1 Offers and partner providers about GLP-1 programs. I understand consent is not required to purchase, and that compounded GLP-1 medications are not FDA-approved.</label>
-          </div>
+          <div class="form-row"><label for="ln_email">Email</label><input type="email" id="ln_email" name="email" required autocomplete="email"></div>
+          <div class="form-row"><label for="ln_phone">Phone</label><input type="tel" id="ln_phone" name="phone" required autocomplete="tel"></div>
+          <div class="form-row consent"><input type="checkbox" id="ln_consent" required><label for="ln_consent">I agree to be contacted by Top GLP-1 Offers and partner providers. I understand consent is not required to purchase, and that compounded GLP-1 medications are not FDA-approved.</label></div>
           <button type="submit" class="form-submit">See My Offer</button>
-          <div class="form-trust">
-            <span>HIPAA-aligned</span>
-            <span>SSL secure</span>
-            <span>Cancel anytime</span>
-          </div>
+          <div class="form-trust"><span>HIPAA-aligned</span><span>SSL secure</span><span>Cancel anytime</span></div>
         </div>
       </form>
     </div>
-
     <div class="form-success" id="formSuccess">
       <h3>You&rsquo;re in.</h3>
       <p>Check your email &mdash; we&rsquo;re sending your <strong data-brand>Thinnex</strong> offer details now.</p>
@@ -1363,20 +1205,10 @@ h1.title{
     <h3>Wait &mdash; Get Your Custom Quote</h3>
     <p class="modal__sub">Drop your ZIP and we&rsquo;ll send your personalized GLP-1 program match by email.</p>
     <form id="exitForm" novalidate>
-      <div class="form-row">
-        <label for="ex_email">Email</label>
-        <input type="email" id="ex_email" name="email" required autocomplete="email">
-      </div>
-      <div class="form-row">
-        <label for="ex_zip">ZIP Code</label>
-        <input type="text" id="ex_zip" name="zip" required inputmode="numeric" pattern="[0-9]{5}" maxlength="5" autocomplete="postal-code">
-      </div>
+      <div class="form-row"><label for="ex_email">Email</label><input type="email" id="ex_email" name="email" required autocomplete="email"></div>
+      <div class="form-row"><label for="ex_zip">ZIP Code</label><input type="text" id="ex_zip" name="zip" required inputmode="numeric" pattern="[0-9]{5}" maxlength="5" autocomplete="postal-code"></div>
       <button type="submit" class="form-submit">Send My Match</button>
-      <div class="form-trust">
-        <span>No spam</span>
-        <span>SSL secure</span>
-        <span>Unsubscribe anytime</span>
-      </div>
+      <div class="form-trust"><span>No spam</span><span>SSL secure</span><span>Unsubscribe anytime</span></div>
     </form>
   </div>
 </div>
@@ -1399,16 +1231,9 @@ h1.title{
     brandLabels.forEach(function(el){ el.textContent = brand || 'Your'; });
   }
   function showStep(n){
-    stepEls.forEach(function(el){
-      el.classList.toggle('is-active', el.getAttribute('data-step') === String(n));
-    });
-    if(n===1){
-      dot1.classList.remove('is-done'); dot1.classList.add('is-active');
-      dot2.classList.remove('is-active'); line1.classList.remove('is-done');
-    } else {
-      dot1.classList.remove('is-active'); dot1.classList.add('is-done');
-      dot2.classList.add('is-active'); line1.classList.add('is-done');
-    }
+    stepEls.forEach(function(el){ el.classList.toggle('is-active', el.getAttribute('data-step') === String(n)); });
+    if(n===1){ dot1.classList.remove('is-done'); dot1.classList.add('is-active'); dot2.classList.remove('is-active'); line1.classList.remove('is-done'); }
+    else { dot1.classList.remove('is-active'); dot1.classList.add('is-done'); dot2.classList.add('is-active'); line1.classList.add('is-done'); }
   }
   function openLead(brand){
     setBrand(brand);
@@ -1435,7 +1260,6 @@ h1.title{
     zip.style.borderColor=''; bmi.style.borderColor='';
     showStep(2);
   });
-
   document.getElementById('leadForm').addEventListener('submit', function(e){
     e.preventDefault();
     var data = Object.fromEntries(new FormData(e.target).entries());
@@ -1445,13 +1269,8 @@ h1.title{
     success.classList.add('is-shown');
   });
 
-  /* ============ Modal close handlers ============ */
-  document.querySelectorAll('.modal__close').forEach(function(btn){
-    btn.addEventListener('click', closeAll);
-  });
-  document.querySelectorAll('.modal').forEach(function(m){
-    m.addEventListener('click', function(e){ if(e.target===m) closeAll(); });
-  });
+  document.querySelectorAll('.modal__close').forEach(function(btn){ btn.addEventListener('click', closeAll); });
+  document.querySelectorAll('.modal').forEach(function(m){ m.addEventListener('click', function(e){ if(e.target===m) closeAll(); }); });
   document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeAll(); });
 
   /* ============ Quiz ============ */
@@ -1462,20 +1281,13 @@ h1.title{
 
   var questions = [
     { q: "What's your weight loss goal?", options: [
-      { label: "Lose 10–25 lbs", v: "small" },
-      { label: "Lose 25–50 lbs", v: "mid" },
-      { label: "Lose 50+ lbs", v: "big" }
+      { label: "Lose 10–25 lbs", v: "small" }, { label: "Lose 25–50 lbs", v: "mid" }, { label: "Lose 50+ lbs", v: "big" }
     ]},
     { q: "Preferred medication format?", options: [
-      { label: "Weekly injection", v: "inject" },
-      { label: "Daily oral drops", v: "oral" },
-      { label: "Open to either", v: "either" }
+      { label: "Weekly injection", v: "inject" }, { label: "Daily oral drops", v: "oral" }, { label: "Open to either", v: "either" }
     ]},
     { q: "What matters most to you?", options: [
-      { label: "Lowest monthly price", v: "price" },
-      { label: "Personalized clinician care", v: "care" },
-      { label: "Fastest start", v: "speed" },
-      { label: "Format flexibility", v: "flex" }
+      { label: "Lowest monthly price", v: "price" }, { label: "Personalized clinician care", v: "care" }, { label: "Fastest start", v: "speed" }, { label: "Format flexibility", v: "flex" }
     ]}
   ];
   var quizState = { step:0, answers:[] };
@@ -1484,50 +1296,31 @@ h1.title{
     quizResult.classList.remove('is-shown');
     var q = questions[quizState.step];
     var html = '<div class="quiz-q">' + q.q + '</div><div class="quiz-options">';
-    q.options.forEach(function(o){
-      html += '<button type="button" class="quiz-option" data-v="'+o.v+'">'+o.label+'</button>';
-    });
+    q.options.forEach(function(o){ html += '<button type="button" class="quiz-option" data-v="'+o.v+'">'+o.label+'</button>'; });
     html += '</div>';
     quizBody.innerHTML = html;
     quizBody.style.display = '';
-    quizProgress.forEach(function(el, i){
-      el.classList.toggle('is-done', i <= quizState.step);
-    });
+    quizProgress.forEach(function(el, i){ el.classList.toggle('is-done', i <= quizState.step); });
     quizBody.querySelectorAll('.quiz-option').forEach(function(btn){
       btn.addEventListener('click', function(){
         quizState.answers.push(btn.getAttribute('data-v'));
         quizState.step++;
-        if(quizState.step >= questions.length){ showQuizResult(); }
-        else { renderQuiz(); }
+        if(quizState.step >= questions.length){ showQuizResult(); } else { renderQuiz(); }
       });
     });
   }
   function showQuizResult(){
     var ans = quizState.answers;
     var brand = 'Thinnex', reason = 'Best overall for fast clinician decisions and dual-medication access.';
-    if(ans[1]==='oral'){
-      brand = 'DirectMeds';
-      reason = 'Only program offering oral sublingual GLP-1 drops in addition to injections.';
-    } else if(ans[2]==='price'){
-      brand = 'Brello Health';
-      reason = 'Lowest entry price ($133/mo) with full clinician care included.';
-    } else if(ans[2]==='care'){
-      brand = 'Brello Health';
-      reason = 'Dedicated clinician and monthly check-ins on every plan.';
-    } else if(ans[2]==='flex'){
-      brand = 'DirectMeds';
-      reason = 'Both semaglutide and tirzepatide, in injectable or oral form.';
-    } else {
-      brand = 'Thinnex';
-      reason = 'Fastest clinician decision in the category, dual-medication access, $149/mo all-inclusive.';
-    }
+    if(ans[1]==='oral'){ brand = 'DirectMeds'; reason = 'Only program offering oral sublingual GLP-1 drops in addition to injections.'; }
+    else if(ans[2]==='price'){ brand = 'Brello Health'; reason = 'Lowest entry price ($133/mo) with full clinician care included.'; }
+    else if(ans[2]==='care'){ brand = 'Brello Health'; reason = 'Dedicated clinician and monthly check-ins on every plan.'; }
+    else if(ans[2]==='flex'){ brand = 'DirectMeds'; reason = 'Both semaglutide and tirzepatide, in injectable or oral form.'; }
+    else { brand = 'Thinnex'; reason = 'Fastest clinician decision, dual-medication access, $149/mo all-inclusive.'; }
     document.getElementById('quizBrand').textContent = brand;
     document.getElementById('quizReason').textContent = reason;
     quizModal.querySelectorAll('[data-brand]').forEach(function(el){ el.textContent = brand; });
-    document.getElementById('quizCta').onclick = function(){
-      closeAll();
-      setTimeout(function(){ openLead(brand); }, 200);
-    };
+    document.getElementById('quizCta').onclick = function(){ closeAll(); setTimeout(function(){ openLead(brand); }, 200); };
     quizBody.style.display = 'none';
     quizResult.classList.add('is-shown');
     quizProgress.forEach(function(el){ el.classList.add('is-done'); });
@@ -1539,19 +1332,20 @@ h1.title{
     document.body.style.overflow = 'hidden';
   }
   document.getElementById('openQuiz').addEventListener('click', openQuiz);
-  document.getElementById('stickyQuiz').addEventListener('click', openQuiz);
+  document.getElementById('closingMatch').addEventListener('click', openQuiz);
 
-  /* ============ Sticky mobile bar ============ */
-  var sticky = document.getElementById('stickyBar');
-  var heroEnd = 400;
-  function onScroll(){
-    if(window.innerWidth >= 720){ sticky.classList.remove('is-shown'); return; }
-    if(window.scrollY > heroEnd){ sticky.classList.add('is-shown'); }
-    else { sticky.classList.remove('is-shown'); }
-  }
-  window.addEventListener('scroll', onScroll, { passive:true });
-  window.addEventListener('resize', onScroll);
-  onScroll();
+  /* ============ Sticky bottom bar countdown ============ */
+  (function(){
+    var el = document.getElementById('ctaTimer');
+    if(!el) return;
+    var s = 11 * 60;
+    function tick(){
+      var m = Math.floor(s/60), r = s%60;
+      el.textContent = (m<10?'0':'')+m+':'+(r<10?'0':'')+r;
+      if(s>0) s--;
+    }
+    tick(); setInterval(tick, 1000);
+  })();
 
   /* ============ Exit intent ============ */
   var exitModal = document.getElementById('exitModal');
@@ -1573,7 +1367,6 @@ h1.title{
     if(y < lastY - 80 && y > 600){ slowScrolls++; if(slowScrolls > 1) fireExit(); }
     lastY = y;
   }, { passive:true });
-
   document.getElementById('exitForm').addEventListener('submit', function(e){
     e.preventDefault();
     var data = Object.fromEntries(new FormData(e.target).entries());
