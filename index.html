@@ -1128,59 +1128,6 @@ h1.title{
   <button class="cta-bar__btn" data-offer="DirectMeds">Get Featured Offer</button>
 </div>
 
-<!-- Lead form modal (2-step wizard) -->
-<div class="modal" id="leadModal" role="dialog" aria-modal="true" aria-labelledby="leadTitle">
-  <div class="modal__panel">
-    <button class="modal__close" aria-label="Close">&times;</button>
-    <div class="modal__form-wrap">
-      <h3 id="leadTitle">Get Your <span data-brand>DirectMeds</span> Offer</h3>
-      <p class="modal__sub">Two quick steps. Average completion time: 45 seconds.</p>
-      <div class="step-indicator">
-        <span class="step-dot is-active" data-dot="1">1</span>
-        <span class="step-line" data-line="1"></span>
-        <span class="step-dot" data-dot="2">2</span>
-      </div>
-      <form id="leadForm" novalidate>
-        <input type="hidden" name="brand" id="leadBrand" value="">
-        <div class="wizard__step is-active" data-step="1">
-          <div class="form-row">
-            <label for="ln_zip">ZIP Code</label>
-            <input type="text" id="ln_zip" name="zip" required inputmode="numeric" pattern="[0-9]{5}" maxlength="5" autocomplete="postal-code">
-          </div>
-          <div class="form-row">
-            <label for="ln_bmi">Estimated BMI</label>
-            <select id="ln_bmi" name="bmi_range" required>
-              <option value="">Select range</option>
-              <option value="under-27">Under 27</option>
-              <option value="27-29">27 &ndash; 29.9</option>
-              <option value="30-34">30 &ndash; 34.9</option>
-              <option value="35-plus">35 or higher</option>
-            </select>
-          </div>
-          <button type="button" class="form-submit" id="wizNext">Continue &rarr;</button>
-          <div class="form-trust"><span>HIPAA-aligned</span><span>SSL secure</span><span>No spam, ever</span></div>
-        </div>
-        <div class="wizard__step" data-step="2">
-          <div class="qualify-msg" id="qualifyMsg">Looks like you may qualify. Let&rsquo;s get your contact info.</div>
-          <div class="form-grid-2">
-            <div class="form-row"><label for="ln_first">First Name</label><input type="text" id="ln_first" name="first_name" required autocomplete="given-name"></div>
-            <div class="form-row"><label for="ln_last">Last Name</label><input type="text" id="ln_last" name="last_name" required autocomplete="family-name"></div>
-          </div>
-          <div class="form-row"><label for="ln_email">Email</label><input type="email" id="ln_email" name="email" required autocomplete="email"></div>
-          <div class="form-row"><label for="ln_phone">Phone</label><input type="tel" id="ln_phone" name="phone" required autocomplete="tel"></div>
-          <div class="form-row consent"><input type="checkbox" id="ln_consent" required><label for="ln_consent">I agree to be contacted by Top GLP-1 Offers and partner providers. I understand consent is not required to purchase, and that compounded GLP-1 medications are not FDA-approved.</label></div>
-          <button type="submit" class="form-submit">See My Offer</button>
-          <div class="form-trust"><span>HIPAA-aligned</span><span>SSL secure</span><span>Cancel anytime</span></div>
-        </div>
-      </form>
-    </div>
-    <div class="form-success" id="formSuccess">
-      <h3>You&rsquo;re in.</h3>
-      <p>Check your email &mdash; we&rsquo;re sending your <strong data-brand>DirectMeds</strong> offer details now.</p>
-    </div>
-  </div>
-</div>
-
 <!-- Quiz modal -->
 <div class="modal" id="quizModal" role="dialog" aria-modal="true">
   <div class="modal__panel">
@@ -1200,21 +1147,6 @@ h1.title{
   </div>
 </div>
 
-<!-- Exit intent modal -->
-<div class="modal modal--exit" id="exitModal" role="dialog" aria-modal="true">
-  <div class="modal__panel">
-    <button class="modal__close" aria-label="Close">&times;</button>
-    <h3>Wait &mdash; Get Your Custom Quote</h3>
-    <p class="modal__sub">Drop your ZIP and we&rsquo;ll send your personalized GLP-1 program match by email.</p>
-    <form id="exitForm" novalidate>
-      <div class="form-row"><label for="ex_email">Email</label><input type="email" id="ex_email" name="email" required autocomplete="email"></div>
-      <div class="form-row"><label for="ex_zip">ZIP Code</label><input type="text" id="ex_zip" name="zip" required inputmode="numeric" pattern="[0-9]{5}" maxlength="5" autocomplete="postal-code"></div>
-      <button type="submit" class="form-submit">Send My Match</button>
-      <div class="form-trust"><span>No spam</span><span>SSL secure</span><span>Unsubscribe anytime</span></div>
-    </form>
-  </div>
-</div>
-
 <script>
 (function(){
   /* ============ Affiliate tracking URLs ============ */
@@ -1228,61 +1160,17 @@ h1.title{
     if(url) window.open(url, '_blank', 'noopener,noreferrer');
   }
 
-  /* ============ Lead form modal (2-step) ============ */
-  var modal = document.getElementById('leadModal');
-  var formWrap = modal.querySelector('.modal__form-wrap');
-  var success = document.getElementById('formSuccess');
-  var brandHidden = document.getElementById('leadBrand');
-  var brandLabels = document.querySelectorAll('[data-brand]');
-  var dot1 = modal.querySelector('[data-dot="1"]');
-  var dot2 = modal.querySelector('[data-dot="2"]');
-  var line1 = modal.querySelector('[data-line="1"]');
-  var stepEls = modal.querySelectorAll('.wizard__step');
-
-  function setBrand(brand){
-    brandHidden.value = brand || '';
-    brandLabels.forEach(function(el){ el.textContent = brand || 'Your'; });
-  }
-  function showStep(n){
-    stepEls.forEach(function(el){ el.classList.toggle('is-active', el.getAttribute('data-step') === String(n)); });
-    if(n===1){ dot1.classList.remove('is-done'); dot1.classList.add('is-active'); dot2.classList.remove('is-active'); line1.classList.remove('is-done'); }
-    else { dot1.classList.remove('is-active'); dot1.classList.add('is-done'); dot2.classList.add('is-active'); line1.classList.add('is-done'); }
-  }
-  function openLead(brand){
-    setBrand(brand);
-    formWrap.style.display = '';
-    success.classList.remove('is-shown');
-    showStep(1);
-    modal.classList.add('is-open');
-    document.body.style.overflow = 'hidden';
-  }
   function closeAll(){
     document.querySelectorAll('.modal').forEach(function(m){ m.classList.remove('is-open'); });
     document.body.style.overflow = '';
   }
 
+  /* ============ Direct-redirect CTAs ============ */
   document.querySelectorAll('[data-offer]').forEach(function(btn){
     btn.addEventListener('click', function(){
       var brand = btn.getAttribute('data-offer');
       if(brand) gotoOffer(brand);
     });
-  });
-
-  document.getElementById('wizNext').addEventListener('click', function(){
-    var zip = document.getElementById('ln_zip');
-    var bmi = document.getElementById('ln_bmi');
-    if(!/^[0-9]{5}$/.test(zip.value)){ zip.focus(); zip.style.borderColor='#b33a3a'; return; }
-    if(!bmi.value){ bmi.focus(); bmi.style.borderColor='#b33a3a'; return; }
-    zip.style.borderColor=''; bmi.style.borderColor='';
-    showStep(2);
-  });
-  document.getElementById('leadForm').addEventListener('submit', function(e){
-    e.preventDefault();
-    var data = Object.fromEntries(new FormData(e.target).entries());
-    // TODO: POST data to your lead endpoint here.
-    console.log('Lead captured:', data);
-    formWrap.style.display = 'none';
-    success.classList.add('is-shown');
   });
 
   document.querySelectorAll('.modal__close').forEach(function(btn){ btn.addEventListener('click', closeAll); });
@@ -1363,31 +1251,6 @@ h1.title{
     tick(); setInterval(tick, 1000);
   })();
 
-  /* ============ Exit intent ============ */
-  var exitModal = document.getElementById('exitModal');
-  var exitFired = false;
-  function fireExit(){
-    if(exitFired) return;
-    if(document.querySelector('.modal.is-open')) return;
-    if(window.scrollY < 300) return;
-    exitFired = true;
-    exitModal.classList.add('is-open');
-    document.body.style.overflow = 'hidden';
-  }
-  document.addEventListener('mouseout', function(e){
-    if(!e.toElement && !e.relatedTarget && e.clientY < 10){ fireExit(); }
-  });
-  var lastY = 0, slowScrolls = 0;
-  window.addEventListener('scroll', function(){
-    var y = window.scrollY;
-    if(y < lastY - 80 && y > 600){ slowScrolls++; if(slowScrolls > 1) fireExit(); }
-    lastY = y;
-  }, { passive:true });
-  document.getElementById('exitForm').addEventListener('submit', function(e){
-    e.preventDefault();
-    closeAll();
-    gotoOffer('DirectMeds');
-  });
 })();
 </script>
 
