@@ -7,25 +7,30 @@
 <meta name="description" content="Side-by-side comparison of the top GLP-1 telehealth programs for 2026. Real pricing, editor scores, and medication options for Thinnex, Brello, and DirectMeds.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#ffffff;
-  --ink:#1a1a1a;
-  --muted:#5a5a5a;
-  --line:#e5e5e5;
-  --line-soft:#f0f0f0;
-  --card:#fafafa;
-  --accent:#0e5c56;
-  --accent-dark:#0a4744;
-  --accent-soft:#eef6f5;
+  --ink:#1e2125;
+  --muted:#374151;
+  --muted-soft:#5b6779;
+  --line:#e3e7ed;
+  --line-soft:#f0f3f7;
+  --card:#f7f9ff;
+  --accent:#35b782;
+  --accent-dark:#2ea16f;
+  --accent-soft:#ecf9ff;
+  --brand:#04102f;
+  --brand-link:#4759b2;
+  --superlative:#ed6e13;
+  --superlative-bg:#fff3e6;
   --partner:#c77e00;
-  --partner-bg:#fff7e6;
-  --partner-line:#f0c878;
+  --partner-bg:#fff1e1;
+  --partner-line:#f5d9b3;
   --gold:#e8a317;
-  --pro:#1f7a3e;
+  --pro:#34997d;
+  --pro-soft:#e6f5f0;
   --con:#b33a3a;
-  --serif:'Playfair Display', Georgia, 'Times New Roman', serif;
   --sans:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -34,26 +39,26 @@ body{
   background:var(--bg);
   color:var(--ink);
   font-family:var(--sans);
-  font-size:17px;
-  line-height:1.65;
+  font-size:16px;
+  line-height:1.6;
   -webkit-font-smoothing:antialiased;
 }
-a{color:var(--accent);text-decoration:none}
+a{color:var(--brand-link);text-decoration:none}
 a:hover{text-decoration:underline}
 img{max-width:100%;display:block}
 
 /* ---------- Top utility bar ---------- */
 .utility{
-  background:#1a1a1a;
-  color:#bbb;
+  background:var(--brand);
+  color:#cbd2e0;
   font-size:12px;
   letter-spacing:.04em;
   text-transform:uppercase;
   padding:8px 0;
   text-align:center;
 }
-.utility a{color:#f0c878;font-weight:600;margin:0 8px}
-.utility .sep{color:#444;margin:0 6px}
+.utility a{color:#7fdab2;font-weight:700;margin:0 8px}
+.utility .sep{color:#3a4566;margin:0 6px}
 
 /* ---------- Header ---------- */
 .site-header{
@@ -64,20 +69,19 @@ img{max-width:100%;display:block}
 .site-header__inner{
   max-width:1200px;margin:0 auto;
   display:flex;align-items:center;justify-content:space-between;
-  padding:18px 24px;
+  padding:16px 24px;
 }
 .logo{
-  font-family:var(--serif);
   font-weight:900;
-  font-size:24px;
-  letter-spacing:-.01em;
+  font-size:22px;
+  letter-spacing:-.025em;
   color:var(--ink);
 }
 .logo span{color:var(--accent)}
 .site-nav{display:flex;gap:28px;align-items:center}
 .site-nav a{
-  color:var(--ink);font-weight:500;font-size:14px;
-  text-transform:uppercase;letter-spacing:.05em;
+  color:var(--ink);font-weight:600;font-size:13px;
+  text-transform:uppercase;letter-spacing:.06em;
 }
 .site-nav a:hover{color:var(--accent);text-decoration:none}
 .site-nav .nav-phone{
@@ -88,179 +92,184 @@ img{max-width:100%;display:block}
 
 /* ---------- Article container ---------- */
 .article{
-  max-width:780px;
+  max-width:820px;
   margin:0 auto;
-  padding:32px 24px 80px;
+  padding:28px 24px 80px;
 }
 .breadcrumb{
-  font-size:12px;text-transform:uppercase;letter-spacing:.08em;
-  color:var(--muted);margin-bottom:20px;
+  font-size:11px;text-transform:uppercase;letter-spacing:.1em;
+  color:var(--muted-soft);margin-bottom:14px;font-weight:600;
 }
-.breadcrumb a{color:var(--muted)}
-.breadcrumb strong{color:var(--accent);font-weight:600}
+.breadcrumb a{color:var(--muted-soft)}
+.breadcrumb strong{color:var(--brand-link);font-weight:700}
 
 h1.title{
-  font-family:var(--serif);
-  font-size:48px;
-  font-weight:800;
-  line-height:1.1;
-  letter-spacing:-.02em;
-  margin-bottom:18px;
+  font-size:42px;
+  font-weight:900;
+  line-height:1.05;
+  letter-spacing:-.03em;
+  margin-bottom:14px;
+  color:var(--ink);
 }
 .dek{
-  font-size:20px;
+  font-size:18px;
   color:var(--muted);
   line-height:1.5;
-  margin-bottom:24px;
+  margin-bottom:18px;
+  font-weight:400;
+}
+.byline{
+  display:flex;flex-wrap:wrap;gap:14px;align-items:center;
+  font-size:13px;color:var(--muted);
+  padding:12px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  margin-bottom:18px;
+}
+.byline strong{color:var(--ink);font-weight:700}
+.byline-sep{width:1px;height:12px;background:var(--line)}
+.byline-checked{
+  display:inline-flex;align-items:center;gap:5px;
+  color:var(--pro);font-weight:700;
 }
 
 /* ---------- Social proof strip ---------- */
 .social-proof{
   display:grid;grid-template-columns:repeat(3,1fr);
   gap:14px;
-  background:#f6faf9;
-  border:1px solid #d6e8e5;
-  border-radius:6px;
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:8px;
   padding:14px 16px;
-  margin:0 0 24px;
+  margin:0 0 18px;
   font-size:13px;
   text-align:center;
 }
-.social-proof__item{display:flex;flex-direction:column;align-items:center;gap:4px}
+.social-proof__item{display:flex;flex-direction:column;align-items:center;gap:3px}
 .social-proof__num{
-  font-family:var(--serif);font-weight:800;
-  font-size:22px;color:var(--accent);line-height:1;
+  font-weight:900;font-size:20px;
+  color:var(--brand);line-height:1;letter-spacing:-.02em;
 }
-.social-proof__lbl{color:var(--muted);font-size:12px;line-height:1.3}
+.social-proof__lbl{color:var(--muted);font-size:11px;line-height:1.3;font-weight:500}
 
-.byline{
-  display:flex;flex-wrap:wrap;gap:16px;align-items:center;
-  font-size:14px;color:var(--muted);
-  padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
-  margin-bottom:24px;
-}
-.byline strong{color:var(--ink)}
-.byline-sep{width:1px;height:14px;background:var(--line)}
-.byline-checked{
-  display:inline-flex;align-items:center;gap:6px;
-  color:var(--pro);font-weight:600;
-}
-
-/* ---------- FDA warning ---------- */
+/* ---------- Compact FDA notice ---------- */
 .warn{
   background:var(--partner-bg);
   border:1px solid var(--partner-line);
-  border-left:4px solid var(--partner);
-  padding:14px 18px;
-  font-size:14px;
+  padding:10px 14px;
+  font-size:12px;
   color:#5a4a1a;
   border-radius:4px;
-  margin:24px 0 32px;
-  line-height:1.55;
+  margin:0 0 24px;
+  line-height:1.5;
+  display:flex;gap:8px;align-items:flex-start;
 }
-.warn strong{color:#8a5a00;text-transform:uppercase;letter-spacing:.04em;font-size:12px;display:block;margin-bottom:4px}
+.warn::before{content:"\26A0";font-size:14px;flex-shrink:0;color:#8a5a00}
+.warn strong{color:#8a5a00;font-weight:700}
 
 /* ---------- Featured partner ---------- */
 .featured-partner{
   background:var(--partner-bg);
   border:1px solid var(--partner-line);
-  border-radius:6px;
-  padding:20px 22px;
-  margin:32px 0;
+  border-radius:10px;
+  padding:24px 26px;
+  margin:0 0 24px;
   display:flex;align-items:center;justify-content:space-between;gap:24px;
   flex-wrap:wrap;
+  position:relative;
 }
+.featured-partner__inner{flex:1;min-width:240px}
 .featured-partner__tag{
   display:inline-block;
-  background:var(--partner);color:#fff;
-  font-size:11px;font-weight:700;
-  text-transform:uppercase;letter-spacing:.08em;
-  padding:4px 8px;border-radius:3px;margin-bottom:8px;
+  background:var(--superlative);color:#fff;
+  font-size:10px;font-weight:800;
+  text-transform:uppercase;letter-spacing:.1em;
+  padding:4px 9px;border-radius:3px;margin-bottom:10px;
 }
-.featured-partner__logo{height:30px;width:auto;max-width:160px;display:block;margin-bottom:8px}
-.featured-partner__logo--thinnex{height:46px;max-width:180px;margin:-4px 0 4px -8px}
-.featured-partner__copy{font-size:14px;color:#5a4a1a;margin-bottom:6px}
+.featured-partner__logo{height:30px;width:auto;max-width:160px;display:block;margin-bottom:10px}
+.featured-partner__logo--thinnex{height:46px;max-width:180px;margin:-4px 0 8px -8px}
+.featured-partner__copy{font-size:15px;color:#3d3215;margin-bottom:8px;font-weight:500}
+.featured-partner__copy strong{color:var(--ink);font-weight:800}
 .featured-partner__urgency{
-  font-size:12px;color:var(--con);font-weight:600;
+  font-size:12px;color:var(--con);font-weight:700;
   display:inline-flex;align-items:center;gap:6px;
 }
 .featured-partner__urgency::before{content:"\23F1";font-size:12px}
 .featured-partner__cta{
-  background:var(--ink);color:#fff;
-  padding:12px 22px;border-radius:4px;
-  font-weight:600;font-size:14px;
+  background:var(--accent);color:#fff;
+  padding:14px 26px;border-radius:4px;
+  font-weight:800;font-size:14px;
   text-transform:uppercase;letter-spacing:.06em;
   border:0;cursor:pointer;
   white-space:nowrap;
+  transition:background .15s, transform .1s;
 }
-.featured-partner__cta:hover{background:#000;text-decoration:none;color:#fff}
+.featured-partner__cta:hover{background:var(--accent-dark);text-decoration:none;color:#fff;transform:translateY(-1px)}
 
 /* ---------- Body copy ---------- */
-.lede{font-size:18px;line-height:1.7;margin-bottom:28px}
-.article p{margin-bottom:18px;color:#2a2a2a}
+.lede{font-size:16px;line-height:1.65;margin-bottom:20px;color:var(--muted)}
+.article p{margin-bottom:16px;color:#2a2a2a}
 .article h2{
-  font-family:var(--serif);
-  font-size:32px;font-weight:700;
-  margin:48px 0 20px;letter-spacing:-.01em;
+  font-size:30px;font-weight:900;
+  margin:48px 0 16px;letter-spacing:-.02em;line-height:1.15;
+  color:var(--ink);
 }
 .article h3{
-  font-family:var(--serif);
-  font-size:24px;font-weight:700;
-  margin:32px 0 14px;
+  font-size:22px;font-weight:800;
+  margin:28px 0 12px;letter-spacing:-.015em;
+  color:var(--ink);
 }
 
 /* ---------- Trust box ---------- */
 .trust-box{
-  background:#f6faf9;
-  border-left:4px solid var(--accent);
-  padding:20px 22px;
+  background:var(--accent-soft);
+  border-left:4px solid var(--brand-link);
+  padding:18px 22px;
   margin:32px 0;
-  border-radius:0 4px 4px 0;
+  border-radius:0 6px 6px 0;
 }
-.trust-box h4{font-family:var(--serif);font-size:18px;font-weight:700;margin-bottom:8px}
-.trust-box p{font-size:15px;color:#3a3a3a;margin:0}
+.trust-box h4{font-size:16px;font-weight:800;margin-bottom:6px;color:var(--ink)}
+.trust-box p{font-size:14px;color:var(--muted);margin:0}
 
 /* ---------- 3-step process ---------- */
 .steps{
   display:grid;grid-template-columns:repeat(3,1fr);
-  gap:14px;margin:24px 0 8px;
+  gap:14px;margin:20px 0 8px;
 }
 .step{
-  background:var(--card);border-radius:8px;padding:24px 20px;text-align:center;
+  background:var(--card);border-radius:10px;padding:22px 18px;text-align:center;
   border:1px solid var(--line);
 }
 .step__num{
-  width:36px;height:36px;border-radius:50%;
+  width:32px;height:32px;border-radius:50%;
   background:var(--accent);color:#fff;
-  font-family:var(--serif);font-weight:800;font-size:17px;
+  font-weight:900;font-size:15px;
   display:flex;align-items:center;justify-content:center;
-  margin:0 auto 12px;
+  margin:0 auto 10px;
 }
-.step h4{font-family:var(--serif);font-size:18px;font-weight:700;margin-bottom:6px}
-.step p{font-size:14px;color:var(--muted);margin:0;line-height:1.5}
+.step h4{font-size:16px;font-weight:800;margin-bottom:4px;color:var(--ink)}
+.step p{font-size:13px;color:var(--muted);margin:0;line-height:1.5}
 
 /* ---------- Quiz / Match ---------- */
 .quiz{
-  background:linear-gradient(135deg,#f6faf9 0%,#eef6f5 100%);
-  border:1px solid #d6e8e5;
-  border-radius:10px;
-  padding:32px;
-  margin:36px 0;
+  background:linear-gradient(135deg,var(--accent-soft) 0%,#dff0e5 100%);
+  border:1px solid #c2e3d4;
+  border-radius:12px;
+  padding:30px;
+  margin:40px 0;
   text-align:center;
 }
 .quiz__eyebrow{
-  font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;
-  color:var(--accent);margin-bottom:8px;
+  font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;
+  color:var(--accent-dark);margin-bottom:6px;
 }
 .quiz h3{
-  font-family:var(--serif);font-size:28px;font-weight:800;
-  margin:0 0 10px;letter-spacing:-.01em;
+  font-size:24px;font-weight:900;
+  margin:0 0 8px;letter-spacing:-.02em;
 }
-.quiz__sub{font-size:15px;color:var(--muted);margin-bottom:22px}
+.quiz__sub{font-size:14px;color:var(--muted);margin-bottom:18px}
 .quiz__cta{
   background:var(--accent);color:#fff;
-  padding:15px 32px;border-radius:4px;
-  font-weight:700;font-size:14px;
+  padding:14px 28px;border-radius:4px;
+  font-weight:800;font-size:14px;
   text-transform:uppercase;letter-spacing:.06em;
   border:0;cursor:pointer;
   display:inline-flex;align-items:center;gap:8px;
@@ -269,282 +278,315 @@ h1.title{
 .quiz__cta:hover{background:var(--accent-dark);transform:translateY(-1px)}
 .quiz__cta::after{content:"\2192";font-size:18px}
 .quiz__meta{
-  display:flex;gap:18px;justify-content:center;
-  font-size:12px;color:var(--muted);margin-top:16px;
+  display:flex;gap:16px;justify-content:center;
+  font-size:12px;color:var(--muted);margin-top:14px;
 }
-.quiz__meta span::before{content:"\2713";color:var(--pro);margin-right:5px;font-weight:700}
+.quiz__meta span::before{content:"\2713";color:var(--pro);margin-right:4px;font-weight:800}
 
 /* ---------- TOC ---------- */
 .toc{
   border:1px solid var(--line);
-  border-radius:6px;
-  padding:22px 24px;
+  border-radius:8px;
+  padding:18px 22px;
   margin:32px 0;
 }
 .toc h4{
-  font-size:12px;text-transform:uppercase;letter-spacing:.08em;
-  color:var(--muted);margin-bottom:12px;font-weight:600;
+  font-size:11px;text-transform:uppercase;letter-spacing:.1em;
+  color:var(--muted-soft);margin-bottom:10px;font-weight:700;
 }
 .toc ol{list-style:none;counter-reset:toc}
 .toc li{
   counter-increment:toc;
-  padding:8px 0;border-bottom:1px solid var(--line-soft);
-  font-size:15px;
+  padding:6px 0;border-bottom:1px solid var(--line-soft);
+  font-size:14px;
 }
 .toc li:last-child{border-bottom:0}
 .toc li::before{
   content:counter(toc) ". ";
-  color:var(--muted);font-weight:600;margin-right:8px;
+  color:var(--muted-soft);font-weight:700;margin-right:8px;
 }
-.toc a{color:var(--ink);font-weight:500}
+.toc a{color:var(--ink);font-weight:600}
 .toc a:hover{color:var(--accent)}
 
 /* ---------- Comparison table ---------- */
+.compare-wrap{margin:0 0 16px}
+.compare-eyebrow{
+  font-size:11px;text-transform:uppercase;letter-spacing:.12em;
+  font-weight:800;color:var(--brand-link);margin-bottom:8px;
+}
+.compare-headline{
+  font-size:24px;font-weight:900;letter-spacing:-.02em;
+  margin-bottom:14px;color:var(--ink);
+}
 .compare{
   overflow-x:auto;
-  margin:24px 0 16px;
   border:1px solid var(--line);
-  border-radius:6px;
+  border-radius:8px;
+  background:#fff;
 }
 .compare table{width:100%;border-collapse:collapse;font-size:14px}
 .compare th,.compare td{
-  padding:14px 16px;text-align:left;border-bottom:1px solid var(--line);
-  vertical-align:top;
+  padding:13px 16px;text-align:left;border-bottom:1px solid var(--line);
+  vertical-align:middle;
 }
 .compare th{
-  background:#fafafa;
-  font-weight:600;font-size:12px;
-  text-transform:uppercase;letter-spacing:.06em;
-  color:var(--muted);
+  background:#f7f9ff;
+  font-weight:700;font-size:11px;
+  text-transform:uppercase;letter-spacing:.08em;
+  color:var(--muted-soft);
 }
 .compare tr:last-child td{border-bottom:0}
-.compare td strong{font-family:var(--serif);font-size:17px;display:block;margin-bottom:2px}
+.compare td strong{font-weight:800;font-size:16px;display:block;margin-bottom:2px;color:var(--ink);letter-spacing:-.01em}
 .compare .pill{
-  display:inline-block;background:var(--accent-soft);color:var(--accent);
-  font-size:11px;font-weight:600;
-  padding:2px 8px;border-radius:10px;
+  display:inline-block;background:var(--superlative-bg);color:var(--superlative);
+  font-size:10px;font-weight:800;
+  padding:2px 7px;border-radius:10px;
+  text-transform:uppercase;letter-spacing:.06em;margin-top:4px;
+}
+.compare .pill--green{background:var(--pro-soft);color:var(--pro)}
+.compare .score{color:var(--pro);font-weight:900;font-size:18px}
+.compare .price{color:var(--ink);font-weight:800;font-size:15px}
+.compare .anchor-row td{
+  background:#fff7e6;font-size:12px;color:#5a4a1a;font-weight:600;
   text-transform:uppercase;letter-spacing:.04em;
 }
-.compare .score{color:var(--pro);font-weight:800;font-size:18px;font-family:var(--serif)}
-.compare .price{color:var(--pro);font-weight:700}
-.compare .anchor-row td{
-  background:#fff7e6;font-size:13px;color:#5a4a1a;font-weight:500;
-}
-.compare .anchor-row strong{font-family:var(--sans);font-size:14px;color:#8a5a00;display:inline}
+.compare .anchor-row strong{font-size:12px;color:#8a5a00;display:inline}
 .price-anchor{
-  font-size:11px;color:var(--muted);text-decoration:line-through;
-  margin-right:6px;font-weight:500;
+  font-size:11px;color:var(--muted-soft);text-decoration:line-through;
+  margin-right:6px;font-weight:600;
 }
-
-/* ---------- Listicle entries ---------- */
-.entry{
-  border:1px solid var(--line);
-  border-radius:8px;
-  padding:32px;
-  margin:32px 0;
-  background:#fff;
-  scroll-margin-top:100px;
-}
-.entry__head{
-  display:flex;gap:20px;align-items:flex-start;
-  padding-bottom:22px;border-bottom:1px solid var(--line);margin-bottom:22px;
-}
-.entry__num{
-  flex-shrink:0;
-  width:48px;height:48px;
+.compare-cta{
   background:var(--accent);color:#fff;
-  border-radius:50%;
-  font-family:var(--serif);font-weight:800;font-size:22px;
-  display:flex;align-items:center;justify-content:center;
-}
-.entry__title-wrap{flex:1;min-width:0}
-.entry__logo{height:36px;width:auto;max-width:180px;display:block;margin-bottom:12px}
-.entry__logo--thinnex{height:56px;max-width:200px;margin:-6px 0 6px -8px}
-.entry__tag{
-  display:inline-block;
-  background:var(--accent-soft);color:var(--accent);
-  font-size:11px;font-weight:700;
-  text-transform:uppercase;letter-spacing:.08em;
-  padding:4px 10px;border-radius:3px;margin-bottom:8px;
-}
-.entry__brand{
-  font-family:var(--serif);font-size:32px;font-weight:800;
-  letter-spacing:-.01em;line-height:1.1;margin-bottom:10px;
-}
-.entry__meds{display:flex;gap:6px;flex-wrap:wrap}
-.med-pill{
-  display:inline-flex;align-items:center;gap:5px;
-  background:var(--accent-soft);color:var(--accent);
-  font-size:12px;font-weight:600;
-  padding:4px 10px;border-radius:12px;
-}
-.med-pill::before{content:"\211E";font-weight:400;opacity:.6}
-.entry__right{
-  flex-shrink:0;
-  display:flex;flex-direction:column;align-items:stretch;gap:12px;
-  min-width:140px;
-}
-.entry__score{
-  text-align:center;
-  background:#f6faf9;
-  border:1px solid #d6e8e5;
-  border-radius:6px;
-  padding:10px 12px;
-}
-.entry__score strong{
-  display:block;
-  font-family:var(--serif);
-  font-size:32px;font-weight:800;
-  color:var(--pro);line-height:1;
-}
-.entry__score span{
-  display:block;font-size:10px;
-  text-transform:uppercase;letter-spacing:.08em;
-  color:var(--muted);font-weight:600;margin-top:4px;
-}
-.entry__cta{
-  background:var(--accent);color:#fff;
-  padding:14px 18px;border-radius:4px;
-  font-weight:700;font-size:13px;
-  text-transform:uppercase;letter-spacing:.06em;
+  padding:8px 14px;border-radius:4px;
+  font-weight:800;font-size:11px;
+  text-transform:uppercase;letter-spacing:.05em;
   border:0;cursor:pointer;
   white-space:nowrap;
   transition:background .15s;
 }
-.entry__cta:hover{background:var(--accent-dark);text-decoration:none;color:#fff}
+.compare-cta:hover{background:var(--accent-dark)}
+
+/* ---------- Listicle entries ---------- */
+.entry{
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:28px;
+  margin:18px 0;
+  background:#fff;
+  scroll-margin-top:100px;
+  position:relative;
+}
+.entry--pick{
+  border-color:var(--pro);
+  border-width:2px;
+  box-shadow:0 4px 16px -4px rgba(53,183,130,.15);
+}
+.entry--pick::before{
+  content:"BEST OVERALL";
+  position:absolute;top:-12px;left:24px;
+  background:var(--pro);color:#fff;
+  font-size:10px;font-weight:900;letter-spacing:.12em;
+  padding:4px 12px;border-radius:3px;
+}
+.entry__head{
+  display:flex;gap:18px;align-items:flex-start;
+  padding-bottom:18px;border-bottom:1px solid var(--line);margin-bottom:18px;
+}
+.entry__num{
+  flex-shrink:0;
+  width:42px;height:42px;
+  background:var(--brand);color:#fff;
+  border-radius:8px;
+  font-weight:900;font-size:18px;
+  display:flex;align-items:center;justify-content:center;
+}
+.entry__title-wrap{flex:1;min-width:0}
+.entry__logo{height:36px;width:auto;max-width:180px;display:block;margin-bottom:10px}
+.entry__logo--thinnex{height:56px;max-width:200px;margin:-6px 0 6px -8px}
+.entry__tag{
+  display:inline-block;
+  background:var(--superlative-bg);color:var(--superlative);
+  font-size:10px;font-weight:800;
+  text-transform:uppercase;letter-spacing:.1em;
+  padding:3px 9px;border-radius:3px;margin-bottom:8px;
+}
+.entry__tag--green{background:var(--pro-soft);color:var(--pro)}
+.entry__brand{
+  font-size:28px;font-weight:900;
+  letter-spacing:-.025em;line-height:1.1;margin-bottom:8px;color:var(--ink);
+}
+.entry__meds{display:flex;gap:6px;flex-wrap:wrap}
+.med-pill{
+  display:inline-flex;align-items:center;gap:5px;
+  background:var(--accent-soft);color:var(--brand-link);
+  font-size:11px;font-weight:700;
+  padding:3px 9px;border-radius:12px;
+}
+.med-pill::before{content:"\211E";font-weight:400;opacity:.6}
+.entry__right{
+  flex-shrink:0;
+  display:flex;flex-direction:column;align-items:stretch;gap:10px;
+  min-width:140px;
+}
+.entry__score{
+  text-align:center;
+  background:var(--pro-soft);
+  border:1px solid #c2e3d4;
+  border-radius:6px;
+  padding:8px 10px;
+}
+.entry__score strong{
+  display:block;
+  font-weight:900;font-size:28px;
+  color:var(--pro);line-height:1;letter-spacing:-.02em;
+}
+.entry__score span{
+  display:block;font-size:9px;
+  text-transform:uppercase;letter-spacing:.1em;
+  color:var(--muted-soft);font-weight:700;margin-top:3px;
+}
+.entry__cta{
+  background:var(--accent);color:#fff;
+  padding:13px 16px;border-radius:4px;
+  font-weight:800;font-size:13px;
+  text-transform:uppercase;letter-spacing:.06em;
+  border:0;cursor:pointer;
+  white-space:nowrap;
+  transition:background .15s, transform .1s;
+}
+.entry__cta:hover{background:var(--accent-dark);text-decoration:none;color:#fff;transform:translateY(-1px)}
 
 .entry__why h5{
-  font-size:12px;text-transform:uppercase;letter-spacing:.08em;
-  color:var(--muted);margin-bottom:10px;font-weight:600;
+  font-size:11px;text-transform:uppercase;letter-spacing:.1em;
+  color:var(--muted-soft);margin-bottom:8px;font-weight:700;
 }
-.entry__why p{font-size:16px;line-height:1.65}
+.entry__why p{font-size:15px;line-height:1.6;color:#2a2a2a}
 
 /* Score breakdown */
 .score-breakdown{
   display:grid;grid-template-columns:repeat(2,1fr);
-  gap:12px 28px;
-  margin:22px 0;
-  padding:18px 20px;
-  background:#f6faf9;
-  border:1px solid #d6e8e5;
+  gap:10px 26px;
+  margin:18px 0;
+  padding:16px 18px;
+  background:var(--pro-soft);
+  border:1px solid #c2e3d4;
   border-radius:6px;
 }
 .score-row{display:flex;align-items:center;gap:10px;font-size:13px}
 .score-row__label{
-  flex-shrink:0;width:80px;
-  font-size:12px;color:var(--muted);font-weight:600;
+  flex-shrink:0;width:78px;
+  font-size:11px;color:var(--muted);font-weight:700;
   text-transform:uppercase;letter-spacing:.04em;
 }
 .score-row__bar{
-  flex:1;height:6px;background:#e5edec;border-radius:3px;overflow:hidden;
+  flex:1;height:5px;background:#d6e8e0;border-radius:3px;overflow:hidden;
 }
 .score-row__fill{height:100%;background:var(--pro);border-radius:3px}
 .score-row__num{
-  flex-shrink:0;width:32px;text-align:right;
-  font-weight:700;color:var(--pro);font-size:13px;
+  flex-shrink:0;width:30px;text-align:right;
+  font-weight:800;color:var(--pro);font-size:13px;
 }
 
 .entry__procon{
-  display:grid;grid-template-columns:1fr 1fr;gap:20px;
-  margin:24px 0;
-  padding:20px;
-  background:var(--card);border-radius:6px;
+  display:grid;grid-template-columns:1fr 1fr;gap:18px;
+  margin:20px 0;
+  padding:18px;
+  background:var(--card);border-radius:8px;
 }
 .entry__procon h6{
-  font-size:12px;text-transform:uppercase;letter-spacing:.06em;
-  font-weight:700;margin-bottom:10px;
+  font-size:11px;text-transform:uppercase;letter-spacing:.08em;
+  font-weight:800;margin-bottom:8px;
 }
 .entry__procon ul{list-style:none}
 .entry__procon li{
-  font-size:14px;line-height:1.5;padding:4px 0;
+  font-size:13px;line-height:1.5;padding:3px 0;
   display:flex;gap:8px;align-items:flex-start;
 }
 .pros h6{color:var(--pro)}
-.pros li::before{content:"\2713";color:var(--pro);font-weight:700;flex-shrink:0}
+.pros li::before{content:"\2713";color:var(--pro);font-weight:800;flex-shrink:0}
 .cons h6{color:var(--con)}
-.cons li::before{content:"\2715";color:var(--con);font-weight:700;flex-shrink:0}
+.cons li::before{content:"\2715";color:var(--con);font-weight:800;flex-shrink:0}
 
 .entry__details{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:14px;
-  padding:16px 0;border-top:1px solid var(--line);
+  display:grid;grid-template-columns:repeat(3,1fr);gap:12px;
+  padding:14px 0;border-top:1px solid var(--line);
 }
 .entry__details div{font-size:13px}
 .entry__details strong{
   display:block;
-  font-size:11px;text-transform:uppercase;letter-spacing:.06em;
-  color:var(--muted);font-weight:600;margin-bottom:4px;
+  font-size:10px;text-transform:uppercase;letter-spacing:.08em;
+  color:var(--muted-soft);font-weight:700;margin-bottom:3px;
 }
-.entry__details .price-cell{color:var(--pro);font-weight:700;font-size:15px}
-.entry__details .price-cell .price-anchor{font-size:12px}
+.entry__details .price-cell{color:var(--ink);font-weight:800;font-size:14px}
+.entry__details .price-cell .price-anchor{font-size:11px}
 
 .entry__bottom-cta{
-  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;
-  margin-top:20px;padding:18px;
-  background:var(--accent-soft);border-radius:6px;
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;
+  margin-top:18px;padding:16px 18px;
+  background:var(--accent-soft);border:1px solid #c5d6e0;border-radius:8px;
 }
-.entry__bottom-cta__copy{font-size:14px;color:var(--accent-dark);font-weight:600}
-.entry__bottom-cta__copy strong{font-family:var(--serif);font-size:18px;font-weight:800}
+.entry__bottom-cta__copy{font-size:13px;color:var(--brand);font-weight:600}
+.entry__bottom-cta__copy strong{font-size:16px;font-weight:900;color:var(--ink)}
 .entry__bottom-cta button{
   background:var(--accent);color:#fff;
-  padding:13px 24px;border-radius:4px;
-  font-weight:700;font-size:13px;
+  padding:12px 22px;border-radius:4px;
+  font-weight:800;font-size:13px;
   text-transform:uppercase;letter-spacing:.06em;
   border:0;cursor:pointer;
-  transition:background .15s;
+  transition:background .15s, transform .1s;
 }
-.entry__bottom-cta button:hover{background:var(--accent-dark)}
+.entry__bottom-cta button:hover{background:var(--accent-dark);transform:translateY(-1px)}
 
 /* ---------- Testimonials ---------- */
 .testimonials{
   display:grid;grid-template-columns:repeat(3,1fr);
-  gap:16px;margin:24px 0;
+  gap:14px;margin:22px 0;
 }
 .tm{
   background:#fff;
   border:1px solid var(--line);
-  border-radius:8px;
-  padding:22px;
+  border-radius:10px;
+  padding:20px;
   display:flex;flex-direction:column;
 }
 .tm__quote{
-  font-family:var(--serif);font-style:italic;font-size:17px;line-height:1.5;
-  color:var(--ink);margin-bottom:14px;flex:1;
+  font-size:15px;line-height:1.5;
+  color:var(--ink);margin-bottom:12px;flex:1;font-weight:500;
 }
 .tm__quote::before{
-  content:"\201C";font-size:48px;line-height:0;
-  color:var(--accent);vertical-align:-18px;margin-right:4px;font-weight:800;
+  content:"\201C";font-size:42px;line-height:0;
+  color:var(--accent);vertical-align:-14px;margin-right:3px;font-weight:900;
 }
 .tm__meta{
   font-size:12px;color:var(--muted);
-  border-top:1px solid var(--line);padding-top:12px;
+  border-top:1px solid var(--line);padding-top:10px;
   display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;
 }
-.tm__name{font-weight:700;color:var(--ink)}
-.tm__brand{color:var(--accent);font-weight:600}
+.tm__name{font-weight:800;color:var(--ink)}
+.tm__brand{color:var(--accent-dark);font-weight:700}
 .testimonial-disclaimer{
-  font-size:11px;color:var(--muted);text-align:center;margin-top:8px;
+  font-size:11px;color:var(--muted-soft);text-align:center;margin-top:6px;
   font-style:italic;
 }
 
 /* ---------- FAQ ---------- */
-.faq{border-top:1px solid var(--line);margin-top:48px;padding-top:8px}
-.faq details{border-bottom:1px solid var(--line);padding:18px 0}
+.faq{border-top:1px solid var(--line);margin-top:32px;padding-top:6px}
+.faq details{border-bottom:1px solid var(--line);padding:16px 0}
 .faq summary{
-  font-family:var(--serif);
-  font-size:20px;font-weight:700;
+  font-size:17px;font-weight:800;letter-spacing:-.01em;
   cursor:pointer;list-style:none;
-  display:flex;justify-content:space-between;align-items:center;gap:16px;
+  display:flex;justify-content:space-between;align-items:center;gap:14px;
+  color:var(--ink);
 }
 .faq summary::-webkit-details-marker{display:none}
 .faq summary::after{
-  content:"+";font-size:28px;font-weight:300;color:var(--accent);
-  transition:transform .2s;
+  content:"+";font-size:24px;font-weight:300;color:var(--accent);
 }
 .faq details[open] summary::after{content:"\2212"}
-.faq details p{margin-top:14px;font-size:16px;color:#3a3a3a}
+.faq details p{margin-top:12px;font-size:15px;color:var(--muted)}
 .faq__softcta{
-  display:inline-block;margin-top:10px;
-  font-size:13px;font-weight:600;color:var(--accent);
+  display:inline-block;margin-top:8px;
+  font-size:13px;font-weight:700;color:var(--accent-dark);
   cursor:pointer;background:none;border:0;padding:0;
 }
 .faq__softcta:hover{text-decoration:underline}
@@ -553,31 +595,33 @@ h1.title{
 /* ---------- Methodology ---------- */
 .methodology{
   background:var(--card);
-  border-radius:6px;
-  padding:28px;
-  margin:48px 0 0;
+  border-radius:10px;
+  padding:24px;
+  margin:32px 0 0;
+  border:1px solid var(--line);
 }
-.methodology h3{margin-top:0;margin-bottom:14px}
-.methodology p{font-size:15px;color:#3a3a3a;margin-bottom:12px}
+.methodology h3{margin-top:0;margin-bottom:10px}
+.methodology p{font-size:14px;color:var(--muted);margin-bottom:10px}
 
 /* ---------- Disclaimer block ---------- */
 .disclaimer{
-  font-size:12px;color:var(--muted);
+  font-size:11px;color:var(--muted-soft);
   line-height:1.6;margin:32px 0 0;
-  padding:20px;background:#fafafa;border-radius:4px;border:1px solid var(--line);
+  padding:18px;background:var(--card);border-radius:6px;border:1px solid var(--line);
 }
-.disclaimer strong{color:var(--ink);text-transform:uppercase;font-size:11px;letter-spacing:.06em;display:block;margin-bottom:6px}
+.disclaimer strong{color:var(--ink);text-transform:uppercase;font-size:10px;letter-spacing:.08em;display:block;margin-bottom:6px;font-weight:800}
 
 /* ---------- Footer ---------- */
-.site-footer{background:#1a1a1a;color:#bbb;padding:48px 24px 100px;font-size:13px}
+.site-footer{background:var(--brand);color:#cbd2e0;padding:48px 24px 100px;font-size:13px}
 .site-footer__inner{max-width:1200px;margin:0 auto}
-.site-footer p{margin-bottom:14px;line-height:1.6;color:#999}
-.site-footer a{color:#f0c878}
+.site-footer p{margin-bottom:14px;line-height:1.6;color:#9aa3bb}
+.site-footer p strong{color:#fff;font-weight:800}
+.site-footer a{color:#7fdab2;font-weight:700}
 .site-footer__legal{
-  margin-top:24px;padding-top:20px;border-top:1px solid #333;
+  margin-top:24px;padding-top:20px;border-top:1px solid #1d2750;
   display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;
 }
-.site-footer__links a{margin-right:18px;color:#bbb}
+.site-footer__links a{margin-right:18px;color:#cbd2e0}
 
 /* ---------- Sticky mobile bar ---------- */
 .sticky-bar{
@@ -594,24 +638,24 @@ h1.title{
 .sticky-bar__btn{
   flex:1;border-radius:4px;
   padding:13px 8px;
-  font-weight:700;font-size:13px;
+  font-weight:800;font-size:13px;
   text-transform:uppercase;letter-spacing:.04em;
   cursor:pointer;border:0;
   text-align:center;
 }
 .sticky-bar__btn--primary{background:var(--accent);color:#fff}
-.sticky-bar__btn--secondary{background:#fff;color:var(--accent);border:1px solid var(--accent)}
+.sticky-bar__btn--secondary{background:#fff;color:var(--brand);border:1px solid var(--brand)}
 
 /* ---------- Modals (shared) ---------- */
 .modal{
   display:none;position:fixed;inset:0;
-  background:rgba(0,0,0,.6);z-index:100;
+  background:rgba(4,16,47,.7);z-index:100;
   align-items:center;justify-content:center;padding:24px;
 }
 .modal.is-open{display:flex}
 .modal__panel{
-  background:#fff;border-radius:8px;
-  max-width:520px;width:100%;padding:32px;position:relative;
+  background:#fff;border-radius:10px;
+  max-width:520px;width:100%;padding:30px;position:relative;
   box-shadow:0 20px 60px rgba(0,0,0,.3);
   max-height:92vh;overflow-y:auto;
 }
@@ -621,16 +665,16 @@ h1.title{
   width:32px;height:32px;border-radius:50%;
   font-size:20px;cursor:pointer;color:var(--muted);
 }
-.modal__close:hover{background:#f5f5f5;color:var(--ink)}
-.modal h3{font-family:var(--serif);font-size:26px;font-weight:700;margin-bottom:8px;line-height:1.2}
-.modal p.modal__sub{font-size:14px;color:var(--muted);margin-bottom:22px}
+.modal__close:hover{background:var(--card);color:var(--ink)}
+.modal h3{font-size:24px;font-weight:900;margin-bottom:6px;line-height:1.15;letter-spacing:-.02em;color:var(--ink)}
+.modal p.modal__sub{font-size:14px;color:var(--muted);margin-bottom:20px}
 
 /* Lead form */
-.form-row{margin-bottom:14px}
+.form-row{margin-bottom:12px}
 .form-row label{
-  display:block;font-size:12px;
-  text-transform:uppercase;letter-spacing:.06em;
-  color:var(--muted);font-weight:600;margin-bottom:6px;
+  display:block;font-size:11px;
+  text-transform:uppercase;letter-spacing:.08em;
+  color:var(--muted-soft);font-weight:700;margin-bottom:5px;
 }
 .form-row input,.form-row select{
   width:100%;padding:11px 12px;
@@ -639,28 +683,29 @@ h1.title{
 }
 .form-row input:focus,.form-row select:focus{
   outline:none;border-color:var(--accent);
-  box-shadow:0 0 0 3px rgba(14,92,86,.12);
+  box-shadow:0 0 0 3px rgba(53,183,130,.15);
 }
 .form-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.form-row.consent{display:flex;gap:10px;align-items:flex-start;margin-top:12px}
+.form-row.consent{display:flex;gap:10px;align-items:flex-start;margin-top:10px}
 .form-row.consent input{width:auto;margin-top:3px;flex-shrink:0}
 .form-row.consent label{
-  text-transform:none;letter-spacing:0;font-size:12px;
-  color:var(--muted);font-weight:400;line-height:1.5;margin:0;
+  text-transform:none;letter-spacing:0;font-size:11px;
+  color:var(--muted-soft);font-weight:400;line-height:1.5;margin:0;
 }
 .form-submit{
   width:100%;background:var(--accent);color:#fff;
   padding:14px;border:0;border-radius:4px;
-  font-weight:700;font-size:14px;
+  font-weight:800;font-size:14px;
   text-transform:uppercase;letter-spacing:.06em;
-  cursor:pointer;margin-top:8px;transition:background .15s;
+  cursor:pointer;margin-top:6px;transition:background .15s;
 }
 .form-submit:hover{background:var(--accent-dark)}
 .form-trust{
   display:flex;justify-content:center;gap:14px;flex-wrap:wrap;
-  font-size:11px;color:var(--muted);margin-top:14px;text-align:center;
+  font-size:10px;color:var(--muted-soft);margin-top:12px;text-align:center;
+  text-transform:uppercase;letter-spacing:.05em;font-weight:600;
 }
-.form-trust span::before{content:"\2713";color:var(--pro);margin-right:4px;font-weight:700}
+.form-trust span::before{content:"\2713";color:var(--pro);margin-right:4px;font-weight:800}
 .form-success{display:none;text-align:center;padding:20px 0}
 .form-success.is-shown{display:block}
 .form-success h3{margin-bottom:10px}
@@ -668,96 +713,94 @@ h1.title{
 
 /* Step indicator */
 .step-indicator{
-  display:flex;align-items:center;gap:10px;margin-bottom:18px;font-size:12px;color:var(--muted);
+  display:flex;align-items:center;gap:10px;margin-bottom:16px;font-size:12px;color:var(--muted);
 }
 .step-dot{
-  width:24px;height:24px;border-radius:50%;
-  background:#e5edec;color:var(--muted);
+  width:22px;height:22px;border-radius:50%;
+  background:var(--line);color:var(--muted);
   display:flex;align-items:center;justify-content:center;
-  font-weight:700;font-size:12px;
+  font-weight:800;font-size:11px;
 }
 .step-dot.is-active{background:var(--accent);color:#fff}
 .step-dot.is-done{background:var(--pro);color:#fff}
-.step-line{flex:1;height:2px;background:#e5edec}
+.step-line{flex:1;height:2px;background:var(--line)}
 .step-line.is-done{background:var(--pro)}
 
 /* Wizard step controls */
 .wizard__step{display:none}
 .wizard__step.is-active{display:block}
 .qualify-msg{
-  background:var(--accent-soft);
-  border-left:3px solid var(--accent);
-  padding:10px 12px;
-  font-size:13px;color:var(--accent-dark);
+  background:var(--pro-soft);
+  border-left:3px solid var(--pro);
+  padding:9px 12px;
+  font-size:13px;color:#1a4a3a;
   border-radius:0 4px 4px 0;
-  margin-bottom:14px;
-  display:flex;gap:8px;align-items:center;
+  margin-bottom:12px;
+  display:flex;gap:8px;align-items:center;font-weight:600;
 }
-.qualify-msg::before{content:"\2713";color:var(--pro);font-weight:800;font-size:16px}
+.qualify-msg::before{content:"\2713";color:var(--pro);font-weight:900;font-size:15px}
 
 /* Quiz modal */
-.quiz-q{font-family:var(--serif);font-size:22px;font-weight:700;margin-bottom:18px;line-height:1.3}
+.quiz-q{font-size:20px;font-weight:800;margin-bottom:16px;line-height:1.3;letter-spacing:-.015em;color:var(--ink)}
 .quiz-options{display:flex;flex-direction:column;gap:10px}
 .quiz-option{
   width:100%;text-align:left;padding:14px 16px;
   background:#fff;border:1px solid var(--line);
-  border-radius:6px;font-family:inherit;font-size:15px;
+  border-radius:6px;font-family:inherit;font-size:15px;font-weight:600;
   cursor:pointer;transition:all .15s;color:var(--ink);
 }
 .quiz-option:hover{
   border-color:var(--accent);background:var(--accent-soft);
   transform:translateX(2px);
 }
-.quiz-progress{
-  display:flex;gap:6px;margin-bottom:18px;
-}
+.quiz-progress{display:flex;gap:6px;margin-bottom:16px}
 .quiz-progress span{
-  flex:1;height:4px;background:#e5edec;border-radius:2px;
+  flex:1;height:4px;background:var(--line);border-radius:2px;
 }
 .quiz-progress span.is-done{background:var(--accent)}
 .quiz-result{display:none;text-align:center}
 .quiz-result.is-shown{display:block}
 .quiz-result__brand{
-  font-family:var(--serif);font-size:32px;font-weight:800;
-  color:var(--accent);margin:8px 0 12px;
+  font-size:30px;font-weight:900;
+  color:var(--accent-dark);margin:6px 0 10px;letter-spacing:-.025em;
 }
-.quiz-result__copy{font-size:15px;color:var(--muted);margin-bottom:24px}
+.quiz-result__copy{font-size:14px;color:var(--muted);margin-bottom:20px}
 
 /* Exit intent modal */
 .modal--exit .modal__panel{max-width:440px;text-align:center}
-.modal--exit h3{font-size:24px}
-.modal--exit p.modal__sub{font-size:15px;margin-bottom:24px}
+.modal--exit h3{font-size:22px}
+.modal--exit p.modal__sub{font-size:14px;margin-bottom:20px}
 
 /* ---------- Mobile ---------- */
 @media (max-width:720px){
   .site-nav{display:none}
-  .nav-phone-mobile{display:inline-flex !important}
-  h1.title{font-size:34px}
-  .dek{font-size:17px}
-  .article h2{font-size:26px}
-  .social-proof{grid-template-columns:1fr;gap:12px;text-align:left}
+  h1.title{font-size:30px}
+  .dek{font-size:16px}
+  .article h2{font-size:24px}
+  .social-proof{grid-template-columns:1fr;gap:10px;text-align:left}
   .social-proof__item{flex-direction:row;justify-content:flex-start;gap:10px}
-  .featured-partner{flex-direction:column;align-items:flex-start}
+  .featured-partner{flex-direction:column;align-items:flex-start;padding:20px}
   .featured-partner__cta{width:100%;text-align:center}
   .steps{grid-template-columns:1fr}
-  .quiz{padding:24px 20px}
-  .quiz h3{font-size:22px}
+  .quiz{padding:22px 18px}
+  .quiz h3{font-size:20px}
   .entry{padding:22px}
+  .entry--pick::before{left:16px}
   .entry__head{flex-direction:column;align-items:stretch}
   .entry__right{flex-direction:row;align-items:stretch;min-width:0}
   .entry__score{flex:1}
   .entry__cta{flex:1}
-  .entry__brand{font-size:26px}
+  .entry__brand{font-size:24px}
   .entry__procon{grid-template-columns:1fr}
   .entry__details{grid-template-columns:1fr;gap:10px}
   .score-breakdown{grid-template-columns:1fr;gap:10px 0}
   .testimonials{grid-template-columns:1fr}
-  .compare table{font-size:13px}
-  .compare th,.compare td{padding:10px 12px}
+  .compare table{font-size:12px}
+  .compare th,.compare td{padding:9px 10px}
+  .compare-cta{padding:7px 10px;font-size:10px}
   .form-grid-2{grid-template-columns:1fr}
   .modal__panel{padding:24px}
 }
-.nav-phone-mobile{display:none}
 </style>
 </head>
 <body>
@@ -789,22 +832,7 @@ h1.title{
 
   <h1 class="title">Best GLP-1 Weight Loss Programs Of 2026</h1>
 
-  <p class="dek">Compare the top compounded GLP-1 telehealth programs side by side &mdash; pricing, medication options, and editor scores for the three providers leading the market this year.</p>
-
-  <div class="social-proof">
-    <div class="social-proof__item">
-      <span class="social-proof__num">180k+</span>
-      <span class="social-proof__lbl">Patients served by featured providers</span>
-    </div>
-    <div class="social-proof__item">
-      <span class="social-proof__num">U.S.</span>
-      <span class="social-proof__lbl">Licensed clinicians &amp; pharmacies only</span>
-    </div>
-    <div class="social-proof__item">
-      <span class="social-proof__num">$1,200+</span>
-      <span class="social-proof__lbl">Average savings vs. brand-name retail</span>
-    </div>
-  </div>
+  <p class="dek">Compare the top compounded GLP-1 telehealth programs &mdash; pricing, medication options, and editor scores for the three providers leading the market this year.</p>
 
   <div class="byline">
     <span>By <strong>The Editorial Team</strong></span>
@@ -814,127 +842,91 @@ h1.title{
     <span class="byline-checked">&#10003; Medically reviewed</span>
   </div>
 
-  <div class="warn">
-    <strong>Important Notice</strong>
-    Compounded GLP-1 medications are <em>not</em> FDA-approved. They are produced by state-licensed pharmacies and require a valid prescription. Speak with a licensed clinician before starting any GLP-1 program. Results vary; this guide is for educational purposes and is not medical advice.
+  <div class="social-proof">
+    <div class="social-proof__item">
+      <span class="social-proof__num">180k+</span>
+      <span class="social-proof__lbl">Patients served by featured providers</span>
+    </div>
+    <div class="social-proof__item">
+      <span class="social-proof__num">U.S.</span>
+      <span class="social-proof__lbl">Licensed clinicians &amp; pharmacies</span>
+    </div>
+    <div class="social-proof__item">
+      <span class="social-proof__num">$1,200+</span>
+      <span class="social-proof__lbl">Avg. savings vs. brand-name retail</span>
+    </div>
   </div>
 
-  <!-- Featured partner -->
+  <div class="warn">
+    <span><strong>Important:</strong> Compounded GLP-1 medications are not FDA-approved. They require a valid prescription from a licensed clinician. Results vary; this guide is educational and is not medical advice.</span>
+  </div>
+
+  <!-- ============ FEATURED PARTNER (above the fold) ============ -->
   <div class="featured-partner">
-    <div>
+    <div class="featured-partner__inner">
       <span class="featured-partner__tag">Featured Partner</span>
       <img class="featured-partner__logo featured-partner__logo--thinnex" src="assets/thinnex-logo.png" alt="Thinnex">
-      <div class="featured-partner__copy">Compounded semaglutide and tirzepatide from $149/month. No insurance required.</div>
+      <div class="featured-partner__copy">Compounded semaglutide and tirzepatide from <strong>$149/month</strong>. No insurance required. 24-hour clinician decision.</div>
       <div class="featured-partner__urgency">Featured pricing valid through May 31, 2026</div>
     </div>
     <button class="featured-partner__cta" data-offer="Thinnex">See If I Qualify</button>
   </div>
 
-  <p class="lede">GLP-1 medications have transformed weight loss in the last three years, but with brand prices still topping $1,000 a month and ongoing supply pressure, most patients are turning to telehealth providers offering compounded versions through state-licensed 503A pharmacies. We reviewed the leading providers on price, eligibility, prescriber quality, and overall member experience &mdash; here are the three that stood out.</p>
-
-  <div class="trust-box">
-    <h4>Why trust Top GLP-1 Offers</h4>
-    <p>Our editorial team independently evaluates every provider on the list. We compare published pricing, U.S. clinician credentials, FDA-registered pharmacy partners, and member-reported wait times. Partners may pay to be featured, but compensation does not influence our editor scores or ranking criteria.</p>
-  </div>
-
-  <h2 id="how-it-works">How It Works</h2>
-  <p>Every program on this list follows the same three-step path. Differences come down to pricing, medication options, and how much clinician interaction you get along the way.</p>
-
-  <div class="steps">
-    <div class="step">
-      <div class="step__num">1</div>
-      <h4>Choose</h4>
-      <p>Pick the program that fits your goals and budget from our top-rated providers below.</p>
+  <!-- ============ COMPARISON TABLE (above the fold) ============ -->
+  <div class="compare-wrap" id="compare">
+    <div class="compare-eyebrow">Top 3 Picks &mdash; At A Glance</div>
+    <div class="compare-headline">Side-by-side comparison</div>
+    <div class="compare">
+      <table>
+        <thead>
+          <tr>
+            <th>Provider</th>
+            <th>Best For</th>
+            <th>Starting Price</th>
+            <th>Score</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="anchor-row">
+            <td colspan="5"><strong>Brand-name retail anchor:</strong> Wegovy ~$1,349/mo &middot; Zepbound ~$1,059/mo &mdash; the programs below price compounded alternatives at a fraction of retail.</td>
+          </tr>
+          <tr>
+            <td>
+              <strong>Thinnex</strong>
+              <span class="pill pill--green">Editor&rsquo;s Pick</span>
+            </td>
+            <td>Best overall &mdash; speed + dual medication</td>
+            <td><span class="price-anchor">$1,349</span><span class="price">$149/mo</span></td>
+            <td><span class="score">9.9</span></td>
+            <td><button class="compare-cta" data-offer="Thinnex">Get Offer</button></td>
+          </tr>
+          <tr>
+            <td><strong>Brello Health</strong><span class="pill">Best Value</span></td>
+            <td>Best value &mdash; full clinician care</td>
+            <td><span class="price-anchor">$1,349</span><span class="price">$133/mo</span></td>
+            <td><span class="score">9.7</span></td>
+            <td><button class="compare-cta" data-offer="Brello Health">Get Offer</button></td>
+          </tr>
+          <tr>
+            <td><strong>DirectMeds</strong><span class="pill">Format Flex</span></td>
+            <td>Best for format flexibility &mdash; injectable + oral</td>
+            <td><span class="price-anchor">$1,349</span><span class="price">$147/mo</span></td>
+            <td><span class="score">9.5</span></td>
+            <td><button class="compare-cta" data-offer="DirectMeds">Get Offer</button></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    <div class="step">
-      <div class="step__num">2</div>
-      <h4>Evaluate</h4>
-      <p>Complete a medical intake. A licensed clinician reviews your history within 24&ndash;72 hours.</p>
-    </div>
-    <div class="step">
-      <div class="step__num">3</div>
-      <h4>Receive</h4>
-      <p>If approved, your medication ships from a U.S. licensed pharmacy in cold-chain packaging.</p>
-    </div>
   </div>
 
-  <!-- Quiz / Match -->
-  <div class="quiz">
-    <div class="quiz__eyebrow">60-Second Match</div>
-    <h3>Not sure which program is right for you?</h3>
-    <p class="quiz__sub">Answer 3 quick questions and we&rsquo;ll recommend the best GLP-1 program for your goals and budget.</p>
-    <button class="quiz__cta" id="openQuiz">Find My Match</button>
-    <div class="quiz__meta">
-      <span>Free</span>
-      <span>No email required</span>
-      <span>60 seconds</span>
-    </div>
-  </div>
-
-  <!-- TOC -->
-  <div class="toc">
-    <h4>What&rsquo;s in this guide</h4>
-    <ol>
-      <li><a href="#compare">Side-by-side comparison</a></li>
-      <li><a href="#thinnex">Thinnex &mdash; Best Overall</a></li>
-      <li><a href="#brello">Brello Health &mdash; Best Value</a></li>
-      <li><a href="#directmeds">DirectMeds &mdash; Best for Format Flexibility</a></li>
-      <li><a href="#testimonials">What members say</a></li>
-      <li><a href="#how-we-chose">How we chose</a></li>
-      <li><a href="#faq">FAQ</a></li>
-    </ol>
-  </div>
-
-  <h2 id="compare">Side-By-Side Comparison</h2>
-
-  <div class="compare">
-    <table>
-      <thead>
-        <tr>
-          <th>Provider</th>
-          <th>Best For</th>
-          <th>Starting Price</th>
-          <th>Editor Score</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="anchor-row">
-          <td colspan="4"><strong>Brand-name retail anchor:</strong> Wegovy ~$1,349/mo &middot; Zepbound ~$1,059/mo &mdash; the programs below price compounded alternatives at a fraction of retail.</td>
-        </tr>
-        <tr>
-          <td>
-            <strong>Thinnex</strong>
-            <span class="pill">Editor&rsquo;s Pick</span>
-          </td>
-          <td>Best overall &mdash; speed + dual medication</td>
-          <td><span class="price-anchor">$1,349</span><span class="price">$149/mo</span></td>
-          <td><span class="score">9.9</span> / 10</td>
-        </tr>
-        <tr>
-          <td><strong>Brello Health</strong></td>
-          <td>Best value &mdash; full clinician care</td>
-          <td><span class="price-anchor">$1,349</span><span class="price">$133/mo</span></td>
-          <td><span class="score">9.7</span> / 10</td>
-        </tr>
-        <tr>
-          <td><strong>DirectMeds</strong></td>
-          <td>Best for format flexibility &mdash; injectable + oral</td>
-          <td><span class="price-anchor">$1,349</span><span class="price">$147/mo</span></td>
-          <td><span class="score">9.5</span> / 10</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <p>All three providers ship from U.S. licensed pharmacies and prescribe through state-licensed clinicians. None require insurance, and all three accept HSA/FSA payment. The differences come down to clinician interaction model, medication options offered, and how aggressively each program titrates dosing.</p>
-
-  <!-- Entry 1: Thinnex -->
-  <section class="entry" id="thinnex">
+  <!-- ============ ENTRY 1: Thinnex (Best Overall) ============ -->
+  <section class="entry entry--pick" id="thinnex">
     <div class="entry__head">
       <div class="entry__num">1</div>
       <div class="entry__title-wrap">
         <img class="entry__logo entry__logo--thinnex" src="assets/thinnex-logo.png" alt="Thinnex">
-        <span class="entry__tag">Best Overall</span>
+        <span class="entry__tag entry__tag--green">Best Overall</span>
         <div class="entry__brand">Thinnex</div>
         <div class="entry__meds">
           <span class="med-pill">Semaglutide</span>
@@ -992,7 +984,7 @@ h1.title{
     </div>
   </section>
 
-  <!-- Entry 2: Brello Health -->
+  <!-- ============ ENTRY 2: Brello Health ============ -->
   <section class="entry" id="brello">
     <div class="entry__head">
       <div class="entry__num">2</div>
@@ -1056,7 +1048,7 @@ h1.title{
     </div>
   </section>
 
-  <!-- Entry 3: DirectMeds -->
+  <!-- ============ ENTRY 3: DirectMeds ============ -->
   <section class="entry" id="directmeds">
     <div class="entry__head">
       <div class="entry__num">3</div>
@@ -1095,7 +1087,7 @@ h1.title{
           <li>Both semaglutide and tirzepatide available</li>
           <li>Choice of injectable or oral sublingual drops</li>
           <li>$147/month with current promotion (semaglutide)</li>
-          <li>No subscription or membership &mdash; pay per prescription</li>
+          <li>No subscription &mdash; pay per prescription</li>
           <li>Same price across all dose levels</li>
           <li>LegitScript certified, 180k+ patients served</li>
           <li>Refund if prescription is not approved</li>
@@ -1123,7 +1115,45 @@ h1.title{
     </div>
   </section>
 
-  <!-- Testimonials -->
+  <!-- ============ Below-the-fold supporting content ============ -->
+
+  <div class="trust-box">
+    <h4>Why trust Top GLP-1 Offers</h4>
+    <p>Our editorial team independently evaluates every provider on the list. We compare published pricing, U.S. clinician credentials, FDA-registered pharmacy partners, and member-reported wait times. Partners may pay to be featured, but compensation does not influence our editor scores or ranking.</p>
+  </div>
+
+  <h2 id="how-it-works">How It Works</h2>
+  <p>Every program on this list follows the same three-step path. Differences come down to pricing, medication options, and how much clinician interaction you get.</p>
+  <div class="steps">
+    <div class="step">
+      <div class="step__num">1</div>
+      <h4>Choose</h4>
+      <p>Pick the program that fits your goals and budget from the providers above.</p>
+    </div>
+    <div class="step">
+      <div class="step__num">2</div>
+      <h4>Evaluate</h4>
+      <p>Complete a medical intake. A licensed clinician reviews your history within 24&ndash;72 hours.</p>
+    </div>
+    <div class="step">
+      <div class="step__num">3</div>
+      <h4>Receive</h4>
+      <p>If approved, your medication ships from a U.S. licensed pharmacy in cold-chain packaging.</p>
+    </div>
+  </div>
+
+  <div class="quiz">
+    <div class="quiz__eyebrow">60-Second Match</div>
+    <h3>Not sure which program is right for you?</h3>
+    <p class="quiz__sub">Answer 3 quick questions and we&rsquo;ll recommend the best GLP-1 program for your goals.</p>
+    <button class="quiz__cta" id="openQuiz">Find My Match</button>
+    <div class="quiz__meta">
+      <span>Free</span>
+      <span>No email required</span>
+      <span>60 seconds</span>
+    </div>
+  </div>
+
   <h2 id="testimonials">What members say</h2>
   <div class="testimonials">
     <div class="tm">
@@ -1150,14 +1180,12 @@ h1.title{
   </div>
   <p class="testimonial-disclaimer">Names changed for privacy. Individual results vary. Member feedback collected by our editorial team and is not medical advice.</p>
 
-  <!-- Methodology -->
   <div class="methodology" id="how-we-chose">
     <h3>How we chose the best GLP-1 programs</h3>
     <p>We evaluated more than a dozen GLP-1 telehealth providers active in the U.S. market and scored each on five weighted dimensions: published price (25%), clinician quality and U.S. licensing (25%), member experience and retention (20%), pharmacy partner credentials (15%), and policy transparency around cancellation, refunds, and side effects (15%).</p>
     <p>Our scoring uses publicly reported pricing, member surveys collected by our editorial team, and pharmacy verification through state board records. Providers cannot pay to influence rankings, but featured-partner placements are clearly labeled.</p>
   </div>
 
-  <!-- FAQ -->
   <h2 id="faq">Frequently Asked Questions</h2>
   <div class="faq">
     <details>
@@ -1198,7 +1226,6 @@ h1.title{
     </details>
   </div>
 
-  <!-- Disclaimer -->
   <div class="disclaimer">
     <strong>Disclaimer</strong>
     The content on this page is for educational and informational purposes only and is not intended as medical advice. Compounded GLP-1 medications are not FDA-approved. Prescriptions require evaluation and approval from a licensed clinician. Individual results vary. Consult your healthcare provider before starting any prescription medication. Top GLP-1 Offers is a marketing platform that connects consumers with telehealth providers; we are not a medical practice or pharmacy and do not provide medical services.
@@ -1246,7 +1273,6 @@ h1.title{
       <form id="leadForm" novalidate>
         <input type="hidden" name="brand" id="leadBrand" value="">
 
-        <!-- Step 1: Qualify -->
         <div class="wizard__step is-active" data-step="1">
           <div class="form-row">
             <label for="ln_zip">ZIP Code</label>
@@ -1270,7 +1296,6 @@ h1.title{
           </div>
         </div>
 
-        <!-- Step 2: Contact -->
         <div class="wizard__step" data-step="2">
           <div class="qualify-msg" id="qualifyMsg">Looks like you may qualify. Let&rsquo;s get your contact info.</div>
           <div class="form-grid-2">
@@ -1321,11 +1346,9 @@ h1.title{
       <span data-q="2"></span>
       <span data-q="3"></span>
     </div>
-    <div id="quizBody">
-      <!-- Question slots injected by JS -->
-    </div>
+    <div id="quizBody"></div>
     <div class="quiz-result" id="quizResult">
-      <p style="font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;font-weight:600">Your match</p>
+      <p style="font-size:11px;color:var(--muted-soft);text-transform:uppercase;letter-spacing:.1em;font-weight:700">Your match</p>
       <div class="quiz-result__brand" id="quizBrand">Thinnex</div>
       <p class="quiz-result__copy" id="quizReason">Best for fast clinician decisions and dual-medication access.</p>
       <button class="form-submit" id="quizCta" style="max-width:280px;margin:0 auto">See My <span data-brand>Thinnex</span> Offer</button>
@@ -1417,7 +1440,6 @@ h1.title{
     e.preventDefault();
     var data = Object.fromEntries(new FormData(e.target).entries());
     // TODO: POST data to your lead endpoint here.
-    // fetch('/api/leads', { method:'POST', body: JSON.stringify(data) })
     console.log('Lead captured:', data);
     formWrap.style.display = 'none';
     success.classList.add('is-shown');
@@ -1439,31 +1461,22 @@ h1.title{
   var quizProgress = quizModal.querySelectorAll('.quiz-progress span');
 
   var questions = [
-    {
-      q: "What's your weight loss goal?",
-      options: [
-        { label: "Lose 10–25 lbs", v: "small" },
-        { label: "Lose 25–50 lbs", v: "mid" },
-        { label: "Lose 50+ lbs", v: "big" }
-      ]
-    },
-    {
-      q: "Preferred medication format?",
-      options: [
-        { label: "Weekly injection", v: "inject" },
-        { label: "Daily oral drops", v: "oral" },
-        { label: "Open to either", v: "either" }
-      ]
-    },
-    {
-      q: "What matters most to you?",
-      options: [
-        { label: "Lowest monthly price", v: "price" },
-        { label: "Personalized clinician care", v: "care" },
-        { label: "Fastest start", v: "speed" },
-        { label: "Format flexibility", v: "flex" }
-      ]
-    }
+    { q: "What's your weight loss goal?", options: [
+      { label: "Lose 10–25 lbs", v: "small" },
+      { label: "Lose 25–50 lbs", v: "mid" },
+      { label: "Lose 50+ lbs", v: "big" }
+    ]},
+    { q: "Preferred medication format?", options: [
+      { label: "Weekly injection", v: "inject" },
+      { label: "Daily oral drops", v: "oral" },
+      { label: "Open to either", v: "either" }
+    ]},
+    { q: "What matters most to you?", options: [
+      { label: "Lowest monthly price", v: "price" },
+      { label: "Personalized clinician care", v: "care" },
+      { label: "Fastest start", v: "speed" },
+      { label: "Format flexibility", v: "flex" }
+    ]}
   ];
   var quizState = { step:0, answers:[] };
 
@@ -1471,13 +1484,12 @@ h1.title{
     quizResult.classList.remove('is-shown');
     var q = questions[quizState.step];
     var html = '<div class="quiz-q">' + q.q + '</div><div class="quiz-options">';
-    q.options.forEach(function(o, i){
+    q.options.forEach(function(o){
       html += '<button type="button" class="quiz-option" data-v="'+o.v+'">'+o.label+'</button>';
     });
     html += '</div>';
     quizBody.innerHTML = html;
     quizBody.style.display = '';
-    // progress
     quizProgress.forEach(function(el, i){
       el.classList.toggle('is-done', i <= quizState.step);
     });
@@ -1491,7 +1503,7 @@ h1.title{
     });
   }
   function showQuizResult(){
-    var ans = quizState.answers; // [goal, format, priority]
+    var ans = quizState.answers;
     var brand = 'Thinnex', reason = 'Best overall for fast clinician decisions and dual-medication access.';
     if(ans[1]==='oral'){
       brand = 'DirectMeds';
@@ -1531,7 +1543,7 @@ h1.title{
 
   /* ============ Sticky mobile bar ============ */
   var sticky = document.getElementById('stickyBar');
-  var heroEnd = 600; // px scroll threshold to show
+  var heroEnd = 400;
   function onScroll(){
     if(window.innerWidth >= 720){ sticky.classList.remove('is-shown'); return; }
     if(window.scrollY > heroEnd){ sticky.classList.add('is-shown'); }
@@ -1555,7 +1567,6 @@ h1.title{
   document.addEventListener('mouseout', function(e){
     if(!e.toElement && !e.relatedTarget && e.clientY < 10){ fireExit(); }
   });
-  // Mobile fallback: fire on rapid scroll-up after some dwell time
   var lastY = 0, slowScrolls = 0;
   window.addEventListener('scroll', function(){
     var y = window.scrollY;
