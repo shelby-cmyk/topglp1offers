@@ -617,6 +617,59 @@ h1.title{
 .quiz-result__brand{font-size:30px;font-weight:900;color:var(--accent-dark);margin:6px 0 10px;letter-spacing:-.025em}
 .quiz-result__copy{font-size:14px;color:var(--muted);margin-bottom:20px}
 
+/* ---------- Limited-Time Promo modal ---------- */
+.modal__panel--promo{max-width:460px;padding:28px 30px;text-align:center}
+.modal__panel--promo > h3{font-size:15px;font-weight:700;color:var(--muted);margin-bottom:16px;text-align:left;letter-spacing:0}
+.promo__pill{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--superlative-bg);color:var(--superlative);
+  padding:8px 14px;border-radius:999px;
+  font-size:12px;font-weight:800;letter-spacing:.04em;
+  margin-bottom:16px;text-transform:uppercase;
+}
+.promo__pill::before{content:"\23F1";font-size:14px}
+.promo__headline{
+  font-size:24px;font-weight:900;letter-spacing:-.02em;
+  line-height:1.18;margin-bottom:10px;color:var(--ink);
+}
+.promo__body{
+  font-size:14px;color:var(--muted);line-height:1.55;
+  margin:0 auto 18px;max-width:380px;
+}
+.promo__body strong{color:var(--ink);font-weight:700}
+.promo__trust{
+  background:var(--pro-soft);
+  border-radius:8px;padding:14px 16px;text-align:left;margin-bottom:18px;
+}
+.promo__trust__title{
+  font-size:13px;font-weight:800;color:var(--pro);
+  margin-bottom:6px;display:flex;align-items:center;gap:6px;
+}
+.promo__trust__title::before{content:"\2713";font-weight:900;font-size:14px}
+.promo__trust p{
+  font-size:13px;color:var(--muted);margin:0 0 8px;line-height:1.5;
+}
+.promo__trust__bullet{
+  font-size:12px;color:var(--pro);font-weight:600;
+}
+.promo__trust__bullet::before{content:"\2022";color:var(--pro);margin-right:6px;font-weight:900}
+.promo__visual{
+  background:var(--card);border-radius:8px;
+  padding:20px;margin-bottom:18px;
+  display:flex;align-items:center;justify-content:center;min-height:70px;
+}
+.promo__visual img{height:34px;width:auto;max-width:170px}
+.promo__buttons{display:flex;gap:10px}
+.promo__btn{
+  flex:1;padding:13px;border-radius:6px;
+  font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:.04em;
+  cursor:pointer;border:0;transition:all .15s;
+}
+.promo__btn--secondary{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.promo__btn--secondary:hover{background:var(--card)}
+.promo__btn--primary{background:var(--superlative);color:#fff}
+.promo__btn--primary:hover{filter:brightness(.95);transform:translateY(-1px)}
+
 /* ---------- Mobile ---------- */
 @media (max-width:760px){
   .site-nav a:not(.nav-phone){display:none}
@@ -1102,6 +1155,29 @@ h1.title{
   </div>
 </div>
 
+<!-- Limited-time promo modal -->
+<div class="modal" id="promoModal" role="dialog" aria-modal="true" aria-labelledby="promoTitle">
+  <div class="modal__panel modal__panel--promo">
+    <button class="modal__close" aria-label="Close">&times;</button>
+    <h3 id="promoTitle">Limited Time Offer</h3>
+    <span class="promo__pill">Featured Offer &mdash; Today Only</span>
+    <div class="promo__headline">Save On Our Editor&rsquo;s Pick GLP-1 Program</div>
+    <p class="promo__body">Our <strong>#1-rated provider</strong> is featuring discounted pricing this month. Save up to <strong>$1,200/month</strong> vs. brand-name retail.</p>
+    <div class="promo__trust">
+      <div class="promo__trust__title">Verified Editor&rsquo;s Pick</div>
+      <p>Published clinical trials of GLP-1 medications show 10&ndash;20% body weight reduction over 12+ months when paired with diet and exercise.</p>
+      <div class="promo__trust__bullet">Featured pricing is limited this month</div>
+    </div>
+    <div class="promo__visual">
+      <img src="assets/directmeds-logo.svg" alt="DirectMeds">
+    </div>
+    <div class="promo__buttons">
+      <button class="promo__btn promo__btn--secondary" id="promoClose">No Thanks</button>
+      <button class="promo__btn promo__btn--primary" data-offer="DirectMeds">Claim Offer Now &rarr;</button>
+    </div>
+  </div>
+</div>
+
 <script>
 (function(){
   /* ============ Affiliate tracking URLs ============ */
@@ -1192,6 +1268,34 @@ h1.title{
   }
   document.getElementById('openQuiz').addEventListener('click', openQuiz);
   document.getElementById('closingMatch').addEventListener('click', openQuiz);
+
+  /* ============ Limited-Time Promo modal ============ */
+  (function(){
+    var promo = document.getElementById('promoModal');
+    if(!promo) return;
+    var fired = false;
+    function firePromo(){
+      if(fired) return;
+      if(sessionStorage.getItem('promoSeen')) return;
+      if(document.querySelector('.modal.is-open')) return;
+      if(window.scrollY < 200) return;
+      fired = true;
+      try{ sessionStorage.setItem('promoSeen', '1'); }catch(_){}
+      promo.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    }
+    document.addEventListener('mouseout', function(e){
+      if(!e.toElement && !e.relatedTarget && e.clientY < 10){ firePromo(); }
+    });
+    setTimeout(firePromo, 35000);
+    var lastY = 0, scrollUps = 0;
+    window.addEventListener('scroll', function(){
+      var y = window.scrollY;
+      if(y < lastY - 80 && y > 600){ scrollUps++; if(scrollUps > 1) firePromo(); }
+      lastY = y;
+    }, { passive:true });
+    document.getElementById('promoClose').addEventListener('click', closeAll);
+  })();
 
   /* ============ Sticky bottom bar countdown ============ */
   (function(){
