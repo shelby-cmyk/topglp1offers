@@ -11,25 +11,25 @@
 <style>
 :root{
   --bg:#ffffff;
-  --ink:#1e2125;
-  --muted:#374151;
-  --muted-soft:#5b6779;
-  --line:#e3e7ed;
-  --line-soft:#f0f3f7;
-  --card:#f7f9ff;
-  --accent:#35b782;
-  --accent-dark:#2ea16f;
-  --accent-soft:#ecf9ff;
-  --brand:#04102f;
-  --brand-link:#4759b2;
-  --superlative:#ed6e13;
-  --superlative-bg:#fff3e6;
-  --partner:#c77e00;
-  --partner-bg:#fff1e1;
-  --partner-line:#f5d9b3;
+  --ink:#171b2c;
+  --muted:#3b405a;
+  --muted-soft:#5b6079;
+  --line:#e2e4ee;
+  --line-soft:#eff1f7;
+  --card:#f6f7fc;
+  --accent:#0d9488;
+  --accent-dark:#0f766e;
+  --accent-soft:#e0f5f2;
+  --brand:#1e1b4b;
+  --brand-link:#5b53d6;
+  --superlative:#ea580c;
+  --superlative-bg:#fff1e6;
+  --partner:#b8770a;
+  --partner-bg:#fff4e0;
+  --partner-line:#f0d499;
   --gold:#e8a317;
-  --pro:#34997d;
-  --pro-soft:#e6f5f0;
+  --pro:#0f766e;
+  --pro-soft:#d6f0ec;
   --con:#b33a3a;
   --gray-soft:#f3f4f6;
   --sans:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -391,6 +391,7 @@ h1.title{
   min-height:240px;display:flex;align-items:center;justify-content:center;
   overflow:hidden;
 }
+.hero-tm__visual img{width:100%;height:100%;min-height:240px;object-fit:cover;display:block}
 .hero-tm__visual span{
   font-size:13px;color:#7a6a4a;font-style:italic;text-align:center;padding:0 16px;
 }
@@ -750,7 +751,7 @@ h1.title{
     <div class="featured-partner__inner">
       <span class="featured-partner__tag">Featured Partner</span>
       <img class="featured-partner__logo" src="assets/directmeds-logo.svg" alt="DirectMeds">
-      <div class="featured-partner__copy">Compounded semaglutide and tirzepatide &mdash; injectable <em>or</em> oral. From <strong>$147/month</strong>, no insurance required. <strong>180,000+ patients served.</strong></div>
+      <div class="featured-partner__copy">Compounded semaglutide and tirzepatide &mdash; injectable <em>or</em> oral. From <strong>$147/month</strong>, pay per prescription. <strong>180,000+ patients served.</strong></div>
       <div class="featured-partner__urgency">Limited promo: $150 off semaglutide for new members</div>
     </div>
     <button class="featured-partner__cta" data-offer="DirectMeds">See If I Qualify</button>
@@ -764,32 +765,32 @@ h1.title{
       <article class="pick">
         <div class="pick__rank pick__rank--1">#1</div>
         <div class="pick__rating"><span class="star">&#9733;</span> 9.9</div>
-        <div class="pick__logo"><img src="assets/thinnex-logo.png" alt="Thinnex"></div>
+        <div class="pick__logo"><img src="assets/directmeds-logo.svg" alt="DirectMeds"></div>
         <h3 class="pick__title">Best Overall</h3>
-        <div class="pick__check">Speed + dual-medication access (sema + tirz)</div>
-        <p class="pick__desc">Compounded semaglutide and tirzepatide on one platform with 24-hour clinician decisions and $149/mo all-inclusive pricing.</p>
-        <span class="pick__badge">Most popular this week</span>
-        <button class="pick__cta" data-offer="Thinnex">View Offer</button>
+        <div class="pick__check">Both injectable and oral GLP-1 formats</div>
+        <p class="pick__desc">180,000+ patients served, LegitScript certified. Both semaglutide and tirzepatide in injectable or oral form. Pay per prescription, no subscription.</p>
+        <span class="pick__badge">Editor&rsquo;s Pick</span>
+        <button class="pick__cta" data-offer="DirectMeds">View Offer</button>
       </article>
       <article class="pick">
         <div class="pick__rank pick__rank--2">#2</div>
         <div class="pick__rating"><span class="star">&#9733;</span> 9.7</div>
-        <div class="pick__logo"><img src="assets/brello-logo.png" alt="Brello Health"></div>
-        <h3 class="pick__title">Best Value</h3>
-        <div class="pick__check">Lowest entry price with full clinician care</div>
-        <p class="pick__desc">$133/month entry pricing with a dedicated clinician and monthly check-ins included on every plan.</p>
-        <span class="pick__badge">Best Value</span>
-        <button class="pick__cta" data-offer="Brello Health">View Offer</button>
+        <div class="pick__logo"><img src="assets/thinnex-logo.png" alt="Thinnex"></div>
+        <h3 class="pick__title">Best for Fast Start</h3>
+        <div class="pick__check">24-hour clinician decision, dual-medication access</div>
+        <p class="pick__desc">Compounded semaglutide and tirzepatide on one platform with the fastest clinician decisions in the category and $149/mo all-inclusive pricing.</p>
+        <span class="pick__badge">Fastest Decision</span>
+        <button class="pick__cta" data-offer="Thinnex">View Offer</button>
       </article>
       <article class="pick">
         <div class="pick__rank pick__rank--3">#3</div>
         <div class="pick__rating"><span class="star">&#9733;</span> 9.5</div>
-        <div class="pick__logo"><img src="assets/directmeds-logo.svg" alt="DirectMeds"></div>
-        <h3 class="pick__title">Best for Format Flexibility</h3>
-        <div class="pick__check">Both injectable and oral GLP-1 formats</div>
-        <p class="pick__desc">Only program with oral sublingual GLP-1 drops as an alternative to weekly injections. 180k+ patients served.</p>
-        <span class="pick__badge">Format Choice</span>
-        <button class="pick__cta" data-offer="DirectMeds">View Offer</button>
+        <div class="pick__logo"><img src="assets/brello-logo.png" alt="Brello Health"></div>
+        <h3 class="pick__title">Best Value</h3>
+        <div class="pick__check">Lowest entry price with full clinician care</div>
+        <p class="pick__desc">$133/month entry pricing with a dedicated clinician and monthly check-ins included on every plan.</p>
+        <span class="pick__badge">Lowest Price</span>
+        <button class="pick__cta" data-offer="Brello Health">View Offer</button>
       </article>
     </div>
   </section>
@@ -814,25 +815,25 @@ h1.title{
             <td colspan="5"><strong>Brand-name retail anchor:</strong> Wegovy ~$1,349/mo &middot; Zepbound ~$1,059/mo &mdash; the programs below price compounded alternatives at a fraction of retail.</td>
           </tr>
           <tr>
-            <td><strong>Thinnex</strong><span class="pill pill--green">Editor&rsquo;s Pick</span></td>
-            <td>Best overall &mdash; speed + dual medication</td>
-            <td><span class="price-anchor">$1,349</span><span class="price">$149/mo</span></td>
+            <td><strong>DirectMeds</strong><span class="pill pill--green">Editor&rsquo;s Pick</span></td>
+            <td>Best overall &mdash; format flexibility + scale</td>
+            <td><span class="price-anchor">$1,349</span><span class="price">$147/mo</span></td>
             <td><span class="score">9.9</span></td>
+            <td><button class="compare-cta" data-offer="DirectMeds">Get Offer</button></td>
+          </tr>
+          <tr>
+            <td><strong>Thinnex</strong><span class="pill">Fast Start</span></td>
+            <td>Best for fast start &mdash; speed + dual medication</td>
+            <td><span class="price-anchor">$1,349</span><span class="price">$149/mo</span></td>
+            <td><span class="score">9.7</span></td>
             <td><button class="compare-cta" data-offer="Thinnex">Get Offer</button></td>
           </tr>
           <tr>
             <td><strong>Brello Health</strong><span class="pill">Best Value</span></td>
             <td>Best value &mdash; full clinician care</td>
             <td><span class="price-anchor">$1,349</span><span class="price">$133/mo</span></td>
-            <td><span class="score">9.7</span></td>
-            <td><button class="compare-cta" data-offer="Brello Health">Get Offer</button></td>
-          </tr>
-          <tr>
-            <td><strong>DirectMeds</strong><span class="pill">Format Flex</span></td>
-            <td>Best for format flexibility &mdash; injectable + oral</td>
-            <td><span class="price-anchor">$1,349</span><span class="price">$147/mo</span></td>
             <td><span class="score">9.5</span></td>
-            <td><button class="compare-cta" data-offer="DirectMeds">Get Offer</button></td>
+            <td><button class="compare-cta" data-offer="Brello Health">Get Offer</button></td>
           </tr>
         </tbody>
       </table>
@@ -849,8 +850,8 @@ h1.title{
   <h2 class="reviews-headline" id="reviews">Best GLP-1 Programs &mdash; Detailed Reviews</h2>
   <p class="reviews-sub">Why each program earned its score, what members get, and where each one shines.</p>
 
-  <!-- REVIEW 1: Thinnex (Best Overall) -->
-  <section class="review review--pick" id="thinnex">
+  <!-- REVIEW 1: DirectMeds (Best Overall) -->
+  <section class="review review--pick" id="directmeds">
     <div class="review__topbar">
       <span class="review__bonus">Editor&rsquo;s Pick &mdash; Best Overall</span>
       <span class="review__rank-num">1</span>
@@ -858,45 +859,90 @@ h1.title{
     <div class="review__grid">
       <div class="review__main">
         <div class="review__intro">
-          Thinnex earned our top slot for combining the fastest clinician decision in the category &mdash; most members report a response within 24 hours of intake &mdash; with both compounded semaglutide and tirzepatide on the same platform. The all-inclusive $149/month pricing covers prescription, medication, supplies, and clinician visits with no surprise add-ons.
+          DirectMeds earned our top slot for combining the only injectable-or-oral GLP-1 platform in the category with the strongest scale (180,000+ patients served) and trust signals (LegitScript telehealth certification). Compounded semaglutide and tirzepatide are both available, in either weekly injection or daily oral sublingual form &mdash; a real alternative for members who can&rsquo;t tolerate needles. Pricing is transactional with no subscription, and the program offers a refund if your prescription isn&rsquo;t approved.
         </div>
         <h5 class="review__love-title">What We Love</h5>
         <ul class="review__love-list">
-          <li>Both semaglutide and tirzepatide available on one platform</li>
-          <li>$149/month all-inclusive &mdash; medication, supplies, and clinician visits</li>
+          <li>Only program with both injectable and oral GLP-1 formats</li>
+          <li>Both semaglutide and tirzepatide available</li>
+          <li>$147/month with current promotion (semaglutide)</li>
+          <li>No subscription or membership &mdash; pay per prescription</li>
+          <li>Same price across all dose levels</li>
+          <li>180,000+ patients served, LegitScript certified</li>
+          <li>Refund if your prescription isn&rsquo;t approved</li>
+        </ul>
+        <div class="review__tags">
+          <span class="review__tag review__tag--effect">From $147/month</span>
+          <span class="review__tag review__tag--bestfor">Best for: Format flexibility</span>
+          <span class="review__tag review__tag--cons">Tirz priced higher &middot; not in MS or LA</span>
+        </div>
+      </div>
+      <aside class="review__side">
+        <div class="review__side__logo"><img src="assets/directmeds-logo.svg" alt="DirectMeds"></div>
+        <div class="review__side__discount">Featured Partner</div>
+        <div class="review__side__rating">
+          <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <span class="review__side__score">9.9 <span>/10</span></span>
+        </div>
+        <div class="review__side__trending">180k+ Patients Served</div>
+        <button class="review__side__cta" data-offer="DirectMeds">Take Assessment</button>
+        <div class="review__side__trust">
+          <span class="ok">Injectable or oral</span>
+          <span class="ok">No subscription</span>
+          <span class="ok">LegitScript certified</span>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- REVIEW 2: Thinnex (Best for Fast Start) -->
+  <section class="review" id="thinnex">
+    <div class="review__topbar">
+      <span class="review__bonus" style="background:var(--brand-link)">Best for Fast Start</span>
+      <span class="review__rank-num">2</span>
+    </div>
+    <div class="review__grid">
+      <div class="review__main">
+        <div class="review__intro">
+          Thinnex earned the #2 slot for the fastest clinician decision in the category &mdash; most members report a response within 24 hours of intake &mdash; paired with both compounded semaglutide and tirzepatide on the same platform. The all-inclusive $149/month pricing covers prescription, medication, supplies, and clinician visits with no surprise add-ons. There&rsquo;s no annual contract, and pausing or cancelling is one-click.
+        </div>
+        <h5 class="review__love-title">What We Love</h5>
+        <ul class="review__love-list">
           <li>24-hour clinician response time on intake</li>
-          <li>No insurance or PA paperwork required</li>
+          <li>Both semaglutide and tirzepatide on one platform</li>
+          <li>$149/month all-inclusive &mdash; medication, supplies, and clinician visits</li>
+          <li>HSA/FSA accepted</li>
           <li>Pause or cancel anytime &mdash; no annual contract</li>
         </ul>
         <div class="review__tags">
-          <span class="review__tag review__tag--effect">Starting at $149/month</span>
-          <span class="review__tag review__tag--bestfor">Best for: Fast start + dual medication</span>
+          <span class="review__tag review__tag--effect">$149/month all-inclusive</span>
+          <span class="review__tag review__tag--bestfor">Best for: Fastest start</span>
           <span class="review__tag review__tag--cons">Compounded only &middot; not all states</span>
         </div>
       </div>
       <aside class="review__side">
         <div class="review__side__logo"><img class="thinnex-logo" src="assets/thinnex-logo.png" alt="Thinnex"></div>
-        <div class="review__side__discount">Featured Pricing</div>
+        <div class="review__side__discount" style="background:var(--brand-link)">Fastest Decision</div>
         <div class="review__side__rating">
           <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-          <span class="review__side__score">9.9 <span>/10</span></span>
+          <span class="review__side__score">9.7 <span>/10</span></span>
         </div>
-        <div class="review__side__trending">Top Trending Program</div>
+        <div class="review__side__trending" style="background:var(--accent-soft);color:var(--brand-link)">24-Hour Decisions</div>
         <button class="review__side__cta" data-offer="Thinnex">Take Assessment</button>
         <div class="review__side__trust">
-          <span class="ok">No insurance required</span>
-          <span class="ok">24-hour decisions</span>
+          <span class="ok">Dual medication</span>
+          <span class="ok">All-inclusive pricing</span>
           <span class="ok">Cancel anytime</span>
         </div>
       </aside>
     </div>
   </section>
 
-  <!-- REVIEW 2: Brello Health -->
+  <!-- REVIEW 3: Brello Health (Best Value) -->
   <section class="review" id="brello">
     <div class="review__topbar">
-      <span class="review__bonus" style="background:var(--brand-link)">Best Value</span>
-      <span class="review__rank-num">2</span>
+      <span class="review__bonus" style="background:var(--superlative)">Best Value</span>
+      <span class="review__rank-num">3</span>
     </div>
     <div class="review__grid">
       <div class="review__main">
@@ -919,61 +965,17 @@ h1.title{
       </div>
       <aside class="review__side">
         <div class="review__side__logo"><img src="assets/brello-logo.png" alt="Brello Health"></div>
-        <div class="review__side__discount" style="background:var(--brand-link)">Lowest Price</div>
-        <div class="review__side__rating">
-          <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-          <span class="review__side__score">9.7 <span>/10</span></span>
-        </div>
-        <div class="review__side__trending" style="background:var(--accent-soft);color:var(--brand-link)">Best Member Retention</div>
-        <button class="review__side__cta" data-offer="Brello Health">Take Assessment</button>
-        <div class="review__side__trust">
-          <span class="ok">Dedicated clinician</span>
-          <span class="ok">Monthly check-ins</span>
-          <span class="ok">No insurance required</span>
-        </div>
-      </aside>
-    </div>
-  </section>
-
-  <!-- REVIEW 3: DirectMeds -->
-  <section class="review" id="directmeds">
-    <div class="review__topbar">
-      <span class="review__bonus">Best for Format Flexibility</span>
-      <span class="review__rank-num">3</span>
-    </div>
-    <div class="review__grid">
-      <div class="review__main">
-        <div class="review__intro">
-          DirectMeds is the only program offering both injectable and oral sublingual formats of semaglutide and tirzepatide, giving members who can&rsquo;t tolerate weekly injections a real alternative. Pricing is transactional &mdash; no membership fees, just per-prescription &mdash; and stays flat across dose levels. With 180,000+ patients served and LegitScript certification, DirectMeds also brings the strongest scale and trust signals in the category.
-        </div>
-        <h5 class="review__love-title">What We Love</h5>
-        <ul class="review__love-list">
-          <li>Both semaglutide and tirzepatide available</li>
-          <li>Choice of injectable or oral sublingual drops &mdash; injection-free option</li>
-          <li>$147/month with current promotion (semaglutide)</li>
-          <li>No subscription &mdash; pay per prescription, same price every dose</li>
-          <li>LegitScript certified, 180,000+ patients served</li>
-          <li>Refund if your prescription is not approved</li>
-        </ul>
-        <div class="review__tags">
-          <span class="review__tag review__tag--effect">From $147/month</span>
-          <span class="review__tag review__tag--bestfor">Best for: Oral GLP-1 access</span>
-          <span class="review__tag review__tag--cons">Tirz priced higher &middot; not in MS or LA</span>
-        </div>
-      </div>
-      <aside class="review__side">
-        <div class="review__side__logo"><img src="assets/directmeds-logo.svg" alt="DirectMeds"></div>
-        <div class="review__side__discount" style="background:var(--superlative)">Format Choice</div>
+        <div class="review__side__discount">Lowest Price</div>
         <div class="review__side__rating">
           <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
           <span class="review__side__score">9.5 <span>/10</span></span>
         </div>
-        <div class="review__side__trending">180k+ Patients Served</div>
-        <button class="review__side__cta" data-offer="DirectMeds">Take Assessment</button>
+        <div class="review__side__trending">Best Member Retention</div>
+        <button class="review__side__cta" data-offer="Brello Health">Take Assessment</button>
         <div class="review__side__trust">
-          <span class="ok">Injectable or oral</span>
-          <span class="ok">No subscription</span>
-          <span class="ok">LegitScript certified</span>
+          <span class="ok">Dedicated clinician</span>
+          <span class="ok">Monthly check-ins</span>
+          <span class="ok">HSA/FSA accepted</span>
         </div>
       </aside>
     </div>
@@ -982,7 +984,7 @@ h1.title{
   <!-- ============ HERO TESTIMONIAL ============ -->
   <div class="hero-tm">
     <div class="hero-tm__visual">
-      <span>Member story photo<br>(swap in real before/after image)</span>
+      <img src="assets/member-result.png" alt="Member weight loss result">
       <div class="hero-tm__overlay">Member result</div>
     </div>
     <div class="hero-tm__content">
@@ -992,7 +994,7 @@ h1.title{
         <span class="hero-tm__pill hero-tm__pill--green">Medically Supervised</span>
         <span class="hero-tm__pill hero-tm__pill--blue">Member Feedback</span>
       </div>
-      <button class="hero-tm__cta" data-offer="Thinnex">Start Your Match</button>
+      <button class="hero-tm__cta" data-offer="DirectMeds">Start Your Match</button>
     </div>
   </div>
 
@@ -1061,9 +1063,9 @@ h1.title{
       <p>Common side effects include nausea, vomiting, diarrhea, constipation, and fatigue, particularly during dose escalation. Less common but serious risks include pancreatitis, gallbladder issues, and kidney problems. Discuss your full medical history with the prescribing clinician before starting.</p>
     </details>
     <details>
-      <summary>Do I need insurance to use these programs?</summary>
-      <p>None of the three providers on this list require insurance. All accept HSA/FSA payment, and all publish flat cash pricing.</p>
-      <button class="faq__softcta" data-offer="">See cash-pay pricing</button>
+      <summary>How does pricing work?</summary>
+      <p>All three providers publish flat cash pricing with no hidden fees. HSA/FSA payment is accepted. Pricing covers prescription, medication, and clinician evaluation.</p>
+      <button class="faq__softcta" data-offer="">See current pricing</button>
     </details>
     <details>
       <summary>What BMI do I need to qualify?</summary>
@@ -1311,12 +1313,12 @@ h1.title{
   }
   function showQuizResult(){
     var ans = quizState.answers;
-    var brand = 'Thinnex', reason = 'Best overall for fast clinician decisions and dual-medication access.';
-    if(ans[1]==='oral'){ brand = 'DirectMeds'; reason = 'Only program offering oral sublingual GLP-1 drops in addition to injections.'; }
+    var brand = 'DirectMeds', reason = 'Most comprehensive program — both injectable and oral GLP-1 formats, 180,000+ patients served.';
+    if(ans[2]==='speed'){ brand = 'Thinnex'; reason = 'Fastest clinician decision in the category, $149/mo all-inclusive.'; }
     else if(ans[2]==='price'){ brand = 'Brello Health'; reason = 'Lowest entry price ($133/mo) with full clinician care included.'; }
     else if(ans[2]==='care'){ brand = 'Brello Health'; reason = 'Dedicated clinician and monthly check-ins on every plan.'; }
+    else if(ans[1]==='oral'){ brand = 'DirectMeds'; reason = 'Only program offering oral sublingual GLP-1 drops in addition to injections.'; }
     else if(ans[2]==='flex'){ brand = 'DirectMeds'; reason = 'Both semaglutide and tirzepatide, in injectable or oral form.'; }
-    else { brand = 'Thinnex'; reason = 'Fastest clinician decision, dual-medication access, $149/mo all-inclusive.'; }
     document.getElementById('quizBrand').textContent = brand;
     document.getElementById('quizReason').textContent = reason;
     quizModal.querySelectorAll('[data-brand]').forEach(function(el){ el.textContent = brand; });
