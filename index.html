@@ -1217,6 +1217,17 @@ h1.title{
 
 <script>
 (function(){
+  /* ============ Affiliate tracking URLs ============ */
+  var OFFER_URLS = {
+    'DirectMeds':    'https://directmeds.com/dm-offers-stc/?oid=12&uid=61&affid=713',
+    'Thinnex':       'https://get.thinnex.com/',
+    'Brello Health': 'https://www.brellohealth.com/start?_ef_transaction_id=&oid=1&affid=12'
+  };
+  function gotoOffer(brand){
+    var url = OFFER_URLS[brand];
+    if(url) window.open(url, '_blank', 'noopener,noreferrer');
+  }
+
   /* ============ Lead form modal (2-step) ============ */
   var modal = document.getElementById('leadModal');
   var formWrap = modal.querySelector('.modal__form-wrap');
@@ -1251,7 +1262,10 @@ h1.title{
   }
 
   document.querySelectorAll('[data-offer]').forEach(function(btn){
-    btn.addEventListener('click', function(){ openLead(btn.getAttribute('data-offer')); });
+    btn.addEventListener('click', function(){
+      var brand = btn.getAttribute('data-offer');
+      if(brand) gotoOffer(brand);
+    });
   });
 
   document.getElementById('wizNext').addEventListener('click', function(){
@@ -1322,7 +1336,7 @@ h1.title{
     document.getElementById('quizBrand').textContent = brand;
     document.getElementById('quizReason').textContent = reason;
     quizModal.querySelectorAll('[data-brand]').forEach(function(el){ el.textContent = brand; });
-    document.getElementById('quizCta').onclick = function(){ closeAll(); setTimeout(function(){ openLead(brand); }, 200); };
+    document.getElementById('quizCta').onclick = function(){ closeAll(); gotoOffer(brand); };
     quizBody.style.display = 'none';
     quizResult.classList.add('is-shown');
     quizProgress.forEach(function(el){ el.classList.add('is-done'); });
@@ -1371,9 +1385,8 @@ h1.title{
   }, { passive:true });
   document.getElementById('exitForm').addEventListener('submit', function(e){
     e.preventDefault();
-    var data = Object.fromEntries(new FormData(e.target).entries());
-    console.log('Exit lead captured:', data);
     closeAll();
+    gotoOffer('DirectMeds');
   });
 })();
 </script>
