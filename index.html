@@ -1177,6 +1177,27 @@ h1.title{
 
 <script>
 (function(){
+  /* ============ Attribution capture (UTM + clickid) ============ */
+  var STORAGE_KEY = 'tg1o_attr';
+  var UTM_KEYS = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','gclid','fbclid','ttclid','msclkid'];
+  function uuid(){
+    return 'xxxxxxxxxxxx4xxxyxxxxxxxxxxxxxxx'.replace(/[xy]/g,function(c){
+      var r=Math.random()*16|0; return (c==='x'?r:(r&0x3|0x8)).toString(16);
+    });
+  }
+  var attr = {};
+  try{ attr = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; }catch(_){}
+  var params = new URLSearchParams(window.location.search);
+  var dirty = false;
+  UTM_KEYS.forEach(function(k){
+    var v = params.get(k);
+    if(v){ attr[k] = v; dirty = true; }
+  });
+  if(!attr.clickid){ attr.clickid = uuid(); dirty = true; }
+  if(!attr.first_seen){ attr.first_seen = new Date().toISOString(); dirty = true; }
+  if(!attr.landing_page && params.toString()){ attr.landing_page = window.location.pathname + window.location.search; dirty = true; }
+  if(dirty){ try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(attr)); }catch(_){} }
+
   /* ============ Affiliate tracking URLs ============ */
   var OFFER_URLS = {
     'DirectMeds':    'https://directmeds.com/dm-offers-stc/?oid=12&uid=61&affid=713',
@@ -1184,8 +1205,25 @@ h1.title{
     'Brello Health': 'https://www.brellohealth.com/start-glp1-affiliate?_ef_transaction_id=&oid=1&affid=12'
   };
   function gotoOffer(brand){
-    var url = OFFER_URLS[brand];
-    if(url) window.open(url, '_blank', 'noopener,noreferrer');
+    var base = OFFER_URLS[brand];
+    if(!base) return;
+    var u; try{ u = new URL(base); }catch(_){ window.open(base, '_blank', 'noopener,noreferrer'); return; }
+    var clickid = attr.clickid || '';
+    // Per-partner sub-ID slots (best-guess names — confirm with each partner)
+    if(brand === 'DirectMeds'){
+      u.searchParams.set('s1', clickid);
+      if(attr.utm_source)   u.searchParams.set('s2', attr.utm_source);
+      if(attr.utm_campaign) u.searchParams.set('s3', attr.utm_campaign);
+    } else if(brand === 'Thinnex'){
+      u.searchParams.set('subid', clickid);
+    } else if(brand === 'Brello Health'){
+      u.searchParams.set('_ef_transaction_id', clickid);
+    }
+    // Always pass through UTMs verbatim (most partner platforms ingest them)
+    UTM_KEYS.forEach(function(k){
+      if(attr[k]) u.searchParams.set(k, attr[k]);
+    });
+    window.open(u.toString(), '_blank', 'noopener,noreferrer');
   }
 
   function closeAll(){
