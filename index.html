@@ -1274,20 +1274,28 @@ h1.title{
     var promo = document.getElementById('promoModal');
     if(!promo) return;
     var fired = false;
+    var loadedAt = Date.now();
     function firePromo(){
       if(fired) return;
-      if(sessionStorage.getItem('promoSeen')) return;
+      try{ if(sessionStorage.getItem('promoSeen')) return; }catch(_){}
       if(document.querySelector('.modal.is-open')) return;
-      if(window.scrollY < 200) return;
+      if(Date.now() - loadedAt < 4000) return; // 4s grace period
       fired = true;
       try{ sessionStorage.setItem('promoSeen', '1'); }catch(_){}
       promo.classList.add('is-open');
       document.body.style.overflow = 'hidden';
     }
-    document.addEventListener('mouseout', function(e){
-      if(!e.toElement && !e.relatedTarget && e.clientY < 10){ firePromo(); }
+    // Trigger 1: exit-intent (cursor leaves top of viewport)
+    document.addEventListener('mouseleave', function(e){
+      if(e.clientY <= 0){ firePromo(); }
     });
-    setTimeout(firePromo, 35000);
+    // Fallback for browsers that fire mouseout instead
+    document.addEventListener('mouseout', function(e){
+      if((!e.relatedTarget && !e.toElement) && e.clientY < 10){ firePromo(); }
+    });
+    // Trigger 2: 25 seconds on page
+    setTimeout(firePromo, 25000);
+    // Trigger 3: aggressive scroll-up (mobile)
     var lastY = 0, scrollUps = 0;
     window.addEventListener('scroll', function(){
       var y = window.scrollY;
