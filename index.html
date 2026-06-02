@@ -1261,17 +1261,22 @@ h1.title{
     if(!base) return;
     var u; try{ u = new URL(base); }catch(_){ window.open(base, '_blank', 'noopener,noreferrer'); return; }
     var clickid = attr.clickid || '';
-    // Per-partner sub-ID slots (best-guess names — confirm with each partner)
-    if(brand === 'DirectMeds'){
-      u.searchParams.set('s1', clickid);
-      if(attr.utm_source)   u.searchParams.set('s2', attr.utm_source);
-      if(attr.utm_campaign) u.searchParams.set('s3', attr.utm_campaign);
-    } else if(brand === 'Thinnex'){
-      u.searchParams.set('subid', clickid);
-    } else if(brand === 'Brello Health'){
+    // Universal Everflow pattern across all partners
+    // source_id = traffic source/affiliate ID
+    // sub5      = unique clickid
+    // sub1      = creative variant (utm_content)
+    // sub2      = traffic medium (utm_medium)
+    // sub3      = campaign tag (utm_campaign)
+    if(attr.utm_source)   u.searchParams.set('source_id', attr.utm_source);
+    u.searchParams.set('sub5', clickid);
+    if(attr.utm_content)  u.searchParams.set('sub1', attr.utm_content);
+    if(attr.utm_medium)   u.searchParams.set('sub2', attr.utm_medium);
+    if(attr.utm_campaign) u.searchParams.set('sub3', attr.utm_campaign);
+    // Brello's URL template has _ef_transaction_id placeholder — fill it
+    if(brand === 'Brello Health'){
       u.searchParams.set('_ef_transaction_id', clickid);
     }
-    // Always pass through UTMs verbatim (most partner platforms ingest them)
+    // Pass UTMs verbatim as fallback (harmless if ignored)
     UTM_KEYS.forEach(function(k){
       if(attr[k]) u.searchParams.set(k, attr[k]);
     });
