@@ -1219,8 +1219,11 @@ h1.title{
   try{ attr = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; }catch(_){}
   var params = new URLSearchParams(window.location.search);
   var dirty = false;
-  // Fresh attribution event: any UTM/click-id present in URL
-  var hasFreshAttribution = UTM_KEYS.some(function(k){ return params.get(k) != null; });
+  // Detect affiliate path: /a/{id} routes here via Cloudflare Pages rewrite
+  var affPath = window.location.pathname.match(/^\/a\/([^\/\?]+)\/?$/);
+  // Fresh attribution: UTM/click-id in URL, ?c= shorthand, or /a/{id} affiliate path
+  var cTag = params.get('c');
+  var hasFreshAttribution = !!affPath || cTag != null || UTM_KEYS.some(function(k){ return params.get(k) != null; });
   if(hasFreshAttribution){
     // Clear all UTM/context keys, generate fresh clickid + timestamp
     UTM_KEYS.forEach(function(k){ delete attr[k]; });
@@ -1228,10 +1231,18 @@ h1.title{
     attr.clickid = uuid();
     attr.attr_at = new Date().toISOString();
     attr.landing_page = window.location.pathname + window.location.search;
+    // Apply explicit UTMs from URL first (these always win)
     UTM_KEYS.forEach(function(k){
       var v = params.get(k);
       if(v) attr[k] = v;
     });
+    // Affiliate path: /a/{id} → utm_source={id}, utm_medium=affiliate
+    if(affPath){
+      if(!attr.utm_source) attr.utm_source = affPath[1];
+      if(!attr.utm_medium) attr.utm_medium = 'affiliate';
+    }
+    // ?c={tag} shorthand → utm_content
+    if(cTag && !attr.utm_content) attr.utm_content = cTag;
     dirty = true;
   }
   // Fallbacks for direct traffic / first visit
