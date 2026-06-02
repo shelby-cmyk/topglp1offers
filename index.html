@@ -1189,13 +1189,24 @@ h1.title{
   try{ attr = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; }catch(_){}
   var params = new URLSearchParams(window.location.search);
   var dirty = false;
-  UTM_KEYS.forEach(function(k){
-    var v = params.get(k);
-    if(v){ attr[k] = v; dirty = true; }
-  });
+  // Fresh attribution event: any UTM/click-id present in URL
+  var hasFreshAttribution = UTM_KEYS.some(function(k){ return params.get(k) != null; });
+  if(hasFreshAttribution){
+    // Clear all UTM/context keys, generate fresh clickid + timestamp
+    UTM_KEYS.forEach(function(k){ delete attr[k]; });
+    delete attr.landing_page;
+    attr.clickid = uuid();
+    attr.attr_at = new Date().toISOString();
+    attr.landing_page = window.location.pathname + window.location.search;
+    UTM_KEYS.forEach(function(k){
+      var v = params.get(k);
+      if(v) attr[k] = v;
+    });
+    dirty = true;
+  }
+  // Fallbacks for direct traffic / first visit
   if(!attr.clickid){ attr.clickid = uuid(); dirty = true; }
   if(!attr.first_seen){ attr.first_seen = new Date().toISOString(); dirty = true; }
-  if(!attr.landing_page && params.toString()){ attr.landing_page = window.location.pathname + window.location.search; dirty = true; }
   if(dirty){ try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(attr)); }catch(_){} }
 
   /* ============ Affiliate tracking URLs ============ */
