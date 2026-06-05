@@ -761,7 +761,7 @@ h1.title{
   <div class="byline">
     <span>By <strong>The Editorial Team</strong></span>
     <span class="byline-sep"></span>
-    <span>Updated May 7, 2026</span>
+    <span id="updatedDate">Updated May 7, 2026</span>
     <span class="byline-sep"></span>
     <span class="byline-checked">&#10003; Medically reviewed</span>
   </div>
@@ -878,7 +878,7 @@ h1.title{
   <!-- ============ Promotional ribbon ============ -->
   <div class="promo-ribbon">
     <span class="promo-ribbon__dot"></span>
-    Special offer: Featured pricing valid through May 31, 2026 &mdash; check eligibility while it lasts
+    Special offer: Featured pricing valid through <span id="promoExpiryDate">May 31, 2026</span> &mdash; check eligibility while it lasts
   </div>
 
   <!-- ============ DETAILED REVIEWS ============ -->
@@ -1207,6 +1207,19 @@ h1.title{
 
 <script>
 (function(){
+  /* ============ Dynamic dates (byline + promo expiry) ============ */
+  var MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  var _now = new Date();
+  var _updatedEl = document.getElementById('updatedDate');
+  if(_updatedEl){
+    _updatedEl.textContent = 'Updated ' + MONTHS[_now.getMonth()] + ' ' + _now.getDate() + ', ' + _now.getFullYear();
+  }
+  var _lastDay = new Date(_now.getFullYear(), _now.getMonth() + 1, 0);
+  var _promoEl = document.getElementById('promoExpiryDate');
+  if(_promoEl){
+    _promoEl.textContent = MONTHS[_lastDay.getMonth()] + ' ' + _lastDay.getDate() + ', ' + _lastDay.getFullYear();
+  }
+
   /* ============ Attribution capture (UTM + clickid) ============ */
   var STORAGE_KEY = 'tg1o_attr';
   var UTM_KEYS = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','gclid','fbclid','ttclid','msclkid'];
